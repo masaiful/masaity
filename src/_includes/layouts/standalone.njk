@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+---
+<article class="pt4 pt5-ns pb4 vs4">
+  {% Heading level=1 %}
+    {{title}}
+  {% endHeading %}
+
+  {# Contents #}
+  {% MarkdownBlock %}
+    {{ content | safe }}
+  {% endMarkdownBlock %}
+</article>

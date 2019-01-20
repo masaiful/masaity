@@ -15,7 +15,7 @@
 
     {# Contents #}
     {% MarkdownBlock %}
-      {{ post.templateContent | safe }}
+      {{ post.data.description | safe }}
     {% endMarkdownBlock %}
   </article>
   {% endfor %}
