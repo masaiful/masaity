@@ -14,7 +14,7 @@ A few months back, I spent a good amount of time working at the website for Futu
 
 Tech Weeklies is our, well, weekly gathering, where we share thoughts about tech and everything related. We have a great mix of people at the office, and I love seeing what everyone is passionate about! It's one of my favourite parts of working here.
 
-Given that background, and having just come back from the [performance.now()](https://perfnow.nl) conference, I was super motivated to work on the site. Taking on that task was a good opportunity to showcase what an accessible, performant site looked like in my mind.
+Given that background, and having recently come back from the [performance.now()](https://perfnow.nl) conference, I was super motivated to work on the site. Taking on that task was a good opportunity to showcase what an accessible, performant site looked like in my mind.
 
 And so we made it! You can find the [Tech Weeklies site here](https://techweeklies.futurice.com). We launched to a warm reception, achieved most of our goals, and content is being added every week. I was happy.
 
@@ -94,7 +94,7 @@ For Tech Weeklies, we got some stickers that had this beautiful pink/purple pale
 As I was writing the post on "Linking to Headings", I wanted to embed a Codepen.
 I realised I could use their new [Prefill Embeds](https://blog.codepen.io/documentation/prefill-embeds/) feature. After a couple of hours of fighting nested templates, I got it working! I think it strikes a great balance of choice, demo, authoring experience, and accessibility. I'll write more about this soon!
 
-I am also using [Workbox](https://developers.google.com/web/tools/workbox/) for some quick precaching. I want to explore offline article storage at some point, but for now it's just nice to have the hashing infrastructure set up.
+I am also using [Workbox](https://developers.google.com/web/tools/workbox/) for some quick precaching. I want to explore offline article storage at some point, but for now it's good to have the hashing infrastructure set up.
 
 ## Wrapping up
 

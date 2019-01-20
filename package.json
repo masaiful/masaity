@@ -60,6 +60,7 @@
     "workbox-build": "^3.6.3"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
     "@fpapado/yt-player": "^0.10.0",
     "common-tags": "^1.8.0",
     "tachyons": "^4.11.1"

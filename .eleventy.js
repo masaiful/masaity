@@ -6,6 +6,7 @@ const { groupBy, flatten, drop } = require('lodash');
 // Plugins
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 
 // Custom tags etc.
 const WithCodepen = require('./src/_includes/components/WithCodepen');
@@ -30,6 +31,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ['njk', 'md'],
   });
+  eleventyConfig.addPlugin(pluginInclusiveLanguage);
 
   //
   // LAYOUTS

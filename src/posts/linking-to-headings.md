@@ -48,7 +48,7 @@ I see two things to answer here:
 
 On the visual side, I think that it is a good idea to always have the link available. Having it appear or disappear based on hover (and focus!) states can be confusing. I also think that hiding it would make the behaviour less discoverable. Nothing bad really happens if someone clicks on the link; they are taken to where they were, and then they know what it does.
 
-If I had to pick, I would go for just a hash symbol, '#'. You could probably add an icon as well. In general, I am curious to read any research/user testing on this pattern!
+If I had to pick, I would go for a standalone hash symbol, '#'. You could probably add an icon as well. In general, I am curious to read any research/user testing on this pattern!
 
 ### Screen reader announcement (or not)
 
