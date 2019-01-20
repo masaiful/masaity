@@ -20,7 +20,7 @@ module.exports = function(content, props = {}) {
   const htmlContent = html`${content}`;
 
   return html`
-    <div>
+    <div class="md-replaced vs2">
       <div
         class="${lazy ? embedIdentifier : 'codepen'}"
         data-prefill
@@ -31,11 +31,12 @@ module.exports = function(content, props = {}) {
       </div>
       ${lazy
         ? html`
-            <div>
-              <button data-for="${embedIdentifier}" class="makeCpInteractive">
-                Make interactive
-              </button>
-            </div>
+            <button
+              data-for="${embedIdentifier}"
+              class="makeCpInteractive button-reset ph3 pv2 fw7 fg-secondary bg-primary focus-outline-accent-lighter hover-bg-accent transition-bg br2"
+            >
+              Make demo interactive
+            </button>
           `
         : ''}
     </div>

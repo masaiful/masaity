@@ -45,7 +45,8 @@
 /* Separate replaced content */
 .article * + img,
 .article * + iframe,
-.article * + .md-img {
+.article * + .md-img,
+.article * + .md-replaced {
   margin-top: 1.5em;
 }
 
