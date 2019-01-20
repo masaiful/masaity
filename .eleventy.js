@@ -8,6 +8,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 // Custom tags etc.
+const WithCodepen = require('./src/_includes/components/WithCodepen');
 const MdImg = require('./src/_includes/components/MdImg');
 const Text = require('./src/_includes/components/Text');
 const Headline = require('./src/_includes/components/Headline');
@@ -154,6 +155,7 @@ module.exports = function(eleventyConfig) {
 
   //
   // SHORTCODES
+  eleventyConfig.addPairedShortcode('WithCodepen', WithCodepen);
   eleventyConfig.addPairedShortcode('MdImg', MdImg);
   eleventyConfig.addPairedShortcode('Text', Text);
   eleventyConfig.addPairedShortcode('Headline', Headline);
