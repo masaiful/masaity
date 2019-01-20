@@ -1,5 +1,13 @@
 # TODO
 
+## Near
+
+- Style code blocks
+- Syntax highlighting
+- Hyphens and word-break, where supported
+
+## Future
+
 - Clean up CSS source
 
   - Only use required Tachyons modules

@@ -8,3 +8,9 @@ tags:
 layout: layouts/post.njk
 description: 'Exploring all the ways of wrapping text in the browser. It would be a shame if a certain 18-letter surname broke our layout :)'
 ---
+
+`word-break`?
+`word-wrap`?
+`hyphens`?
+
+Which one is it?

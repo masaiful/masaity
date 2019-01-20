@@ -6,7 +6,7 @@
   --secondary: #fafafa;
   --accent: #f331b2;
   --accent-lighter: #f331b2;
-  --gold: #fedf35;
+  --selection: #fff09d;
 }
 
 /** Explicit light theme */
@@ -15,7 +15,7 @@
   --secondary: #fafafa;
   --accent: #f331b2;
   --accent-lighter: #f331b2;
-  --gold: #fedf35;
+  --selection: #fff09d;
 }
 
 /** Atomic classes for theme */
@@ -61,6 +61,13 @@
   background-color: var(--accent-lighter);
 }
 
-.bg-gold {
-  background-color: var(--gold);
+/** Text selection 
+  * TODO: Reconsider
+*/
+/* ::selection {
+  background-color: var(--selection);
 }
+
+::-moz-selection {
+  background-color: var(--selection);
+} */

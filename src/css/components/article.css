@@ -15,6 +15,16 @@
   line-height: 1.5;
 }
 
+/* TODO: Look more into code formatting */
+.article code {
+  word-break: break-word;
+  hyphens: manual;
+  background-color: #eeeeee;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.15em;
+}
+
 /* Heading line-height */
 .article h1,
 .article h2,
