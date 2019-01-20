@@ -23,6 +23,8 @@
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   border-radius: 0.15em;
+  /* Adjust visually for PhantomSans being smaller */
+  font-size: 0.8em;
 }
 
 /* Heading line-height */
@@ -69,7 +71,7 @@
 .article * + h4,
 .article * + h5,
 .article * + h6 {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 /* Type scale */
