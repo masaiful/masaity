@@ -5,6 +5,7 @@
 - Style code blocks
 - Syntax highlighting
 - Hyphens and word-break, where supported
+- Fetch the codepen script dynamically
 
 ## Future
 

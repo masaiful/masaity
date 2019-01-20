@@ -4,7 +4,6 @@ module.exports = function(content, props = {}) {
   const {
     id,
     lazy = true,
-    lang = 'html',
     height = '400',
     defaultTab = 'html, result',
   } = props;
@@ -15,6 +14,8 @@ module.exports = function(content, props = {}) {
 
   const embedIdentifier = `codepen-later-${id}`;
 
+  // THIS IS IMPORTANT, stuff breaks with extra <pre> being inserted
+  // due to extra white-space :))))
   // prettier-ignore
   const htmlContent = html`${content}`;
 

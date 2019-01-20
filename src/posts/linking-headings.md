@@ -7,6 +7,7 @@ tags:
   - a11y
 layout: layouts/post.njk
 description: 'Exploring the pattern of linking to headings in a document.'
+hasCodepen: true
 ---
 
 Recently, a co-worker asked me about the pattern of linking to specific headings in a document:
@@ -25,23 +26,13 @@ The `name` attribute has been deprecated in HTML5. You can use the `id` attribut
 
 So, a first attempt at linking things would look like this:
 
-<div 
-  class="codepen"
-  data-prefill 
-  data-height="400" 
-  data-default-tab="html,result" 
->
-  <pre data-lang="html">
-  {% raw %}
-    <div class="module">
-      <h1>README</h1>
-      <a href="#introduction">Introduction</a>
-      <h2 id="introduction">Introduction</h2>
-    </div>
-  {% endraw %}
-  </pre>
-</div>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% WithCodepen id="linking-headings-1" %}
+{% highlight "html" %}
+<h1>README</h1>
+<a href="#introduction">Introduction</a>
+<h2 id="introduction">Introduction</h2>
+{% endhighlight %}
+{% endWithCodepen %}
 
 We associate the href with the id, and we're done.
 But what if we want to make link available for copying?
@@ -79,23 +70,14 @@ Here are a few uses of this pattern that I spotted in the wild:
 
 Given everything above, here is how I would do it:
 
-{% WithCodepen lazy=true, id="linking-headings-2" %}
-
-  {% highlight "html" %}
-  <div>
-    <h1>README</h1>
-    <a href="#introduction">Introduction</a>
-    <h2 id="introduction">
-      Introduction <a href="#introduction" aria-hidden="true">#</a>
-    </h2>
-  </div>
-  {% endhighlight %}
-
-  {% highlight "css" %}
-  .link {
-    color: rebeccapurple;
-  }
-  {% endhighlight %}
+{% WithCodepen id="linking-headings-2" %}
+{% highlight "html" %}
+<h1>README</h1>
+<a href="#introduction">Introduction</a>
+<h2 id="introduction">
+  Introduction <a href="#introduction" aria-hidden="true">#</a>
+</h2>
+{% endhighlight %}
 {% endWithCodepen %}
 
 Would you pick some other combination? Do you have user insigths ore more cases to consider? Get in touch, I'd love to know!

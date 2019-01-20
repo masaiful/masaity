@@ -24,4 +24,9 @@ templateClass: tmpl-post
       {% endLink %}
     {% endText %}
   {% endMarkdownBlock %}
+
+  {# Load Codepen script if needed #}
+  {% if hasCodepen %}
+    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+  {% endif %}
 </article>
