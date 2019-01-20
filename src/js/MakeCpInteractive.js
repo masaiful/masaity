@@ -21,6 +21,14 @@ export function init() {
 
       // The API for looking for and creating embeds
       window.__CPEmbed(`.${embedIdentifier}`);
+
+      // Focus the iframe and remove the button
+      // TODO: Really should test this. Does it make sense?
+      // const newEmbed = button.previousElementSibling;
+      // newEmbed.setAttribute('tabindex', '-1');
+      // newEmbed.focus();
+      // newEmbed.removeAttribute('tabindex');
+      // button.remove();
     })
   );
 }
