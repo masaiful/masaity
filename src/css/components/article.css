@@ -79,6 +79,9 @@
   /* All type is f4 by default */
   font-size: 1.25rem;
   line-height: 1.5;
+
+  /* Hyphenation */
+  hyphens: auto;
 }
 
 .article h1 {
