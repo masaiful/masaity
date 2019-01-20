@@ -7,17 +7,96 @@
 */
 
 /* Generated content namespace */
-.article {
+
+/* Copy line-height for lists and paragraphs */
+.article ol,
+.article ul,
+.article p {
   line-height: 1.5;
 }
 
+/* Heading line-height */
 .article h1,
-h2,
-h3,
-h4,
-h6,
-h6 {
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
   line-height: 1.25;
+}
+
+/* Separate paragraphs */
+.article p + p {
+  margin-top: 1.5em;
+}
+
+/* SEPARATORS */
+/* First off, reset margin-bottom */
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6,
+.article p {
+  margin-bottom: 0;
+}
+
+/* Then, augment margin-top with the owl selector */
+/* Separate headings 
+ * NOTE: There is an assumption here that the heading is paired with the content after it.
+*/
+.article * + h1,
+.article * + h2,
+.article * + h3,
+.article * + h4,
+.article * + h5,
+.article * + h6 {
+  margin-top: 2em;
+}
+
+/* Type scale */
+.article {
+  /* All type is f4 by default */
+  font-size: 1.25rem;
+}
+
+.article h1 {
+  /* f1 */
+  font-size: 3rem;
+}
+
+.article h2 {
+  /* f2 */
+  font-size: 2.25rem;
+}
+
+/** All others are f3 */
+.article h3 {
+  /* f3 */
+  font-size: 1.5rem;
+}
+
+/* Font Weights */
+/* Equivalent of "fw7" for headings */
+.article h1,
+.article h2,
+.article h3,
+.article h4,
+.article h5,
+.article h6 {
+  font-weight: 700;
+}
+
+@supports (font-variation-settings: normal) {
+  .article h1,
+  .article h2,
+  .article h3,
+  .article h4,
+  .article h5,
+  .article h6 {
+    font-variation-settings: 'wght' 999;
+  }
 }
 
 /* Link styles */
