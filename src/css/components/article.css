@@ -26,7 +26,14 @@
 }
 
 /* Separate paragraphs */
-.article p + p {
+.article * + p {
+  margin-top: 1.5em;
+}
+
+/* Separate replaced content */
+.article * + img,
+.article * + iframe,
+.article * + .md-img {
   margin-top: 1.5em;
 }
 

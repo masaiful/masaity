@@ -8,6 +8,7 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 // Custom tags etc.
+const MdImg = require('./src/_includes/components/MdImg');
 const Text = require('./src/_includes/components/Text');
 const Headline = require('./src/_includes/components/Headline');
 const Heading = require('./src/_includes/components/Heading');
@@ -153,6 +154,7 @@ module.exports = function(eleventyConfig) {
 
   //
   // SHORTCODES
+  eleventyConfig.addPairedShortcode('MdImg', MdImg);
   eleventyConfig.addPairedShortcode('Text', Text);
   eleventyConfig.addPairedShortcode('Headline', Headline);
   eleventyConfig.addPairedShortcode('Heading', Heading);
@@ -169,7 +171,7 @@ module.exports = function(eleventyConfig) {
     // This is only used for URLs (it does not affect your file structure)
     pathPrefix: '/',
 
-    markdownTemplateEngine: 'liquid',
+    markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
     passthroughFileCopy: true,
