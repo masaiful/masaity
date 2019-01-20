@@ -1,12 +1,7 @@
 const { html } = require('common-tags');
 
 module.exports = function(content, props = {}) {
-  const {
-    id,
-    lazy = true,
-    height = '400',
-    defaultTab = 'html, result',
-  } = props;
+  const { id, lazy = true, height = '400', defaultTab = 'html,result' } = props;
 
   if (lazy && !id) {
     throw 'id is required for lazy-initialised pens in WithCodepen';
