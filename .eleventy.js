@@ -27,7 +27,9 @@ module.exports = function(eleventyConfig) {
   //
   // PLUGINS
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(pluginSyntaxHighlight);
+  eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+    templateFormats: ['njk', 'md'],
+  });
 
   //
   // LAYOUTS

@@ -1,4 +1,4 @@
-const { html, safeHtml } = require('common-tags');
+const { html } = require('common-tags');
 
 module.exports = function(content, props = {}) {
   const {
@@ -15,6 +15,9 @@ module.exports = function(content, props = {}) {
 
   const embedIdentifier = `codepen-later-${id}`;
 
+  // prettier-ignore
+  const htmlContent = html`${content}`;
+
   return html`
     <div>
       <div
@@ -23,7 +26,7 @@ module.exports = function(content, props = {}) {
         data-height="${height}"
         data-default-tab="${defaultTab}"
       >
-        <pre data-lang="${lang}">${content}</pre>
+        ${htmlContent}
       </div>
       ${lazy
         ? html`

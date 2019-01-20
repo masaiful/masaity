@@ -17,7 +17,8 @@
     "dev:css": "postcss src/css/*.css --dir _site/css/ --watch",
     "prod": "npm-run-all -s build serve",
     "serve": "serve _site --listen 8000",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "DEBUG=* npx eleventy",
+    "postinstall": "patch-package"
   },
   "repository": {
     "type": "git",

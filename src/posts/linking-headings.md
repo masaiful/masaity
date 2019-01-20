@@ -79,17 +79,23 @@ Here are a few uses of this pattern that I spotted in the wild:
 
 Given everything above, here is how I would do it:
 
-{% WithCodepen id="linking-headings-final" %}
-{% filter escape %}
+{% WithCodepen lazy=true, id="linking-headings-2" %}
 
-<div>
-  <h1>README</h1>
-  <a href="#introduction">Introduction</a>
-  <h2 id="introduction">
-    Introduction <a href="#introduction" aria-hidden="true">#</a>
-  </h2>
-</div>
-{% endfilter %}
+  {% highlight "html" %}
+  <div>
+    <h1>README</h1>
+    <a href="#introduction">Introduction</a>
+    <h2 id="introduction">
+      Introduction <a href="#introduction" aria-hidden="true">#</a>
+    </h2>
+  </div>
+  {% endhighlight %}
+
+  {% highlight "css" %}
+  .link {
+    color: rebeccapurple;
+  }
+  {% endhighlight %}
 {% endWithCodepen %}
 
 Would you pick some other combination? Do you have user insigths ore more cases to consider? Get in touch, I'd love to know!

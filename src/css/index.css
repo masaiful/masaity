@@ -12,6 +12,9 @@
 @import './transition-extra';
 @import './animations';
 
+/** Syntax highlighting */
+@import './prism-a11y-dark';
+
 /** "Components" */
 @import './components/article';
 @import './components/skip-link';

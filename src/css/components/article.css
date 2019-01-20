@@ -16,7 +16,7 @@
 }
 
 /* TODO: Look more into code formatting */
-.article code {
+.article :not(pre) > code {
   word-break: break-word;
   hyphens: manual;
   background-color: #eeeeee;

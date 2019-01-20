@@ -1,0 +1,10 @@
+patch-package
+--- a/node_modules/@11ty/eleventy-plugin-syntaxhighlight/src/HighlightPairedShortcode.js
++++ b/node_modules/@11ty/eleventy-plugin-syntaxhighlight/src/HighlightPairedShortcode.js
+@@ -20,5 +20,5 @@ module.exports = function(content, language, highlightNumbers) {
+     return group.getLineMarkup(j, line);
+   });
+ 
+-  return `<pre class="language-${language}"><code class="language-${language}">` + lines.join("<br>") + "</code></pre>";
++  return `<pre class="language-${language}" data-lang="${language}"><code class="language-${language}">` + lines.join("<br>") + "</code></pre>";
+ };
