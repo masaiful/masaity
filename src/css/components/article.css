@@ -1,0 +1,33 @@
+/**
+    The `.article` class namespaces/handles editorial content,
+    typically generated from Markdown.
+    The name of the game in this case is "resilience".
+    We should be able to anticipate content, and make sure that the result
+    is accessible, readable, and scales well.
+*/
+
+/* Generated content namespace */
+.article {
+  line-height: 1.5;
+}
+
+.article h1, h2, h3, h4, h6, h6 {
+  line-height: 1.25;
+}
+
+/* Link styles */
+.article a,
+.article a:visited {
+  color: var(--accent-lighter);
+  transition: color 0.15s ease-in;
+}
+
+.article a:hover {
+  color: var(--accent-2);
+}
+
+.article a:focus {
+  text-decoration: none;
+  outline: 0.125em var(--accent-lighter) solid;
+  outline-offset: 0.125em;
+}

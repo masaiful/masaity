@@ -1,0 +1,60 @@
+/* Themes */
+
+/** Set the root theme to be the light one */
+:root {
+  --primary: #eaeaea;
+  --secondary: #1a1a1a;
+  --accent: #10a985;
+  --accent-lighter: #15e1b2;
+}
+
+/** Explicit light theme */
+.theme-light {
+  --primary: #eaeaea;
+  --secondary: #1a1a1a;
+  --accent: #10a985;
+  --accent-lighter: #15e1b2;
+}
+
+/** Atomic classes for theme */
+/**  Foreground */
+.fg-primary {
+  color: var(--primary);
+}
+
+.fg-secondary {
+  color: var(--secondary);
+}
+
+.fg-accent {
+  color: var(--accent);
+}
+
+.fg-accent-lighter {
+  color: var(--accent-lighter);
+}
+
+.hover-fg-accent:hover {
+  color: var(--accent);
+}
+
+.hover-fg-accent-lighter:hover {
+  color: var(--accent-lighter);
+}
+
+/** Background */
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-accent {
+  background-color: var(--accent);
+}
+
+.bg-accent-lighter {
+  background-color: var(--accent-lighter);
+}

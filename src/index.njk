@@ -1,0 +1,40 @@
+---
+layout: layouts/home.njk
+title: Home
+tags:
+  - nav
+---
+
+<h1 class="mv5 mw5 center fill-accent fg-accent animation-logo animate-me">
+  {% include "svg/weeklies_logo.svg" %}
+</h1>
+
+<div class="vs5">
+  <div class="vs4">
+    {% Heading level=2 %}
+      Latest Talks
+    {% endHeading %}
+
+    {% set latestPosts = collections.postsByDate | last %}
+    {% include "latestPost.njk" %}
+  </div>
+
+  <div class="vs4">
+    {% Heading level=2 %}
+      Past Talks
+    {% endHeading %}
+
+    <div class="measure-prose">
+      {# For the "Past Talks", skip the latest talks, flatten the remaining, and take 3 #}
+      {% set postslist = collections.postsByDate | reverse | drop(1) | flatten | head(3) %}
+      {% include "postslist.njk" %}
+    </div>
+
+    {% Text %}
+      More talks can be found in 
+      {% Link { href: '/posts/' | url } %}
+        the archive.
+      {% endLink %}
+    {% endText %}
+  </div>
+</div>

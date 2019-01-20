@@ -1,0 +1,29 @@
+<div class="vs4">
+  {% for post in latestPosts | reverse %}
+  <article class="vs3">
+    <div class="vs2">
+      {% Subheading level=3 %}
+        {% Link href=post.url | url %}
+          {{ post.data.title }}
+        {% endLink %}
+      {% endSubheading %}
+
+      <time class="db" datetime="{{post.data.date}}">
+        {{post.data.date | readableDate}}
+      </time>
+    </div>
+
+    {# Video #}
+    {% if post.data.videoId %}
+        {# TODO: make videoId a parameter of youtubeVideo #}
+        {% set videoId = post.data.videoId %}
+        {% include "youtubeVideo.njk" %}
+    {% endif %}
+
+    {# Contents #}
+    {% MarkdownBlock %}
+      {{ post.templateContent | safe }}
+    {% endMarkdownBlock %}
+  </article>
+  {% endfor %}
+</div>

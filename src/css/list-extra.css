@@ -1,0 +1,5 @@
+/* List styling */
+/* Keep list bullets flush with content on left */
+.u-list {
+  padding-left: 1em;
+}

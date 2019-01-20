@@ -1,0 +1,9 @@
+/** Styles for selectively transitioning colours */
+
+.transition-fg {
+  transition: color 0.15s ease-in;
+}
+
+.transition-bg {
+  transition: background-color 0.15s ease-in;
+}
