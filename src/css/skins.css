@@ -6,6 +6,7 @@
   --secondary: #fafafa;
   --accent: #f331b2;
   --accent-lighter: #f331b2;
+  --gold: #fedf35;
 }
 
 /** Explicit light theme */
@@ -14,6 +15,7 @@
   --secondary: #fafafa;
   --accent: #f331b2;
   --accent-lighter: #f331b2;
+  --gold: #fedf35;
 }
 
 /** Atomic classes for theme */
@@ -57,4 +59,8 @@
 
 .bg-accent-lighter {
   background-color: var(--accent-lighter);
+}
+
+.bg-gold {
+  background-color: var(--gold);
 }

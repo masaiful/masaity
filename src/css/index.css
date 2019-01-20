@@ -10,6 +10,7 @@
 @import './spacing-extra.css';
 @import './list-extra.css';
 @import './transition-extra';
+@import './animations';
 
 /** "Components" */
 @import './components/article';

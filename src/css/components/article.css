@@ -11,14 +11,19 @@
   line-height: 1.5;
 }
 
-.article h1, h2, h3, h4, h6, h6 {
+.article h1,
+h2,
+h3,
+h4,
+h6,
+h6 {
   line-height: 1.25;
 }
 
 /* Link styles */
 .article a,
 .article a:visited {
-  color: var(--accent-lighter);
+  color: var(--accent);
   transition: color 0.15s ease-in;
 }
 
@@ -28,6 +33,6 @@
 
 .article a:focus {
   text-decoration: none;
-  outline: 0.125em var(--accent-lighter) solid;
+  outline: 0.125em var(--accent) solid;
   outline-offset: 0.125em;
 }

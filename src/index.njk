@@ -5,9 +5,9 @@ tags:
   - nav
 ---
 
-<h1 class="mv5 mv6-ns f1 f-headline-ns fg-primary fw9 lh-copy">
-  Greetings, friend
-</h1>
+{% Headline level=1 %}
+  Greetings, friend.
+{% endHeadline %}
 
 <div class="vs5">
   <div class="vs4">
@@ -31,7 +31,7 @@ tags:
     </div>
 
     {% Text %}
-      More talks can be found in 
+      More posts can be found in 
       {% Link { href: '/posts/' | url } %}
         the archive.
       {% endLink %}

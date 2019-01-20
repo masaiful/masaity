@@ -9,6 +9,7 @@ const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 // Custom tags etc.
 const Text = require('./src/_includes/components/Text');
+const Headline = require('./src/_includes/components/Headline');
 const Heading = require('./src/_includes/components/Heading');
 const Subheading = require('./src/_includes/components/Subheading');
 const Link = require('./src/_includes/components/Link');
@@ -153,6 +154,7 @@ module.exports = function(eleventyConfig) {
   //
   // SHORTCODES
   eleventyConfig.addPairedShortcode('Text', Text);
+  eleventyConfig.addPairedShortcode('Headline', Headline);
   eleventyConfig.addPairedShortcode('Heading', Heading);
   eleventyConfig.addPairedShortcode('Subheading', Subheading);
   eleventyConfig.addPairedShortcode('MarkdownBlock', MarkdownBlock);

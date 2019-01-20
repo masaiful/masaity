@@ -8,4 +8,4 @@ tags:
 layout: layouts/post.njk
 ---
 
-<!--- You can insert a short description here -->
+Exploring the pattern of linking to headings in a document.

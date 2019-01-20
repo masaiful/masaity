@@ -1,0 +1,32 @@
+@keyframes rotateIn {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, 180deg);
+  }
+
+  to {
+    transform-origin: center;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.rotateIn {
+  animation-name: rotateIn;
+  will-change: transform;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  animation-iteration-count: infinite;
+}
+
+@media (print), (prefers-reduced-motion) {
+  .animated {
+    animation: unset !important;
+    transition: none !important;
+  }
+}
