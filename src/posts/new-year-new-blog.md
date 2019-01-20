@@ -78,6 +78,8 @@ I didn't add much client-side JS here. That is by design, to keep things lean. I
 ### Syntax highlighting
 Syntax highlighting is handled by [Prism](https://prismjs.com/), by [Lea Verou](https://twitter.com/leaverou). Feels damn bulletproof, and having it on the server works wonders for keeping the site fast.
 
+The syntax theme is [prism-a11y-dark](https://github.com/ericwbailey/a11y-syntax-highlighting) by [Eric Bailey](https://twitter.com/ericwbailey/).
+
 ### Fonts
 The text is set in [Phantom Sans](https://www.futurefonts.xyz/phantom-foundry/phantom-sans), by Phantom Foundry.
 
