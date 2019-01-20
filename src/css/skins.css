@@ -5,6 +5,7 @@
   --primary: #1a1a1a;
   --secondary: #fafafa;
   --accent: #dc0794;
+  --accent-2: #4e07dc;
   --accent-lighter: #dc0794;
   --selection: #fff09d;
 }
@@ -14,6 +15,7 @@
   --primary: #1a1a1a;
   --secondary: #fafafa;
   --accent: #dc0794;
+  --accent-2: #4e07dc;
   --accent-lighter: #dc0794;
   --selection: #fff09d;
 }
@@ -38,6 +40,10 @@
 
 .hover-fg-accent:hover {
   color: var(--accent);
+}
+
+.hover-fg-accent-2:hover {
+  color: var(--accent-2);
 }
 
 .hover-fg-accent-lighter:hover {

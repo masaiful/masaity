@@ -3,3 +3,7 @@
   outline: 0.125em var(--accent-lighter) solid;
   outline-offset: 0.125em;
 }
+
+.focus-tdn:focus {
+  text-decoration: none;
+}
