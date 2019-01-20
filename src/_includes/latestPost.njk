@@ -13,13 +13,6 @@
       </time>
     </div>
 
-    {# Video #}
-    {% if post.data.videoId %}
-        {# TODO: make videoId a parameter of youtubeVideo #}
-        {% set videoId = post.data.videoId %}
-        {% include "youtubeVideo.njk" %}
-    {% endif %}
-
     {# Contents #}
     {% MarkdownBlock %}
       {{ post.templateContent | safe }}

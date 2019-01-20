@@ -5,14 +5,14 @@ tags:
   - nav
 ---
 
-<h1 class="mv5 mw5 center fill-accent fg-accent animation-logo animate-me">
-  {% include "svg/weeklies_logo.svg" %}
+<h1 class="mv5 mv6-ns f1 f-headline-ns fg-primary fw9 lh-copy">
+  Greetings, friend
 </h1>
 
 <div class="vs5">
   <div class="vs4">
     {% Heading level=2 %}
-      Latest Talks
+      Latest Posts
     {% endHeading %}
 
     {% set latestPosts = collections.postsByDate | last %}
@@ -21,7 +21,7 @@ tags:
 
   <div class="vs4">
     {% Heading level=2 %}
-      Past Talks
+      Past Posts
     {% endHeading %}
 
     <div class="measure-prose">

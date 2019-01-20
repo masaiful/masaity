@@ -2,18 +2,18 @@
 
 /** Set the root theme to be the light one */
 :root {
-  --primary: #eaeaea;
-  --secondary: #1a1a1a;
-  --accent: #10a985;
-  --accent-lighter: #15e1b2;
+  --primary: #1a1a1a;
+  --secondary: #fafafa;
+  --accent: #f331b2;
+  --accent-lighter: #f331b2;
 }
 
 /** Explicit light theme */
 .theme-light {
-  --primary: #eaeaea;
-  --secondary: #1a1a1a;
-  --accent: #10a985;
-  --accent-lighter: #15e1b2;
+  --primary: #1a1a1a;
+  --secondary: #fafafa;
+  --accent: #f331b2;
+  --accent-lighter: #f331b2;
 }
 
 /** Atomic classes for theme */

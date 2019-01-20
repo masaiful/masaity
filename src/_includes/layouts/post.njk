@@ -13,11 +13,6 @@ templateClass: tmpl-post
     </time>
   </div>
 
-  {# Video #}
-  {% if videoId %}
-    {% include "youtubeVideo.njk" %}
-  {% endif %}
-
   {# Contents #}
   {% MarkdownBlock %}
     {{ content | safe }}

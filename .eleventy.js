@@ -8,7 +8,6 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginSyntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 // Custom tags etc.
-const YoutubeThumbnail = require('./src/_includes/components/YoutubeThumbnail');
 const Text = require('./src/_includes/components/Text');
 const Heading = require('./src/_includes/components/Heading');
 const Subheading = require('./src/_includes/components/Subheading');
@@ -97,18 +96,6 @@ module.exports = function(eleventyConfig) {
     return hashedFilename;
   });
 
-  eleventyConfig.addFilter('youtubeVideoUrl', (videoId, clipTimeSeconds) => {
-    return `https://youtube.com/watch?v=${videoId}${
-      clipTimeSeconds ? `&t=${clipTimeSeconds}` : ''
-    }`;
-  });
-
-  eleventyConfig.addFilter('youtubeEmbedUrl', (videoId, clipTimeSeconds) => {
-    return `https://www.youtube.com/embed/${videoId}${
-      clipTimeSeconds ? `&start=${clipTimeSeconds}` : ''
-    }`;
-  });
-
   //
   // COLLECTIONS
 
@@ -165,7 +152,6 @@ module.exports = function(eleventyConfig) {
 
   //
   // SHORTCODES
-  eleventyConfig.addShortcode('YoutubeThumbnail', YoutubeThumbnail);
   eleventyConfig.addPairedShortcode('Text', Text);
   eleventyConfig.addPairedShortcode('Heading', Heading);
   eleventyConfig.addPairedShortcode('Subheading', Subheading);
