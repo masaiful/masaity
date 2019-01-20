@@ -24,11 +24,11 @@ export function init() {
 
       // Focus the iframe and remove the button
       // TODO: Really should test this. Does it make sense?
-      // const newEmbed = button.previousElementSibling;
-      // newEmbed.setAttribute('tabindex', '-1');
-      // newEmbed.focus();
-      // newEmbed.removeAttribute('tabindex');
-      // button.remove();
+      const newEmbed = button.previousElementSibling;
+      newEmbed.setAttribute('tabindex', '-1');
+      newEmbed.focus();
+      newEmbed.removeAttribute('tabindex');
+      button.remove();
     })
   );
 }
