@@ -1,5 +1,5 @@
 ---
-title: Linking Headings
+title: Linking to Headings
 date: 2019-01-20
 tags:
   - post
@@ -9,7 +9,7 @@ layout: layouts/post.njk
 description: 'Exploring the pattern of linking to headings in a document.'
 ---
 
-Recently, a co-worker asked me about the pattern of linking to headings as a fragment:
+Recently, a co-worker asked me about the pattern of linking to specific headings in a document:
 
 {% MdImg
   aspectRatio="6x4",
@@ -25,13 +25,23 @@ The `name` attribute has been deprecated in HTML5. You can use the `id` attribut
 
 So, a first attempt at linking things would look like this:
 
-```html
-<h1>README</h1>
-
-<a href="#introduction">Introduction</a>
-
-<h2 id="introduction">Introduction</h2>
-```
+<div 
+  class="codepen"
+  data-prefill 
+  data-height="400" 
+  data-default-tab="html,result" 
+>
+  <pre data-lang="html">
+  {% raw %}
+    <div class="module">
+      <h1>README</h1>
+      <a href="#introduction">Introduction</a>
+      <h2 id="introduction">Introduction</h2>
+    </div>
+  {% endraw %}
+  </pre>
+</div>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 We associate the href with the id, and we're done.
 But what if we want to make link available for copying?
@@ -43,9 +53,13 @@ I see two things to answer here:
 - Visually representing the link
 - Deciding whether to announce it to screen readers
 
+### Visual representation
+
 On the visual side, I think that it is a good idea to always have the link available. Having it appear or disappear based on hover (and focus!) states can be confusing. I also think that hiding it would make the behaviour less discoverable. Nothing bad really happens if someone clicks on the link; they are taken to where they were, and then they know what it does.
 
 If I had to pick, I would go for just a hash symbol, '#'. You could probably add an icon as well. In general, I am curious to read any research/user testing on this pattern!
+
+### Screen reader announcement (or not)
 
 Now, what do we do about screen reader announcements? Having a repeated '#' announcements can be bad, because there is no context for what the link does. On this page, for instance, you would have five nonsensical '#' links. On the other hand, I think that any user might want to save or send the link. In that case, removing the announcement might remove useful functionality.
 
@@ -63,16 +77,23 @@ Here are a few uses of this pattern that I spotted in the wild:
 
 ## Final words
 
-Here is how I would do it, given the above:
+Given everything above, here is how I would do it:
 
-```html
-<h1>README</h1>
+<div 
+  class="codepen"
+  data-prefill 
+  data-height="400" 
+  data-default-tab="html,result" 
+>
+  <pre data-lang="html">
+  {% raw %}
+    <h1>README</h1>
+    <a href="#introduction">Introduction</a>
+    <h2 id="introduction">
+      Introduction <a href="#introduction" aria-hidden="true">#</a>
+    </h2>
+  {% endraw %}
+  </pre>
+</div>
 
-<a href="#introduction">Introduction</a>
-
-<h2 id="introduction">
-  Introduction <a href="#introduction" aria-hidden="true">#</a>
-</h2>
-```
-
-Do get in touch if you have user insights from this, or more cases to consider. I'd love to know :)
+Would you pick some other combination? Do you have user insigths ore more cases to consider? Get in touch, I'd love to know!
