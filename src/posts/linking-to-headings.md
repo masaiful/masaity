@@ -35,8 +35,7 @@ So, a first attempt at linking things would look like this:
 {% endhighlight %}
 {% endWithCodepen %}
 
-We associate the href with the id, and we're done.
-But what if we want to make link available for copying?
+We associate the href with the id, and we're done. But what if we want to make link available for copying?
 
 ## Affordances and announcements
 
@@ -53,7 +52,7 @@ If I had to pick, I would go for a standalone hash symbol, '#'. You could probab
 
 ### Screen reader announcement (or not)
 
-Now, what do we do about screen reader announcements? Having a repeated '#' announcements can be bad, because there is no context for what the link does. On this page, for instance, you would have five nonsensical '#' links. On the other hand, I think that any user might want to save or send the link. In that case, removing the announcement might remove useful functionality.
+Now, what do we do about screen reader announcements? Having duplicate announcements can be bad, because there is no context for what each link does. On the other hand, I think that any user might want to save or send the link. In that case, removing the announcement might remove useful functionality.
 
 Having said that, I would probably opt to not announce the link. The extra announcements do not make sense if you list links. Moreover, in cases where I have a table of contents (e.g. in a docs site), there are already explicit links, with context, available! The extra '#' would be very much an enhancement in that case, and the [comparable experience](https://inclusivedesignprinciples.org/#provide-comparable-experience) seems there.
 
