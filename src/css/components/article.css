@@ -77,8 +77,8 @@
 
 /* Type scale */
 .article {
-  /* All type is f4 by default */
-  font-size: 1rem;
+  /* All type is between f4 and f5 by default */
+  font-size: 1.125rem;
   line-height: 1.5;
 
   /* Hyphenation */
