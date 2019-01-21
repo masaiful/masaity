@@ -71,8 +71,16 @@
   background-color: var(--accent);
 }
 
+.bg-accent-2 {
+  background-color: var(--accent-2);
+}
+
 .bg-accent-lighter {
   background-color: var(--accent-lighter);
+}
+
+.bg-selection {
+  background-color: var(--selection);
 }
 
 /** Text selection 

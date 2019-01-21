@@ -1,9 +1,9 @@
-<ol reversed class="pa0 vs3 list postlist" style="counter-reset: start-from {{ postslist.length + 1 }}">
+<ol reversed class="pa0 vs4 list" style="counter-reset: start-from {{ postslist.length + 1 }}">
 {% for post in postslist %}
-  <li class="flex items-baseline postlist-item{% if post.url == url %} fw7 postlist-item-active{% endif %}">
-    <span class="ml2 lh-title">
+  <li class="flex items-baseline {% if post.url == url %}fw7{% endif %}">
+    <span class="lh-title">
       {# Title link #}
-      {% Link href=post.url | url, className="db mb1 mr1 f4 fw7" %}
+      {% Link href=post.url | url, className="db mb2 mr2 f4 f3-ns fw7" %}
         {% if post.data.title %}
           {{ post.data.title }}
         {% else %}
@@ -12,13 +12,13 @@
       {% endLink %}
 
       {# Date #}
-      <time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
+      <time class="f5 f4-ns" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
 
       {# Tags #}
       {% for tag in post.data.tags %}
         {%- if tag != "post" -%}
         {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="tag">{{ tag }}</a>
+        <a href="{{ tagUrl | url }}" class="ml1 ph2 pv1 f5 f4-ns fg-primary bg-selection br2 link focus-shadow-accent">{{ tag }}</a>
         {%- endif -%}
       {% endfor %}
     </span>

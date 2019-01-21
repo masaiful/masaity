@@ -1,21 +1,19 @@
 # TODO
 
 ## Near
-
-- Style code blocks
-- Syntax highlighting
-- Hyphens and word-break, where supported
-- Fetch the codepen script dynamically
+- Audit SkipLink
 
 ## Future
+- Add test pipeline/CI for accessibility
+- Add test pipeline/CI for performance
 
-- Clean up CSS source
-
+- Clean up CSS source:
   - Only use required Tachyons modules
   - Add fallback for browsers without CSS custom properties
 
-- Document build pipeline:
+- Fetch the codepen script dynamically
 
+- Document build pipeline:
   - Assets: JS, Rollup
   - Assets: CSS, PostCSS
   - Heavy lifting / first pass: Eleventy for data manipulation, and templating
@@ -23,10 +21,6 @@
     - Critical CSS inlining
 
 - Document environment variables
-
-- Add test pipeline for accessibility
 - Add prettier and pre-commit hooks
 - Add prose checker
 - Consider 11ty transforms instead of the metalsmith one https://www.11ty.io/docs/config/#transforms
-- Add Lighthouse CI
-- Audit SkipLink

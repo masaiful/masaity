@@ -29,7 +29,7 @@ permalink: /styleguide/
         </div>
     </div>
 
-    <div class="vs3 pl3 bl bw1 b--light-yellow">
+    <div class="vs3 pl3 bl bw1 b--light-red">
         {% Text %}
             The pairs shown are also the recommendations for
             accessible combinations.
@@ -55,7 +55,7 @@ permalink: /styleguide/
         Subheading
     {% endSubheading %}
 
-    <div class="pl3 bl bw1 b--light-yellow">
+    <div class="pl3 bl bw1 b--light-red">
         {% Text %}
             Headings come in two sizes, that scale
             according to fixed media queries. Note
@@ -83,7 +83,7 @@ permalink: /styleguide/
         {% endText %}
     </div>
 
-    <div class="pl3 bl bw1 b--light-yellow">
+    <div class="pl3 bl bw1 b--light-red">
         {% Text %}
             Text can be composed by adding a "spacer", `vs0-6`,
             class on the wrapping element. In Markdown text,
@@ -110,7 +110,7 @@ permalink: /styleguide/
         {% endLink %}
     </div>
 
-    <div class="pl3 bl bw1 b--light-yellow">
+    <div class="pl3 bl bw1 b--light-red">
         {% Text %}
             Links handle hover and focus styles, as well as
             security parameters (rel="noopener noreferrer")
@@ -149,7 +149,7 @@ permalink: /styleguide/
         </div>
     </div>
 
-    <div class="vs3 pl3 bl bw1 b--light-yellow">
+    <div class="vs3 pl3 bl bw1 b--light-red">
         {% Text %}
             Vertical spacing can be achieved with the `vs0-6`
             classes. They set spacing such that only elements
@@ -180,7 +180,7 @@ permalink: /styleguide/
 
     {% endMarkdownBlock %}
 
-    <div class="pl3 bl bw1 b--light-yellow">
+    <div class="pl3 bl bw1 b--light-red">
         {% Text %}
             Most of the content on this site is hardcoded.
             However, the content of posts is technically freeform
@@ -194,7 +194,7 @@ permalink: /styleguide/
 
   <section class="pb4 vs4 bb bw1 b--light-gray">
     {% Subheading level=2 %}
-        Aspect Ratio
+        Aspect Ratio (MdImg)
     {% endSubheading %}
 
     {% Text %}
@@ -204,19 +204,6 @@ permalink: /styleguide/
         can make layout slow and distract the user.
     {% endText %}
 
-    <div class="aspect-ratio aspect-ratio--6x4 bg-moon-gray">
-      <img class="aspect-ratio--object fit-cover" src="" alt="" />
-    </div>
-
-    <div class="pl3 bl bw1 b--light-yellow">
-        {% Text %}
-            This is more of a "pattern" and less of a component.
-            This is because the content of the aspect-ratio can
-            be anything, and there would be a good amount of
-            indidrection to make that generic. Making special-case
-            components for every content also does not seem worthwhile
-            atm, but it might change in the future!
-        {% endText %}
-    </div>
+    {% MdImg aspectRatio="6x4", src="", alt="" %}{% endMdImg %}
   </section>
 </article>
