@@ -140,22 +140,20 @@ module.exports = function(eleventyConfig) {
 
   /* Markdown Plugins */
   let markdownIt = require('markdown-it');
-  let markdownItAnchor = require('markdown-it-anchor');
   let options = {
     html: true,
     breaks: true,
     linkify: true,
   };
-  let opts = {
+  //let markdownItAnchor = require('markdown-it-anchor');
+  /* let anchorOpts = {
     permalink: true,
     permalinkClass: 'direct-link',
     permalinkSymbol: '#',
   };
+  */
 
-  eleventyConfig.setLibrary(
-    'md',
-    markdownIt(options).use(markdownItAnchor, opts)
-  );
+  eleventyConfig.setLibrary('md', markdownIt(options));
 
   //
   // SHORTCODES

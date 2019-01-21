@@ -86,8 +86,6 @@ The [Inclusive Design Principles](https://inclusivedesignprinciples.org) website
   alt=""
 %}{% endMdImg %}
 
-This blog uses markdown automation for these links. They are always visible as '#', and the announcements hidden with `aria-hidden="true"`. I am still split on this. I don't have a table of contents, and I am not sure if people would use it or find it weird.
-
 ## Final words
 
 Given everything above, here is how I would do it:
