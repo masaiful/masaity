@@ -28,7 +28,7 @@ The `name` attribute has been deprecated in HTML5. You can use the `id` attribut
 So, suppose we have a list of links that point to sections.
 A first attempt at linking things would look like this:
 
-{% WithCodepen id="linking-headings-1", height="800" %}
+{% WithCodepen id="linking-headings-1", height="400" %}
 {% highlight "html" %}
 <h1>README</h1>
 
@@ -112,7 +112,7 @@ The [Inclusive Design Principles](https://inclusivedesignprinciples.org) website
 
 Given everything above, here is how I would do it:
 
-{% WithCodepen id="linking-headings-2", height="800" %}
+{% WithCodepen id="linking-headings-2", height="400" %}
 {% highlight "html" %}
 <h1>README</h1>
 
