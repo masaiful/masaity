@@ -2,3 +2,18 @@
 .fit-cover {
   object-fit: cover;
 }
+.o-pos-bottom {
+  object-position: bottom;
+}
+.o-pos-center {
+  object-position: center;
+}
+.o-pos-left {
+  object-position: left;
+}
+.o-pos-right {
+  object-position: right;
+}
+.o-pos-top {
+  object-position: top;
+}

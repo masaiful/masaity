@@ -4,8 +4,7 @@ date: 2019-01-20
 tags:
   - post
 layout: layouts/post.njk
-description: 'Whoops.'
-hasCodepen: true
+description: 'Recharging, gathering inspiration, and writing on.'
 ---
 
 ## The road so far
@@ -70,10 +69,12 @@ There's more things, that have shaped what I care about: colour contrast, and se
 
 I could write pages on this topic. Some other time, perhaps. I like the atomic classes approach, and I still use it a lot to glue things together. For more editorial content (such as markdown blocks), I use qualified/scoped selectors, such as `.article`. Fret not, I still use the scales and palettes!
 
-### JS: A minimal amount, bundled with Rollup
-I didn't add much client-side JS here. That is by design, to keep things lean. It uses very simple selectors and modules. I might need components if I start handling more complex loading states (that lazy Youtube embed...), but for now it's great. 
+I use [PostCSS](https://github.com/postcss/postcss) with [Autoprefixer](https://github.com/postcss/autoprefixer) to handle vendor prefixes in the compiled CSS.
 
-[Rolllup](https://rollupjs.org/) hit v1 recently, and I am amazed by how advanced the optimisations can be. What I really love though, is their vision of ES modules natively, and ways of pushing the standards forward. I don't use  much of that functionality, but I'm glad to have the option.
+### JS: A minimal amount, bundled with Rollup
+I didn't add much client-side JS here. That is by design, to keep things lean. It uses very simple selectors and modules. I might need components if I start handling more complex loading states (that lazy Youtube embed...), but for now it's great.
+
+[Rolllup](https://rollupjs.org/) hit v1 recently, and I am impressed by their advanced optimisations. What I really love though, is their vision of ES modules natively, and ways of pushing the standards forward. I don't use  much of that functionality, but I'm glad to have the option.
 
 ### Syntax highlighting
 Syntax highlighting is handled by [Prism](https://prismjs.com/), by [Lea Verou](https://twitter.com/leaverou). Feels damn bulletproof, and having it on the server works wonders for keeping the site fast.

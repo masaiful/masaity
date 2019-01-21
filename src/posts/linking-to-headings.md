@@ -10,10 +10,11 @@ description: 'Exploring the pattern of linking to headings in a document.'
 hasCodepen: true
 ---
 
-Recently, a co-worker asked me about the pattern of linking to specific headings in a document:
+Recently, a co-worker, [Juhis](https://twitter.com/hamatti), asked me about the pattern of linking to specific headings in a document:
 
 {% MdImg
   aspectRatio="6x4",
+  position="top",
   src="/img/posts/linking_headings_1.jpg",
   alt="#Accessibility and #semantics question for #HTML: if I use an anchor name='foo', should I also add href attribute to it to make it link to itself?"
 %}{% endMdImg %}
@@ -54,17 +55,38 @@ If I had to pick, I would go for a standalone hash symbol, '#'. You could probab
 
 Now, what do we do about screen reader announcements? Having a repeated '#' announcements can be bad, because there is no context for what the link does. On this page, for instance, you would have five nonsensical '#' links. On the other hand, I think that any user might want to save or send the link. In that case, removing the announcement might remove useful functionality.
 
-I would probably opt to not announce the link. The extra announcements do not make sense if you list links. Moreover, in cases where I have a table of contents (e.g. in a docs site), there are explicit links, with context, available! The extra '#' would be very much an enhancement in that case, and something comparable is there.
+Having said that, I would probably opt to not announce the link. The extra announcements do not make sense if you list links. Moreover, in cases where I have a table of contents (e.g. in a docs site), there are already explicit links, with context, available! The extra '#' would be very much an enhancement in that case, and the [comparable experience](https://inclusivedesignprinciples.org/#provide-comparable-experience) seems there.
 
 ## In the wild
 
-(This section is a Work In Progress)
-
 Here are a few uses of this pattern that I spotted in the wild:
 
-- Github README rendering (shows only on hover, hides with aria-hidden)
-- CSS Tricks (always visible, always announced)
-- This blog (via markdown automation; always visible, aria-hidden)
+[Github README rendering](https://github.com/fpapado/fotis.xyz) shows a link only on hover, and hides the announcement with `aria-hidden="true"`. I am not a huge fan of that. Especially since READMEs are typically documentation and reference, I would think that making the link always visible would be more intuitive.
+
+{% MdImg
+  aspectRatio="6x4",
+  src="/img/posts/linking-headings-github.jpg",
+  alt=""
+%}{% endMdImg %}
+
+[CSS Tricks](https://css-tricks.com/2019-css-wishlist/) has the links always visible as '#' and always announced. They are placed at the beginning of headings, which keeps the alignment flush on the start.
+
+{% MdImg
+  aspectRatio="16x9",
+  position="left",
+  src="/img/posts/linking-headings-css-tricks.jpg",
+  alt=""
+%}{% endMdImg %}
+
+The [Inclusive Design Principles](https://inclusivedesignprinciples.org) website offers an explicit link for sections. For example, the "Provide Comparable Experience" section has a link "Link to Provide comparable experience" at the end. I like how direct it is, and the placement at the section seems distinct enough. I would definitely consider this for a site!
+
+{% MdImg
+  aspectRatio="6x4",
+  src="/img/posts/linking-headings-inclusive-design-principles.jpg",
+  alt=""
+%}{% endMdImg %}
+
+This blog uses markdown automation for these links. They are always visible as '#', and the announcements hidden with `aria-hidden="true"`. I am still split on this. I don't have a table of contents, and I am not sure if people would use it or find it weird.
 
 ## Final words
 
@@ -80,4 +102,4 @@ Given everything above, here is how I would do it:
 {% endhighlight %}
 {% endWithCodepen %}
 
-Would you pick some other combination? Do you have user insigths ore more cases to consider? Get in touch, I'd love to know!
+Would you pick some other combination? Do you have user insights or more cases to consider? Get in touch, I'd love to know!
