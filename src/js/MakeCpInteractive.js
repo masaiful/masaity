@@ -1,3 +1,5 @@
+import { focusOnElement } from './SkipLinkFix';
+
 const BUTTON_SELECTOR = '.makeCpInteractive';
 
 /**
@@ -16,8 +18,7 @@ export function init() {
       if (!embedIdentifier) {
         console.error('No embedIdentifier found as data-for');
       }
-      console.log({ embedIdentifier });
-      // TODO: Consider `fetch`ing the ei.js script in here.
+      // console.log({ embedIdentifier });
 
       // The API for looking for and creating embeds
       window.__CPEmbed(`.${embedIdentifier}`);
@@ -26,20 +27,8 @@ export function init() {
       // TODO: Really should test this. Does it make sense?
       setTimeout(() => {
         const newEmbed = button.previousElementSibling;
-        newEmbed.setAttribute('tabindex', '-1');
-        newEmbed.focus();
-        newEmbed.removeAttribute('tabindex');
-        button.remove();
+        focusOnElement(newEmbed);
       });
     })
   );
 }
-
-// Uncomment this for debugging
-/*
-function focusHandler(event) {
-  var target = event.target;
-  console.log('Focus target', target);
-};
-document.body.addEventListener('focus', focusHandler, true);
-*/
