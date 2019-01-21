@@ -25,9 +25,9 @@ export function init() {
 
       // Focus the iframe and remove the button
       // TODO: Really should test this. Does it make sense?
+      const newEmbed = button.previousElementSibling;
+      focusOnElement(newEmbed);
       setTimeout(() => {
-        const newEmbed = button.previousElementSibling;
-        focusOnElement(newEmbed);
         button.remove();
       });
     })
