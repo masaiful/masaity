@@ -32,12 +32,9 @@
     "@11ty/eleventy-plugin-rss": "^1.0.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^2.0.1",
     "autoprefixer": "^9.4.5",
-    "chalk": "^2.4.2",
     "cssnano": "^4.1.8",
-    "inquirer-datepicker-prompt": "^0.4.2",
     "luxon": "^1.10.0",
     "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.0.2",
     "metalsmith": "^2.3.0",
     "metalsmith-inline-critical-css": "^0.4.0",
     "npm-run-all": "^4.1.5",
@@ -61,7 +58,6 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
-    "@fpapado/yt-player": "^0.10.0",
     "common-tags": "^1.8.0",
     "tachyons": "^4.11.1"
   }
