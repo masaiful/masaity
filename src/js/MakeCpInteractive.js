@@ -28,6 +28,7 @@ export function init() {
       setTimeout(() => {
         const newEmbed = button.previousElementSibling;
         focusOnElement(newEmbed);
+        button.remove();
       });
     })
   );
