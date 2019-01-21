@@ -4,9 +4,9 @@
 :root {
   --primary: #1a1a1a;
   --secondary: #fafafa;
-  --accent: #dc0794;
+  --accent: #da0993;
   --accent-2: #4e07dc;
-  --accent-lighter: #dc0794;
+  --accent-lighter: #da0993;
   --selection: #fff09d;
 }
 
@@ -14,9 +14,9 @@
 .theme-light {
   --primary: #1a1a1a;
   --secondary: #fafafa;
-  --accent: #dc0794;
+  --accent: #da0993;
   --accent-2: #4e07dc;
-  --accent-lighter: #dc0794;
+  --accent-lighter: #da0993;
   --selection: #fff09d;
 }
 

@@ -27,6 +27,7 @@ export function init() {
       // TODO: Really should test this. Does it make sense?
       const newEmbed = button.previousElementSibling;
       focusOnElement(newEmbed);
+      // TODO: Could add this as 'onblur' instead
       setTimeout(() => {
         button.remove();
       });
