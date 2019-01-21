@@ -52,11 +52,13 @@ I am always amazed by how many hours of human effort go into building the chains
 
 [Eleventy](https://11ty.io) is a simple static-site generator, by [Zach Leatherman](https://twitter.com/zachleat/).
 
-The thing I like about Eleventy is how it recognises that data is the key. So much, in fact, that it supports a ton of templating languages: nunjucks (the one I use), handlebars, liquid, JS templates, markdown, plain text, JSON, HTML. It has "universal" helpers that augment each of these.
+The thing I like about Eleventy is how it recognises that data is the key. There are options for data merging, collections are seamless out-of-the-box, and you can even stitch together async sources.
 
-I had never touched Nunjucks before, but Eleventy made the transition so simple, that it wasn't daunting at all! Mixing and matching Markdown and Nunjucks makes for a great authoring experience. I can write prose, and fork out to more structured templating when I need more power. For example, I have "pseudo-components" that enable [images with fixed aspect ratios](https://github.com/fpapado/fotis.xyz/blob/master/src/_includes/components/MdImg.js) and [structured and accessible headings](https://github.com/fpapado/fotis.xyz/blob/master/src/_includes/components/Heading.js).
+As for the templating, Eleventy is pretty agnostic. So much, in fact, that it supports all of the following templating languages: nunjucks (the one I use), handlebars, liquid, JS templates, markdown, plain text, JSON, HTML. It has "universal" helpers that can augment each of these.
 
-Another good thing about Eleventy is that it uses Javascript. I use JS every day, and even when I dislike it, I feel confident plugging things together with it. For example, I have to merge a manifest from PostCSS and another one from Rollup. I have a script that merges them and a custom `resolveHash` filter that reads the file and translates, say, `index.js` to `index.abc123.js`. I've had to write similar things in Ruby for Jekyll and my photo blog, and I'm still not sure.
+I had never touched Nunjucks before, but Eleventy made the transition simpler. Mixing and matching Markdown and Nunjucks makes for a great authoring experience. I can write prose, and fork out to more structured templating when I need more power. For example, I have "pseudo-components" that enable [images with fixed aspect ratios](https://github.com/fpapado/fotis.xyz/blob/master/src/_includes/components/MdImg.js) and [structured and accessible headings](https://github.com/fpapado/fotis.xyz/blob/master/src/_includes/components/Heading.js).
+
+Another good thing about Eleventy is that it uses Javascript. I use JS every day, and even when I dislike it, I feel confident plugging things together with it. For example, I have to merge a manifest from PostCSS and another one from Rollup. I have a script that merges them and a custom `resolveHash` filter that reads the file and translates, say, `index.js` to `index.abc123.js`. I've had to write similar things in Ruby/Jekyll for my photo blog, and I'm still a bit lost.
 
 ### CSS: Tachyons + minimal atomic classes
 I love [Tachyons](https://tachyons.io), by [Adam Morse](https://twitter.com/mrmrs_).
@@ -95,9 +97,10 @@ For Tech Weeklies, we got some stickers that had this beautiful pink/purple pale
 
 ### Other goodies
 As I was writing the post on "Linking to Headings", I wanted to embed a Codepen.
-I realised I could use their new [Prefill Embeds](https://blog.codepen.io/documentation/prefill-embeds/) feature. After a couple of hours of fighting nested templates, I got it working! I think it strikes a great balance of choice, demo, authoring experience, and accessibility. I'll write more about this soon!
 
-I am also using [Workbox](https://developers.google.com/web/tools/workbox/) for some quick precaching. I want to explore offline article storage at some point, but for now it's good to have the hashing infrastructure set up.
+I realised I could use their new [Prefill Embeds](https://blog.codepen.io/documentation/prefill-embeds/) feature. After a couple of hours of fighting nested templates, I got it working! I think it strikes a great balance of offering options to readers, enhancing the authoring experience, and adding demos. I'll write more about this soon!
+
+The embed setup also allows the code samples to be accessible in Reader view, RSS feeds etc.
 
 ## Wrapping up
 
