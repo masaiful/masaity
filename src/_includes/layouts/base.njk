@@ -23,8 +23,13 @@
   <body class="pa3 flex flex-column min-vh-100 mw7 center f5 theme-light fg-primary bg-secondary f-phantomsans">
     <header>
       {% include "SkipLink.njk" %}
-      <nav class="mn2 f5 f4-ns flex flex-row justify-between items-center flex-wrap">
-        <a class="ma2 db fg-accent-lighter fw6 link focus-outline-accent-lighter animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.title }}</a>
+      <nav class="mn2 f5 f4-ns flex flex-row justify-between items-end flex-wrap">
+        <div class="ma2 flex items-end">
+          <div class="w2 h2">
+          {% include "svg/lightbulb.svg" %}
+          </div>
+          <a class="ml2 db fg-accent-lighter fw6 link focus-outline-accent-lighter animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.title }}</a>
+        </div>
         <div class="ma2">
           <ul class="mn2 pa0 flex list">
             {%- for nav in collections.nav | reverse -%}
