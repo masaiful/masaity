@@ -77,12 +77,27 @@
 
 /* Type scale */
 .article {
-  /* All type is f4 by default */
-  font-size: 1.25rem;
+  /* All type is between f4 and f5 by default */
+  font-size: 1.125rem;
   line-height: 1.5;
 
   /* Hyphenation */
   hyphens: auto;
+}
+
+/* Scale the text, so that it stays between 45 and 75 characters on a line */
+/* -m */
+@media screen and (min-width: 30em) {
+  .article {
+    font-size: 1.25rem;
+  }
+}
+
+/* -l */
+@media screen and (min-width: 60em) {
+  .article {
+    font-size: 1.5rem;
+  }
 }
 
 .article h1 {
