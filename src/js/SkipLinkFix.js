@@ -41,6 +41,7 @@ export function focusOnElement(el) {
   // If the element is not focusable by default, add tabindex="-1", then remove it
   if (!isFocusable(el)) {
     el.setAttribute('tabindex', '-1');
+    // TODO: Consider 'focusout' as well
     el.addEventListener('blur', ev => {
       el.removeAttribute('tabindex');
     });
