@@ -6,5 +6,5 @@ patch-package
    });
  
 -  return `<pre class="language-${language}"><code class="language-${language}">` + lines.join("<br>") + "</code></pre>";
-+  return `<pre class="language-${language}" data-lang="${language}"><code class="language-${language}">` + lines.join("<br>") + "</code></pre>";
++  return `<pre class="language-${language}" data-lang="${language}" role="region" aria-label="code sample"><code class="language-${language}">` + lines.join("<br>") + "</code></pre>";
  };
