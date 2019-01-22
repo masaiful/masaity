@@ -11,7 +11,7 @@ hasCodepen: true
 
 At some point through writing [my first post on this blog](/posts/linking-to-headings), I realised that I wanted to have code examples.
 
-I had taken a "write first, add the infrastructure later" approach, because I wanted to finish writing instead of going down some rabbit holes. So I finished the write-up, and reached part where I would touch up the code examples.
+I had taken a "write first, add the infrastructure later" approach, because I wanted to finish writing instead of going down some rabbit holes. So I finished the write-up, and reached the part where I would touch up the code examples.
 
 There were two main things I wanted to have:
 - Syntax highlighting
