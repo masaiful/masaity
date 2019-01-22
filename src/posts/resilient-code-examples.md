@@ -236,17 +236,17 @@ As a bonus, did I mention you can have multiple "files" in a single pen? Add mor
 
 {% WithCodepen id="resilient-code-examples", height="400" %}
 {% highlight "html" %}
-  <div class="container">
-    <h1>Prefill Embeds are cool</h1>
-    <a href="https://fotis.xyz/posts/resilient-code-examples">
-      Read about how you can use them
-    </a>
-  </div>
+<div class="container">
+  <h1>Prefill Embeds are cool</h1>
+  <a href="https://fotis.xyz/posts/resilient-code-examples">
+    Read about how you can use them
+  </a>
+</div>
 {% endhighlight %}
 {% highlight "css" %}
-  .container {
-    background-color: beige;
-  }
+.container {
+  background-color: beige;
+}
 {% endhighlight %}
 {% endWithCodepen %}
 
