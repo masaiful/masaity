@@ -42,12 +42,30 @@
   margin-top: 1.5em;
 }
 
-/* Separate replaced content */
+/* Separate replaced img content */
 .article * + img,
-.article * + iframe,
-.article * + .md-img,
-.article * + .md-replaced {
+.article * + .md-img {
   margin-top: 1.5em;
+}
+
+/* NOTE:
+ * iframes and .md-replaced can be nested, so set
+ * margin-top always. False positives are unlikely!
+*/
+.article .md-replaced,
+.article iframe {
+  margin-top: 1.5em;
+}
+
+/* For pre, we want to keep subsequent ones close,
+ * and separate everything else.
+*/
+.article pre {
+  margin-top: 1.5em;
+}
+
+.article pre + pre {
+  margin-top: 0.5em;
 }
 
 /* SEPARATORS */

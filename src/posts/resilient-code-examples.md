@@ -147,26 +147,24 @@ module.exports = function(content, props = {}) {
   const htmlContent = html`${content}`;
 
   return html`
-    <div class="md-replaced vs2">
-      <div
-        class="${lazy ? embedIdentifier : 'codepen'}"
-        data-prefill
-        data-height="${height}"
-        data-default-tab="${defaultTab}"
-      >
-        ${htmlContent}
-      </div>
-      ${lazy
-        ? html`
-            <button
-              data-for="${embedIdentifier}"
-              class="makeCpInteractive"
-            >
-              Make demo interactive
-            </button>
-          `
-        : ''}
+    <div
+      class="${lazy ? embedIdentifier : 'codepen'}"
+      data-prefill
+      data-height="${height}"
+      data-default-tab="${defaultTab}"
+    >
+      ${htmlContent}
     </div>
+    ${lazy
+      ? html`
+          <button
+            data-for="${embedIdentifier}"
+            class="makeCpInteractive"
+          >
+            Make demo interactive
+          </button>
+        `
+      : ''}
   `;
 };
 {% endhighlight %}

@@ -15,25 +15,23 @@ module.exports = function(content, props = {}) {
   const htmlContent = html`${content}`;
 
   return html`
-    <div class="md-replaced vs2">
-      <div
-        class="${lazy ? embedIdentifier : 'codepen'}"
-        data-prefill
-        data-height="${height}"
-        data-default-tab="${defaultTab}"
-      >
-        ${htmlContent}
-      </div>
-      ${lazy
-        ? html`
-            <button
-              data-for="${embedIdentifier}"
-              class="makeCpInteractive button-reset ph3 pv2 fw6 fg-secondary bg-primary enhanced-outline-shadow hover-bg-accent transition-bg br2"
-            >
-              Make demo interactive
-            </button>
-          `
-        : ''}
+    <div
+      class="${lazy ? embedIdentifier : 'codepen'}"
+      data-prefill
+      data-height="${height}"
+      data-default-tab="${defaultTab}"
+    >
+      ${htmlContent}
     </div>
+    ${lazy
+      ? html`
+          <button
+            data-for="${embedIdentifier}"
+            class="makeCpInteractive button-reset ph3 pv2 fw6 fg-secondary bg-primary enhanced-outline-shadow hover-bg-accent transition-bg br2"
+          >
+            Make demo interactive
+          </button>
+        `
+      : ''}
   `;
 };
