@@ -3,15 +3,15 @@ title: Resilent Code Examples with Codepen
 date: 2019-01-22
 tags:
   - post
-  - resilence
+  - resilience
 layout: layouts/post.njk
 description: 'Making code examples in blog posts performant, accessible, and fun.'
 hasCodepen: true
 ---
 
-At some point through writing [my first post on this blog](/posts/linking-to-headings), I realised that I wanted to have code exaples.
+At some point through writing [my first post on this blog](/posts/linking-to-headings), I realised that I wanted to have code examples.
 
-I had taken a "write first, add the infrastructure later" approach, because I wanted to finish writing instead of going down some rabbit holes. So I finished the writeup, and reached part where I would touch up the code examples.
+I had taken a "write first, add the infrastructure later" approach, because I wanted to finish writing instead of going down some rabbit holes. So I finished the write-up, and reached part where I would touch up the code examples.
 
 There were two main things I wanted to have:
 - Syntax highlighting
@@ -63,7 +63,7 @@ In no particular order, here are the possibilities I like:
 - No heavy scripts on page load
 
 ## Fun with templates
-On th blog, I also have syntax highlighting, rendered once on the server, using [Prism](https://prismjs.com/). I use the [syntax highlight shortcode from Eleventy](https://github.com/11ty/11ty-plugin-syntaxhighlight) to add it to the page.
+On the blog, I also have syntax highlighting, rendered once on the server, using [Prism](https://prismjs.com/). I use the [syntax highlight shortcode from Eleventy](https://github.com/11ty/11ty-plugin-syntaxhighlight) to add it to the page.
 
 I had to make one change to the highlighting short code, to add `data-lang` to the `pre` tag that it renders. This is for CodePen to pick it up. I could have wrapped it in another `pre` tag, and that also seemed to work. That seemed like undefined behaviour, though, so I went with the more "correct-feeling" route.
 
@@ -254,6 +254,6 @@ As a bonus, did I mention you can have multiple "files" in a single pen? Add mor
 
 This functionality really struck a note with me. From static markup, to readers, RSS feeds, and interactive demos; the content is there, the functionality is layered, the experience adapts. It reminded me why I love the web so much, with a diversity and richness of experience. The word [resilience](https://resilientwebdesign.com/) rings in my mind as I write these words down.
 
-I recently wrote about [taking a break from coding](/posts/new-year-new-blog), seeking inspiration, and trying to write more of my thougths down. This functionality makes me feel super excited about what I can share. I hope you are too.
+I recently wrote about [taking a break from coding](/posts/new-year-new-blog), seeking inspiration, and trying to write more of my thoughts down. This functionality makes me feel super excited about what I can share. I hope you are too.
 
 P.S. I might have stumbled somewhere, or forgotten something, please go easy on me and let me know :)
