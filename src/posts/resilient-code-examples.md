@@ -59,6 +59,7 @@ In no particular order, here are the possibilities I like:
 - No need to keep things in sync (an activity that distracts me, or I always forget)
 - Friendly to Reader mode, Pocket, which I use daily
 - Friendly to RSS feeds, [this site has an RSS feed](/feed/feed.xml) too, btw ;)
+- Priting (though I should set up some print stylesheets)
 - Arguably more accessible than an iframe-by-default; can let the user decide
 - No heavy scripts on page load
 
