@@ -11,9 +11,7 @@ hasCodepen: true
 
 At some point through writing [my first post on this blog](/posts/linking-to-headings), I realised that I wanted to have code exaples.
 
-I had taken a "write first, add the infrastructure later" approach, because I wanted to finish writing instead of going down some rabbit holes.
-
-So I finished the writeup, and reached part where I touch up the code examples.
+I had taken a "write first, add the infrastructure later" approach, because I wanted to finish writing instead of going down some rabbit holes. So I finished the writeup, and reached part where I would touch up the code examples.
 
 There were two main things I wanted to have:
 - Syntax highlighting
@@ -23,15 +21,15 @@ I also value accessibility and performance, so I had a few more requirements:
 - Code samples should be available in the server-rendered markup
 - The page should not load heavy scripts without user action
 
-My "usual" approach would be to duplicate the samples on the markup and Codepen. Then, depending on how critical I find the demo, I either embed the `iframe` or link to the pen. That is, until I found Prefill Embeds...
+My "usual" approach would be to duplicate the samples in the markup and CodePen, something I already do for my talks. Then, depending on how critical I find the demo, I either embed the `iframe` or link to the pen. Then I forget about it and inevitably something breaks...
 
-## Prefill Embeds
+## Enter Prefill Embeds
 
 A few days prior to writing my post, [Codepen announced their "Prefill Embeds" feature](https://blog.codepen.io/2019/01/17/introducing-prefill-embeds/).
 
 In short, you write markup on your site, and "enhance" it to a full-fledged pen at runtime. I affectionately refer to those as "anonymous pens".
 
-To give you an idea, here is what a simple setup looks like:
+To give you an idea, here is what setting it up looks like:
 
 {% highlight "html" %}
 <div 
@@ -57,17 +55,17 @@ To give you an idea, here is what a simple setup looks like:
 
 I must admit, I had no idea how much I wanted this feature, until I tried it out. 
 
-In no particular order, here are things I the possibilities I like:
+In no particular order, here are the possibilities I like:
 - No need to keep things in sync (an activity that distracts me, or I always forget)
-- Friendly to Reader mode, Pocket
+- Friendly to Reader mode, Pocket, which I use daily
 - Friendly to RSS feeds, [this site has an RSS feed](/feed/feed.xml) too, btw ;)
 - Arguably more accessible than an iframe-by-default; can let the user decide
-- No heavy scripts loaded
+- No heavy scripts on page load
 
 ## Fun with templates
 On th blog, I also have syntax highlighting, rendered once on the server, using [Prism](https://prismjs.com/). I use the [syntax highlight shortcode from Eleventy](https://github.com/11ty/11ty-plugin-syntaxhighlight) to add it to the page.
 
-I had to make one change to the highlighting short code, to add `data-lang` to the `pre` tag that it renders. This is for CodePen to pick it up. I could have wrapped it in another `pre` tag, and that also seemed to work. But it also seemed like undefined behaviour, so I went with the more "correct-feeling" route.
+I had to make one change to the highlighting short code, to add `data-lang` to the `pre` tag that it renders. This is for CodePen to pick it up. I could have wrapped it in another `pre` tag, and that also seemed to work. That seemed like undefined behaviour, though, so I went with the more "correct-feeling" route.
 
 Paired with the modified shortcode, here is the initial setup that I had:
 
@@ -105,7 +103,7 @@ Given my earlier goals of making `iframe`s optional, and giving readers the choi
 The sketch for the shortcode/pseudo-component would look like this:
 - On the server, be able to define the language for each block
 - On the server, render a button that is associated with some id on the codepen
-- On the client, call `window.__CPEmbed(.codepen-later-${id})`, to activate that frame.
+- On the client, call `window.__CPEmbed(.codepen-later-${id})`, to enhance to an embed.
 
 ### Templating shortcode
 
@@ -128,7 +126,7 @@ I dubbed the shortcode `WithCodepen`. I also added some conveniences about diffe
 {% endraw %}
 {% endhighlight %}
 
-There are different ways to implement this. I went with a nunjucks helper that forks out to Javascript template literals. It went well, but the extra spacing from formatters and substitutions was a pain to debug!
+There are different ways to implement this. I went with a [Nunjucks helper](https://www.11ty.io/docs/languages/nunjucks/) that forks out to Javascript template literals. It went well, though the extra spacing from formatters and substitutions was a pain to debug!
 
 {% highlight "js" %}
 const { html } = require('common-tags');
@@ -172,7 +170,7 @@ module.exports = function(content, props = {}) {
 };
 {% endhighlight %}
 
-You can [find the source for WithCodepen on Github](https://github.com/fpapado/fotis.xyz/src/includes/WithCodepen.js).
+You can find [the source for WithCodepen on Github](https://github.com/fpapado/fotis.xyz/blob/master/src/_includes/components/WithCodepen.js).
 
 ### Client-side interaction
 
@@ -204,6 +202,7 @@ export function init() {
       // The API for looking for and creating embeds
       window.__CPEmbed(`.${embedIdentifier}`);
 
+      // TODO: Evaluate this feature
       // Focus the iframe and remove the button
       const newEmbed = button.previousElementSibling;
 
@@ -222,13 +221,11 @@ There is a bit of an open question, on how we'd manage/move focus when clicking 
 
 A coworker also suggested adding the functionality to revert the embed. We could do this by saving the initial content, and restoring it later. I have to think more about this.
 
-You can [find the source for MakeCpInteractive on Github](https://github.com/fpapado/fotis.xyz/src/js/MakeCpInteractive.js).
+You can find [the source for MakeCpInteractive on Github](https://github.com/fpapado/fotis.xyz/blob/master/src/js/MakeCpInteractive.js).
 
-### Loading the script
+### Loading the embed script
 
-The embed script seems quite small, at about 5kB gzipped.
-There is a coarse-grained `hasCodePen` frontmatter option in the templates, that adds that script to the page.
-Loading it on button click seems not worth the effort of latency, but you might prioritise differently if you want.
+The embed script seems quite small, at about 5kB gzipped. There is a coarse-grained `hasCodePen` frontmatter option in the templates, that adds that script to the page. Loading it on button click seems not worth the effort of latency, but you might prioritise differently if you want.
 
 ## In practice
 
