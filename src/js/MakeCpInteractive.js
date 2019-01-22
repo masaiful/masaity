@@ -1,4 +1,4 @@
-import { focusOnElement } from './SkipLinkFix';
+import { focusOnElement } from './fix-in-page-links.js';
 
 const BUTTON_SELECTOR = '.makeCpInteractive';
 
@@ -26,11 +26,13 @@ export function init() {
       // Focus the iframe and remove the button
       // TODO: Really should test this. Does it make sense?
       const newEmbed = button.previousElementSibling;
-      focusOnElement(newEmbed);
-      // TODO: Could add this as 'onblur' instead
-      setTimeout(() => {
+
+      // Remove the button after the focus moves
+      button.addEventListener('blur', ev => {
         button.remove();
       });
+
+      focusOnElement(newEmbed);
     })
   );
 }
