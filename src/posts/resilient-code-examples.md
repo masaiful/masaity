@@ -1,5 +1,5 @@
 ---
-title: Resilent Code Examples with CodePen
+title: Resilient Code Examples with CodePen
 date: 2019-01-22
 tags:
   - post
