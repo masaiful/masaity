@@ -10,7 +10,7 @@ layout: layouts/home.njk
   <div>
     {% for tag in collections.tagList %}
       {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-      <a href="{{ tagUrl | url }}" class="ml1 ph2 pv1 f5 f4-ns fg-primary bg-selection br2 link focus-shadow-accent">{{ tag }}</a>
+      <a href="{{ tagUrl | url }}" class="ml1 ph2 pv1 f5 f4-ns fg-primary bg-selection br2 link enhanced-outline-shadow">{{ tag }}</a>
     {% endfor %}
   </div>
 </article>

@@ -2,6 +2,8 @@
 
 ## Near
 - Audit SkipLink
+- `--intrinsicsize` placeholder
+    - and a fallback :)
 
 ## Future
 - Add test pipeline/CI for accessibility

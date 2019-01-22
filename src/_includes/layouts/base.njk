@@ -28,7 +28,7 @@
           <div class="w2 h2">
           {% include "svg/lightbulb.svg" %}
           </div>
-          <a class="ml2 db fg-accent-lighter fw6 link focus-outline-accent-lighter animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.title }}</a>
+          <a class="ml2 db fg-accent-lighter fw6 link enhanced-outline animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.title }}</a>
         </div>
         <div class="ma2">
           <ul class="mn2 pa0 flex list">
@@ -38,7 +38,7 @@
               <li class="db ma2 {% if nav.url == page.url %} fw7{% endif %}">
                 <a
                   {% if nav.url == page.url %}aria-current="page"{% endif %}
-                  class="fg-primary hover-fg-accent-lighter focus-outline-accent-lighter link"
+                  class="fg-primary hover-fg-accent-lighter enhanced-outline link"
                   href="{{ nav.url | url }}">
                     {{ nav.data.navtitle }}
                 </a>

@@ -151,6 +151,6 @@
 
 .article a:focus {
   text-decoration: none;
-  outline: 0.125em var(--accent) solid;
-  outline-offset: 0.125em;
+  outline: 4px var(--accent-lighter) solid;
+  outline-offset: 4px;
 }
