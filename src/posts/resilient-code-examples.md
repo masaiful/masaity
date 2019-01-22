@@ -257,4 +257,6 @@ As a bonus, did I mention you can have multiple "files" in a single pen? Add mor
 
 This functionality really struck a note with me. From static markup, to readers, RSS feeds, and interactive demos; the content is there, the functionality is layered, the experience adapts. It reminded me why I love the web so much, with a diversity and richness of experience. The word [resilience](https://resilientwebdesign.com/) rings in my mind as I write these words down.
 
-I might have stumbled somewhere, or forgotten something, please go easy on me and let me know. Nonetheless, I'm super excited at what I can share with this functionality. I hope you are too.
+I recently wrote about [taking a break from coding](/posts/new-year-new-blog), seeking inspiration, and trying to write more of my thougths down. This functionality makes me feel super excited about what I can share. I hope you are too.
+
+P.S. I might have stumbled somewhere, or forgotten something, please go easy on me and let me know :)
