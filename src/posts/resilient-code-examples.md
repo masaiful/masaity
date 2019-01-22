@@ -1,5 +1,5 @@
 ---
-title: Resilent Code Examples with Codepen
+title: Resilent Code Examples with CodePen
 date: 2019-01-22
 tags:
   - post
@@ -25,7 +25,7 @@ My "usual" approach would be to duplicate the samples in the markup and CodePen,
 
 ## Enter Prefill Embeds
 
-A few days prior to writing my post, [Codepen announced their "Prefill Embeds" feature](https://blog.codepen.io/2019/01/17/introducing-prefill-embeds/).
+A few days prior to writing my post, [CodePen announced their "Prefill Embeds" feature](https://blog.codepen.io/2019/01/17/introducing-prefill-embeds/).
 
 In short, you write markup on your site, and "enhance" it to a full-fledged pen at runtime. I affectionately refer to those as "anonymous pens".
 
@@ -102,7 +102,7 @@ Given my earlier goals of making `iframe`s optional, and giving readers the choi
 
 The sketch for the shortcode/pseudo-component would look like this:
 - On the server, be able to define the language for each block
-- On the server, render a button that is associated with some id on the codepen
+- On the server, render a button that is associated with some id on the pen
 - On the client, call `window.__CPEmbed(.codepen-later-${id})`, to enhance to an embed.
 
 ### Templating shortcode
@@ -183,7 +183,7 @@ import { focusOnElement } from './fix-in-page-links.js';
 const BUTTON_SELECTOR = '.makeCpInteractive';
 
 /**
- * Button, that when clicked, makes the related code an interactive codepen.
+ * Button, that when clicked, makes the related code an interactive CodePen.
  * Works by being associated via data-for
  *
  * @see src/includes/WithCodepen.js
