@@ -118,6 +118,13 @@
   }
 }
 
+@media print {
+  /* Give the medium font-size for article print */
+  .article {
+    font-size: 1.25rem;
+  }
+}
+
 .article h1 {
   /* f1 */
   font-size: 3rem;

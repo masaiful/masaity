@@ -158,3 +158,15 @@ pre[class*='language-'] {
     font-weight: normal;
   }
 }
+
+@media print {
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    border: 1pt solid #000;
+    background: none;
+  }
+
+  pre[class*='language-'] * {
+    color: #000 !important;
+  }
+}

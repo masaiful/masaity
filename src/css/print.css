@@ -1,0 +1,87 @@
+@media print {
+  body {
+    max-width: 100ch !important;
+  }
+
+  .measure-prose {
+    max-width: 100ch !important;
+  }
+
+  /* Variable fonts do not get rendered correctly in print styles */
+  .f-phantomsans {
+    font-family: 'PhantomSans', Arial, Helvetica, sans-serif;
+  }
+
+  .f2-p {
+    font-size: 2.25rem;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+
+  .article a {
+    text-decoration: none;
+  }
+
+  /* In-site links */
+  .article a[href^='/']:after {
+    content: ' (' url(/img/link.svg) ' https://fotis.xyz' attr(href) ')';
+
+    display: inline;
+
+    color: var(--primary);
+    opacity: 0.8;
+
+    font-style: italic;
+    font-size: 0.9em;
+
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: wrap;
+  }
+
+  /* External links */
+  .article a[href^='http']:after {
+    content: ' (' url(/img/link.svg) attr(href) ')';
+    display: inline;
+
+    color: var(--primary);
+    opacity: 0.8;
+
+    font-style: italic;
+    font-size: 0.9em;
+
+    word-break: break-word;
+    word-wrap: break-word;
+    white-space: wrap;
+  }
+
+  .hide-print {
+    display: none;
+  }
+
+  .show-print {
+    display: block;
+  }
+
+  .author {
+    font-size: 1.25rem;
+  }
+
+  time {
+    font-size: 1.25rem;
+  }
+
+  /* Page break hints */
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  /* Apparently this fixes wrapping, otherwise the code gets cut off */
+  pre code {
+    white-space: pre-wrap !important;
+  }
+}

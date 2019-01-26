@@ -11,6 +11,11 @@ templateClass: tmpl-post
     <time class="db" datetime="{{date}}">
       {{date | readableDate}}
     </time>
+
+    <div class="dn show-print author">
+      by <span class="fw6">Fotis Papadogeorgopoulos</span>
+    </div>
+
   </div>
 
   {# Contents #}
@@ -18,7 +23,7 @@ templateClass: tmpl-post
     {{ content | safe }}
 
     {# Backlink #}
-    {% Text %}
+    {% Text className="hide-print" %}
       {% Link { href: '/' | url } %}
         ← Home
       {% endLink %}
