@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const { DateTime } = require('luxon');
 const { groupBy, flatten, drop } = require('lodash');
+const sanitizeHTML = require('sanitize-html');
 
 // Plugins
 const pluginRss = require('@11ty/eleventy-plugin-rss');
@@ -44,10 +45,15 @@ module.exports = function(eleventyConfig) {
 
   //
   // FILTERS
+
   eleventyConfig.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
       'dd LLLL yyyy'
     );
+  });
+
+  eleventyConfig.addFilter('dateFromTimestamp', timestamp => {
+    return DateTime.fromISO(timestamp, { zone: 'utc' }).toJSDate();
   });
 
   eleventyConfig.addFilter('dateToIso', dateObj => {
@@ -110,6 +116,49 @@ module.exports = function(eleventyConfig) {
     }
 
     return hashedFilename;
+  });
+
+  // Filter that gets webmentions for a url
+  // Note that the data is fetched upfront from `_data/webmentions.js`
+  // This is filtering and sanitizing things for displayA
+  eleventyConfig.addFilter('webmentionsForUrl', (webmentions, url) => {
+    // TODO: Write the enum of the possible types
+    const allowedTypes = ['mention-of', 'in-reply-to'];
+    const allowedHTML = {
+      allowedTags: ['b', 'i', 'em', 'strong', 'a'],
+      allowedAttributes: {
+        a: ['href'],
+      },
+    };
+
+    const clean = entry => {
+      const { content } = entry;
+      if (content && content['html']) {
+        content.value = sanitizeHTML(content.html, allowedHTML);
+      } else if (content && content['text']) {
+        content.value = content.text;
+      }
+      console.log('Entry', entry);
+      return entry;
+    };
+
+    return webmentions
+      .filter(entry => entry['wm-target'] === url)
+      .filter(entry => allowedTypes.includes(entry['wm-property']))
+      .filter(entry => !!entry.content)
+      .map(clean);
+  });
+
+  eleventyConfig.addFilter('webmentionCountByType', function(
+    webmentions,
+    url,
+    ...types
+  ) {
+    return String(
+      webmentions
+        .filter(entry => entry['wm-target'] === url)
+        .filter(entry => types.includes(entry['wm-property'])).length
+    );
   });
 
   //

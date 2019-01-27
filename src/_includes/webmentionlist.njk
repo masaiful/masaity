@@ -1,0 +1,49 @@
+{%- set absoluteUrl -%}{{ page.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
+{%- set mentions = webmentions.children | webmentionsForUrl(absoluteUrl) -%}
+<div class="vs4 webmentions" id="webmentions">
+  {% Subheading level="2"%}
+    Webmentions
+  {% endSubheading %}
+
+  {% if mentions | length %}
+    <details class="vs4 details-reset details-outline">
+      <summary class="flex flex-wrap items-center cursor-default">
+        <span class="mr3 flex items-center f4 f3-ns fg-accent details-outline-target">
+          <span class="svg-scale">{% include "svg/message-circle.svg" %}</span>
+          <span class="ml1">Show all ({{ mentions | length }})</span>
+        </span>
+        <div class="mn1 flex flex-wrap items-center">
+          {% for webmention in mentions | reverse | head(5) %}
+
+          <div class="ma1 w2 h2">
+            {%- set authorPhoto -%}{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}{%- endset -%}
+
+            {% MdImg 
+              aspectRatio="1x1", 
+              alt=webmention.author.name,
+              src=authorPhoto,
+              borderRadius="100"
+            %}{% endMdImg %}
+          </div>
+          {% endfor %}
+          {% if mentions.length > 5 %}
+            <span class="ma1 fw7">+{{ mentions.length - 5 }}</span>
+          {% endif %}
+        </div>
+      </summary>
+
+      <ol class="pl0 vs4 vs5-ns list">
+        {% for webmention in mentions | reverse %}
+          <li class="webmentions__item">
+            {% include 'webmention.njk' %}
+          </li>
+        {% endfor %}
+      </ol>
+    </details>
+
+  {% else %}
+    {% Text %}
+    No mentions yet.
+    {% endText %}
+  {% endif %}
+</div>

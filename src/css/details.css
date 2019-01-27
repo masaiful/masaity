@@ -1,0 +1,37 @@
+/**
+  * Styles and resets for the <details> element.
+  * @see https://github.com/primer/primer/blob/master/modules/primer-buttons/lib/button.scss#L206-L213
+*/
+
+/* Remove marker added by the display: list-item browser default */
+.details-reset > summary {
+  list-style: none;
+}
+
+/* Remove marker added by details polyfill */
+.details-reset > summary::before {
+  display: none;
+}
+
+/* Remove marker added by Chrome */
+.details-reset > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Give .enhanced-outline-fit to a label, when
+ * focusing the summary
+ *
+ * TODO: Test this and ask around
+*/
+.details-outline > summary {
+  outline: none;
+}
+
+.details-outline > summary:focus > .details-outline-target {
+  outline: 4px var(--accent-lighter) solid;
+  outline-offset: 0px;
+}
+
+.cursor-default {
+  cursor: default;
+}

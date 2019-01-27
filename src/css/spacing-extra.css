@@ -7,6 +7,10 @@
  * flexbox "gaps" and offseting the space leaking out.
  * In the future, consider using the `gap` property!
 */
+.mn1 {
+  margin: -0.25rem;
+}
+
 .mn2 {
   margin: -0.5rem;
 }
@@ -15,3 +19,20 @@
   margin: -1rem;
 }
 
+.w2-half {
+  width: 3rem;
+}
+
+.h2-half {
+  height: 3rem;
+}
+
+@media screen and (min-width: 34rem) {
+  .w2-half-ns {
+    width: 3rem;
+  }
+
+  .h2-half-ns {
+    height: 3rem;
+  }
+}

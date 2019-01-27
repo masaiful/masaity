@@ -11,6 +11,7 @@
 @import './list-extra.css';
 @import './transition-extra';
 @import './animations';
+@import './details';
 
 /** Syntax highlighting */
 @import './prism-a11y-dark';

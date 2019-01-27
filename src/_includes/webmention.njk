@@ -1,3 +1,35 @@
-{# Callbacks to enable webmention.io #}
-<link rel="pingback" href="https://webmention.io/fotis.xyz/xmlrpc">
-<link rel="webmention" href="https://webmention.io/fotis.xyz/webmention">
+<article class="vs3" id="webmention-{{ webmention['wm-id'] }}">
+  <div class="flex flex-wrap items-center">
+    <div class="w2 w2-half-ns h2 h2-half-ns mr2">
+      {%- set authorPhoto -%}{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}{%- endset -%}
+
+      {% MdImg 
+        aspectRatio="1x1", 
+        alt=webmention.author.name,
+        src=authorPhoto,
+        borderRadius="100"
+      %}{% endMdImg %}
+    </div>
+
+    {% Link 
+      isExternal=true, 
+      href=webmention.url,
+      className="mr2 f5 f4-ns fw7"
+    %}
+    {% if webmention.author %}
+      {{ webmention.author.name }}
+    {% else %}
+        <strong class="fw7">Anonymous</strong>
+    {% endif %}
+    {% endLink %}
+    {% if webmention.published %}
+      <time class="f6 f5-ns dt-published" datetime="{{ webmention.published }}">{{ webmention.published | dateFromTimestamp | readableDate }}</time>
+    {% endif %}
+  </div>
+
+  <div class="webmention__content p-content">
+    {% MarkdownBlock %}
+    {{ webmention.content.value | safe }}
+    {% endMarkdownBlock %}
+  </div>
+</article>

@@ -21,17 +21,24 @@ templateClass: tmpl-post
   {# Contents #}
   {% MarkdownBlock %}
     {{ content | safe }}
-
-    {# Backlink #}
-    {% Text className="hide-print" %}
-      {% Link { href: '/' | url } %}
-        ← Home
-      {% endLink %}
-    {% endText %}
   {% endMarkdownBlock %}
-
-  {# Load Codepen script if needed #}
-  {% if hasCodepen %}
-    <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
-  {% endif %}
 </article>
+
+{# Webmentions #}
+<section class="mb4 pt4 pb4 bt bb bw1 b--light-gray">
+{% include "webmentionlist.njk" %}
+</section>
+
+{# Backlink #}
+<section>
+{% Text className="hide-print" %}
+  {% Link { href: '/' | url } %}
+    ← Home
+  {% endLink %}
+{% endText %}
+</section>
+
+{# Load Codepen script if needed #}
+{% if hasCodepen %}
+  <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+{% endif %}
