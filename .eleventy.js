@@ -35,7 +35,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ['njk', 'md'],
   });
-  eleventyConfig.addPlugin(pluginInclusiveLanguage);
+  eleventyConfig.setDataDeepMerge(true),
+    eleventyConfig.addPlugin(pluginInclusiveLanguage);
 
   //
   // LAYOUTS
@@ -114,13 +115,9 @@ module.exports = function(eleventyConfig) {
   //
   // COLLECTIONS
 
-  // only content in the `posts/` directory
-  eleventyConfig.addCollection('posts', function(collection) {
-    const postsGlob = path.join(INPUT_DIR, 'posts/*');
-    return collection.getFilteredByGlob(postsGlob).sort(function(a, b) {
-      return a.date - b.date;
-    });
-  });
+  // eleventyConfig.addCollection('my-collection', function(collection) {
+  //   return collection;
+  // });
 
   // Group posts by date
   // NOTE: You have to inspect the date in the children atm;

@@ -17,7 +17,7 @@
 {# Author full name (or whichever you want) #}
 <meta name="author" content="{{ metadata.author.name }}">
 {# Either the tailored page description, a generated one, or the site's #}
-<meta name="description" content="{{ description or autoDescription or metadata.description }}">
+<meta name="description" content="{{ renderData.description or description or metadata.description }}">
 
 {# Opengraph data #}
 {# The site's name #}
@@ -27,7 +27,7 @@
 {# Either the page's title or the site's title #}
 <meta property="og:title" content="{{ title or metadata.title }}">
 {# Either the tailored page description, a generated one, or the site's #}
-<meta property="og:description" content="{{ description or autoDescription or metadata.description }}">
+<meta property="og:description" content="{{ description or metadata.description }}">
 {# Canonical, absolute URL for page #}
 <meta property="og:url" content="{{ absolutePageUrl }}">
 {# An image, if specified in the post's frontmatter, otherwise the author's image #}
