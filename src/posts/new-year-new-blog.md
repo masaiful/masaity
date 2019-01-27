@@ -1,9 +1,6 @@
 ---
 title: New Year, New Blog
 date: 2019-01-20
-tags:
-  - post
-layout: layouts/post.njk
 description: 'Recharging, gathering inspiration, and writing on.'
 ---
 

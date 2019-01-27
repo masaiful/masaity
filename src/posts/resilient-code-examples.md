@@ -2,10 +2,10 @@
 title: Resilient Code Examples with CodePen
 date: 2019-01-22
 tags:
-  - post
   - resilience
-layout: layouts/post.njk
 description: 'Making code examples in blog posts performant, accessible, and fun.'
+image: '/img/posts/resilient-code-examples-cover.jpg'
+imageAlt: 'Two code panels, one with HTML and another with CSS, with a button to make the demo interactive below them.'
 hasCodepen: true
 ---
 

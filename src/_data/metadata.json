@@ -1,7 +1,10 @@
 {
-  "title": "fotis.xyz",
+  "title": "Fotis Papadogeorgopoulos",
+  "shortTitle": "fotis.xyz",
   "url": "https://fotis.xyz",
+  "logo": "https://fotis.xyz/img/logo.png",
   "description": "Thoughts, talks, notes, and everything in-between. Personal blog of Fotis Papadogeorgopoulos.",
+  "locale": "en",
   "feed": {
     "subtitle": "Thoughts, talks, notes, and everything in-between. Personal blog of Fotis Papadogeorgopoulos.",
     "filename": "feed.xml",
@@ -11,6 +14,17 @@
   },
   "author": {
     "name": "Fotis Papadogeorgopoulos",
-    "email": "fotis@fpapado.com"
+    "email": "fotis@fpapado.com",
+    "avatar": "https://fotis.xyz/img/me/profile.jpg",
+    "social": {
+      "twitter": {
+        "name": "isfotis",
+        "url": "https://twitter.com/isfotis"
+      },
+      "github": {
+        "name": "fpapado",
+        "url": "https://github.com/fpapado"
+      }
+    }
   }
 }

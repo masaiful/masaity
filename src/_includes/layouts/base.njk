@@ -8,9 +8,9 @@
 
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="/img/favicon-128x128.png" sizes="128x128">
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.shortTitle }}">
 
-    <meta name="description" content="{{ renderData.description or description or metadata.description }}">
+    {% include "meta.njk" %}
     <meta name="theme-color" content="#1a1a1a">
 
     {# Preload variable font. Browsers with preload also support variable fonts, so this is a good balance.
@@ -28,7 +28,7 @@
           <div class="w2 h2">
           {% include "svg/lightbulb.svg" %}
           </div>
-          <a class="ml2 db fg-accent-lighter fw6 link enhanced-outline animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.title }}</a>
+          <a class="ml2 db fg-accent-lighter fw6 link enhanced-outline animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
         </div>
         <div class="ma2">
           <ul class="mn2 pa0 flex list hide-print">

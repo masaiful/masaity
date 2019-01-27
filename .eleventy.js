@@ -48,6 +48,10 @@ module.exports = function(eleventyConfig) {
     );
   });
 
+  eleventyConfig.addFilter('dateToIso', dateObj => {
+    return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toISO();
+  });
+
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter('head', (array, n) => {
     if (n < 0) {

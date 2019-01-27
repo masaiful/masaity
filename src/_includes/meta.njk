@@ -1,0 +1,82 @@
+{%- set absolutePageUrl -%}{{ page.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
+{%- set isPost = layout == 'post' -%}
+
+{# Image handling:
+    - if `image` is in frontmatter, set as pageImage; use it for descriptions
+    - set authorImage to be that of the autho, and use as fallback. 
+   The pageImage should have a 2:1 ratio
+#}
+{%- set pageImage -%}
+    {%- if image -%}{{ image | url | absoluteUrl(metadata.url) }}{%- endif -%}
+{%- endset -%}
+{%- set authorImage -%}
+    {{ metadata.author.avatar | url | absoluteUrl(metadata.url) }}
+{%- endset -%}
+
+{# Page-Specific metadata #}
+
+{# Generic metadata #}
+{# Author full name (or whichever you want) #}
+<meta name="author" content="{{ metadata.author.name }}">
+{# Either the tailored page description, a generated one, or the site's #}
+<meta name="description" content="{{ description or autoDescription or metadata.description }}">
+
+{# Opengraph data #}
+{# The site's name #}
+<meta property="og:site_name" content="{{ metadata.title }}">
+{# The site's locale #}
+<meta property="og:locale" content="{{ metadata.locale }}">
+{# Either the page's title or the site's title #}
+<meta property="og:title" content="{{ title or metadata.title }}">
+{# Either the tailored page description, a generated one, or the site's #}
+<meta property="og:description" content="{{ description or autoDescription or metadata.description }}">
+{# Canonical, absolute URL for page #}
+<meta property="og:url" content="{{ absolutePageUrl }}">
+{# An image, if specified in the post's frontmatter, otherwise the author's image #}
+<meta property="og:image" content="{%- if pageImage -%}{{ pageImage }}{%- else -%}{{ authorImage }}{%- endif -%}">
+{%- if pageImage -%}
+<meta property="og:image:alt" content="{%- if pageImage -%}{{ imageAlt }}{%- endif -%}">
+{%- endif -%}
+{# TODO: handle twitter:image:alt#}
+
+{# Posts get publishing tags #}
+{%- if isPost -%}
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="{{ page.date | dateToIso }}">
+{%- endif -%}
+
+{# Twitter data 
+    @see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html
+#}
+{# TODO: change condition to `if isPost and has image` #}
+<meta name="twitter:card" content="{% if isPost and pageImage -%}summary_large_image{% else %}summary{% endif %}">
+{# The @username of the site; same as the creator in this case; #}
+<meta name="twitter:site" content="@{{ metadata.author.social.twitter.name }}">
+{# The @username of the creator #}
+<meta name="twitter:creator" content="@{{ metadata.author.social.twitter.name }}">
+
+{# Canonical link to the page #}
+<link rel="canonical" href="{{ absolutePageUrl }}">
+
+{# JSON LD 
+    @see https://en.wikipedia.org/wiki/JSON-LD
+#}
+<script type="application/ld+json">
+    {
+        "name":"{{ metadata.author.name }}",
+        "description":"{{ metadata.description }}",
+        "author": {
+            "@type":"Person",
+            "name":"{{ metadata.author.name }}"
+        },
+        "@type":"WebSite",
+        "url":"{{ metadata.url }}",
+        "image":"{{ metadata.logo }}",
+        "headline":"{{ metadata.title }}",
+        "sameAs":[
+            "{{ metadata.author.social.twitter.url }}",
+            "{{ metadata.author.social.github.url }}",
+        ],
+        "@context":"http://schema.org"
+    }
+</script>
