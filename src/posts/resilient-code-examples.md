@@ -64,7 +64,7 @@ In no particular order, here are the possibilities I like:
 - No heavy scripts on page load
 
 ## Fun with templates
-On the blog, I also have syntax highlighting, rendered once on the server, using [Prism](https://prismjs.com/). I use the [syntax highlight shortcode from Eleventy](https://github.com/11ty/11ty-plugin-syntaxhighlight) to add it to the page.
+On the blog, I also have syntax highlighting, rendered once on the server, using [Prism](https://prismjs.com/). I use the [syntax highlight shortcode from Eleventy](https://github.com/11ty/eleventy-plugin-syntaxhighlight) to add it to the page.
 
 I had to make one change to the highlighting short code, to add `data-lang` to the `pre` tag that it renders. This is for CodePen to pick it up. I could have wrapped it in another `pre` tag, and that also seemed to work. That seemed like undefined behaviour, though, so I went with the more "correct-feeling" route.
 
