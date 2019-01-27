@@ -8,6 +8,9 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 const pluginSyntaxHighlight = require('@fpapado/eleventy-plugin-syntaxhighlight');
 
+// For transforms
+const htmlmin = require('html-minifier');
+
 // Custom tags etc.
 const WithCodepen = require('./src/_includes/components/WithCodepen');
 const MdImg = require('./src/_includes/components/MdImg');
@@ -165,6 +168,25 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedShortcode('Subheading', Subheading);
   eleventyConfig.addPairedShortcode('MarkdownBlock', MarkdownBlock);
   eleventyConfig.addPairedShortcode('Link', Link);
+
+  //
+  // TRANSFORMS
+
+  // Minify HTML output
+  // Good for normalising whitespace from templates
+  // The effect on output size is minimal
+  // @seehttps://www.11ty.io/docs/config/#transforms-example%3A-minify-html-output
+  eleventyConfig.addTransform('htmlmin', function(content, outputPath) {
+    if (isProduction && outputPath.endsWith('.html')) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+      });
+      return minified;
+    }
+    return content;
+  });
 
   return {
     templateFormats: ['md', 'njk', 'html', 'liquid'],
