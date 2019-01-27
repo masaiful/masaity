@@ -19,6 +19,7 @@ const Headline = require('./src/_includes/components/Headline');
 const Heading = require('./src/_includes/components/Heading');
 const Subheading = require('./src/_includes/components/Subheading');
 const Link = require('./src/_includes/components/Link');
+const IdentityLink = require('./src/_includes/components/IdentityLink');
 const MarkdownBlock = require('./src/_includes/components/MarkdownBlock');
 
 // Globals
@@ -172,6 +173,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedShortcode('Subheading', Subheading);
   eleventyConfig.addPairedShortcode('MarkdownBlock', MarkdownBlock);
   eleventyConfig.addPairedShortcode('Link', Link);
+  eleventyConfig.addPairedShortcode('IdentityLink', IdentityLink);
 
   //
   // TRANSFORMS
