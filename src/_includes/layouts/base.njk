@@ -20,7 +20,7 @@
 
     <link rel="stylesheet" href="{{ '/css/index.css' | resolveHash | url }}">
   </head>
-  <body class="pa3 flex flex-column min-vh-100 mw7 center f5 theme-light fg-primary bg-secondary f-phantomsans">
+  <body class="pa3 flex db-p flex-column min-vh-100 mw7 center f5 theme-light fg-primary bg-secondary f-phantomsans">
     <header>
       {% include "SkipLink.njk" %}
       <nav class="mn2 f5 f4-ns flex flex-row justify-between items-end flex-wrap">
@@ -50,7 +50,7 @@
       </nav>
     </header>
 
-    <main id="main" class="flex flex-column flex-grow-1 {% if templateClass %}{{ templateClass }}{% endif %}" style="outline: none;">
+    <main id="main" class="flex db-p flex-column flex-grow-1 {% if templateClass %}{{ templateClass }}{% endif %}" style="outline: none;">
       {{ content | safe }}
     </main>
 

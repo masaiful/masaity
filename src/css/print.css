@@ -16,6 +16,10 @@
     font-size: 2.25rem;
   }
 
+  .db-p {
+    display: block;
+  }
+
   @page {
     margin: 2cm;
   }
