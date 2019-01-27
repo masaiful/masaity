@@ -9,9 +9,7 @@
 {%- set pageImage -%}
     {%- if image -%}{{ image | url | absoluteUrl(metadata.url) }}{%- endif -%}
 {%- endset -%}
-{%- set authorImage -%}
-    {{ metadata.author.avatar | url | absoluteUrl(metadata.url) }}
-{%- endset -%}
+{%- set authorImage -%}{{ metadata.author.avatar | url | absoluteUrl(metadata.url) }}{%- endset -%}
 
 {# Page-Specific metadata #}
 
