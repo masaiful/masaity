@@ -3,9 +3,9 @@
     <div class="w2 w2-half-ns h2 h2-half-ns mr2">
       {%- set authorPhoto -%}{% if webmention.author.photo %}{{ webmention.author.photo }}{% else %}{{ '/img/webmention-avatar-default.svg' | url }}{% endif %}{%- endset -%}
 
-      {% MdImg 
-        aspectRatio="1x1", 
-        alt=webmention.author.name,
+      {% MdImg
+        aspectRatio="1x1",
+        alt="",
         src=authorPhoto,
         borderRadius="100"
       %}{% endMdImg %}
