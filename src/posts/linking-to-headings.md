@@ -23,8 +23,7 @@ This is a pattern I see often in documentation sites, where the headings are lin
 
 The `name` attribute has been deprecated in HTML5. You can use the `id` attribute to achieve the same goal. I really like the `id`, because it is shared with form `label`, `aria-labelledby` and other cases of referencing content.
 
-So, suppose we have a list of links that point to sections.
-A first attempt at linking things would look like this:
+So, suppose we have a list of links that point to sections. A first attempt at linking things would look like this:
 
 {% WithCodepen id="linking-headings-1", height="400" %}
 {% highlight "html" %}

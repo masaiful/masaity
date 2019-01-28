@@ -27,7 +27,7 @@ module.exports = function(content, props = {}) {
       ? html`
           <button
             data-for="${embedIdentifier}"
-            class="makeCpInteractive button-reset ph3 pv2 fw6 fg-secondary bg-primary enhanced-outline-shadow hover-bg-accent transition-bg br2 hide-print"
+            class="makeCpInteractive button-reset ph3 pv2 fw6 fg-secondary bg-primary enhanced-outline-shadow hover-bg-accent transition-bg br2 hide-print scale-down"
           >
             Make demo interactive
           </button>
