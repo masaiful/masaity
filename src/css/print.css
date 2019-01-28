@@ -30,7 +30,7 @@
 
   /* In-site links */
   .article a[href^='/']:after {
-    content: ' (' url(/img/link.svg) ' https://fotis.xyz' attr(href) ')';
+    content: ' ( ↪ https://fotis.xyz' attr(href) ')';
 
     display: inline;
 
@@ -47,7 +47,7 @@
 
   /* External links */
   .article a[href^='http']:after {
-    content: ' (' url(/img/link.svg) attr(href) ')';
+    content: ' ( ↪ ' attr(href) ')';
     display: inline;
 
     color: var(--primary);
