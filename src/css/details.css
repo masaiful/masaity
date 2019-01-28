@@ -27,7 +27,7 @@
   outline: none;
 }
 
-.details-outline > summary:focus > .details-outline-target {
+.details-outline summary:focus .details-outline-target {
   outline: 4px var(--accent-lighter) solid;
   outline-offset: 0px;
 }
