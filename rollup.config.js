@@ -22,9 +22,10 @@ export default {
       'process.env.NODE_ENV': JSON.stringify(
         process.env.NODE_ENV || 'production'
       ),
-      'process.env.GA_TRACKING_ID': JSON.stringify(
-        process.env.GA_TRACKING_ID || ''
+      'process.env.ANALYTICS_ENDPOINT': JSON.stringify(
+        process.env.ANALYTICS_ENDPOINT
       ),
+      'process.env.ANALYTICS_ID': JSON.stringify(process.env.ANALYTICS_ID),
     }),
     // Resolve modules for bundling using node's search algorithtm
     resolve(),

@@ -62,6 +62,7 @@
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
     "common-tags": "^1.8.0",
     "details-element-polyfill": "^2.3.0",
+    "nanoid": "^2.0.1",
     "tachyons": "^4.11.1"
   }
 }

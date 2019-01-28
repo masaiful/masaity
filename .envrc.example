@@ -1,6 +1,9 @@
 # This is an example of a .envrc file
 # Replace the values found here with those in password safe
-export GA_TRACKING_ID=""
+
+# Analytics
+export ANALYTICS_ID=''
+export ANALYTICS_ENDPOINT=''
 
 # For fetching data in _data/webmentions.js
 # You get this from webmention.io, after authenticating
