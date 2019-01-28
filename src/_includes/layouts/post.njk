@@ -15,7 +15,6 @@ templateClass: tmpl-post
     <div class="dn show-print author">
       by <span class="fw6">Fotis Papadogeorgopoulos</span>
     </div>
-
   </div>
 
   {# Contents #}
@@ -25,13 +24,13 @@ templateClass: tmpl-post
 </article>
 
 {# Webmentions #}
-<section class="mb4 pt4 pb4 bt bb bw1 b--light-gray">
+<section class="mb4 pt4 pb4 bt bb bw1 b--light-gray hide-print">
 {% include "webmentionlist.njk" %}
 </section>
 
 {# Backlink #}
-<section>
-{% Text className="hide-print" %}
+<section class="hide-print">
+{% Text %}
   {% Link { href: '/' | url } %}
     ← Home
   {% endLink %}
