@@ -2,13 +2,13 @@
 layout: layouts/base.njk
 templateClass: tmpl-post
 ---
-<article class="pt4 pt5-ns pb4 vs4">
+<article class="h-entry pt4 pt5-ns pb4 vs4">
   <div class="vs3">
-    {% Heading level=1 %}
+    {% Heading level=1, className="p-name" %}
       {{title}}
     {% endHeading %}
 
-    <time class="db" datetime="{{date}}">
+    <time class="dt-published db" datetime="{{date}}">
       {{date | readableDate}}
     </time>
 
@@ -18,9 +18,11 @@ templateClass: tmpl-post
   </div>
 
   {# Contents #}
+  <div class="e-content">
   {% MarkdownBlock %}
     {{ content | safe }}
   {% endMarkdownBlock %}
+  </div>
 </article>
 
 {# Webmentions #}

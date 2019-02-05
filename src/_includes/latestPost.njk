@@ -1,22 +1,24 @@
 <div class="vs4">
   {% for post in latestPosts | reverse %}
-  <article class="vs3">
+  <article class="h-entry vs3">
     <div class="vs2">
-      {% Subheading level=3 %}
-        {% Link href=post.url | url %}
+      {% Subheading level=3, className="p-name" %}
+        {% Link href=post.url | url, className="u-url" %}
           {{ post.data.title }}
         {% endLink %}
       {% endSubheading %}
 
-      <time class="db" datetime="{{post.data.date}}">
+      <time class="dt-published db" datetime="{{post.data.date}}">
         {{post.data.date | readableDate}}
       </time>
     </div>
 
     {# Contents #}
+    <div class="p-summary">
     {% MarkdownBlock %}
       {{ post.data.description | safe }}
     {% endMarkdownBlock %}
+    </div>
   </article>
   {% endfor %}
 </div>

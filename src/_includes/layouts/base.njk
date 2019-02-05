@@ -8,7 +8,15 @@
 
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="/img/favicon-128x128.png" sizes="128x128">
+
+    {# RSS Feed link #}
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.shortTitle }}">
+
+    {# Used to point to a canonical feed url, for all the posts 
+      @see https://indieweb.org/posse-post-discovery#Algorithm
+      @see https://indieweb.org/h-feed#rel_feed
+    #}
+    <link rel="feed alternate" type="text/html" href="/posts/" title="Writing" />
 
     {% include "meta.njk" %}
     <meta name="theme-color" content="#1a1a1a">
@@ -38,6 +46,7 @@
               {% if nav.url !== '/' %}
               <li class="db ma2 {% if nav.url == page.url %} fw7{% endif %}">
                 <a
+                  {# Declare full feed for /posts/ #}
                   {% if nav.url == page.url %}aria-current="page"{% endif %}
                   class="fg-primary hover-fg-accent-lighter enhanced-outline link"
                   href="{{ nav.url | url }}">
@@ -57,11 +66,10 @@
 
     <footer class="mt5 hide-print">
       <div class="vs2 f5 f4-ns lh-copy">
-        <p class="mv0">
-          Made by Fotis Papadogeorgopoulos,
-          ({% IdentityLink href='https://twitter.com/isfotis' %}
-          @isfotis
-          {% endIdentityLink %})
+        <p class="h-card mv0">
+          Made by 
+          {% IdentityLink href='https://fotis.xyz', className="p-name u-url" %}Fotis Papadogeorgopoulos{% endIdentityLink %}
+          ({% IdentityLink href='https://twitter.com/isfotis' %}@isfotis{% endIdentityLink %})
         </p>
         <p class="mv0">
         {% Link href='https://github.com/fpapado/fotis.xyz', isExternal=true %}

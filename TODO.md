@@ -1,11 +1,13 @@
 # TODO
 
 ## Near
+- Check microformats
+- Add likes/shares/comment counts
 - Audit SkipLink
-- `--intrinsicsize` placeholder
-    - and a fallback :)
 
 ## Future
+- Add syndication scripts
+    - Handle syndication links, @see https://indieweb.org/u-syndication#How_to_publish
 - Add test pipeline/CI for accessibility
 - Add test pipeline/CI for performance
 
