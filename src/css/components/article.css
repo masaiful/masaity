@@ -36,6 +36,11 @@
   margin-top: 1.5em;
 }
 
+/* Separate list items, but keep them related */
+.article li + li {
+  margin-top: 0.5em;
+}
+
 /* NOTE:
  * iframes and .md-replaced can be nested, so set
  * margin-top always. False positives are unlikely!
