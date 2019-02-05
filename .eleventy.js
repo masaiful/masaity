@@ -120,7 +120,7 @@ module.exports = function(eleventyConfig) {
 
   // Filter that gets webmentions for a url
   // Note that the data is fetched upfront from `_data/webmentions.js`
-  // This is filtering and sanitizing things for displayA
+  // This is filtering and sanitizing things for display
   eleventyConfig.addFilter('webmentionsForUrl', (webmentions, url) => {
     // TODO: Write the enum of the possible types
     const allowedTypes = ['mention-of', 'in-reply-to'];
@@ -138,7 +138,6 @@ module.exports = function(eleventyConfig) {
       } else if (content && content['text']) {
         content.value = content.text;
       }
-      console.log('Entry', entry);
       return entry;
     };
 
@@ -154,11 +153,13 @@ module.exports = function(eleventyConfig) {
     url,
     ...types
   ) {
-    return String(
+    // mention-of, in-reply-to, like-of, share-of, repost-of
+    const countString = String(
       webmentions
         .filter(entry => entry['wm-target'] === url)
         .filter(entry => types.includes(entry['wm-property'])).length
     );
+    return countString;
   });
 
   //

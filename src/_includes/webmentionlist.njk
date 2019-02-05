@@ -1,9 +1,31 @@
 {%- set absoluteUrl -%}{{ page.url | url | absoluteUrl(metadata.url) }}{%- endset -%}
 {%- set mentions = webmentions.children | webmentionsForUrl(absoluteUrl) -%}
+{%- set likeCount = webmentions.children | webmentionCountByType(absoluteUrl, "like-of") -%}
+{%- set shareCount = webmentions.children | webmentionCountByType(absoluteUrl, "repost-of") -%}
 <div class="vs4 webmentions" id="webmentions">
   {% Subheading level="2"%}
     Webmentions
   {% endSubheading %}
+
+  {%if likeCount !== '0' or shareCount !== '0' %}
+  <dl class="flex flex-wrap">
+    <div class="mr4 f4 f3-ns flex flex-wrap items-center">
+      <dt>
+        <span class="svg-scale dark-red">{% include "svg/heart.svg" %}</span>
+        <span class="clip">Likes</likes>
+      </dt>
+      <dd class="ml2">{{likeCount}}</dd>
+    </div>
+
+    <div class="f4 f3-ns flex flex-wrap items-center">
+      <dt>
+        <span class="svg-scale dark-green">{% include "svg/repeat.svg" %}</span>
+        <span class="clip">Shares</span>
+      </dt>
+      <dd class="ml2">{{shareCount}}</dd>
+    </div>
+  </dl>
+  {% endif %}
 
   {% if mentions | length %}
     <details class="vs4 details-reset details-outline">
@@ -45,7 +67,7 @@
 
   {% else %}
     {% Text %}
-    No mentions yet.
+    No replies yet.
     {% endText %}
   {% endif %}
 </div>

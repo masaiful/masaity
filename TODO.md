@@ -1,9 +1,6 @@
 # TODO
 
 ## Near
-- Check microformats
-- Add likes/shares/comment counts
-- Audit SkipLink
 
 ## Future
 - Add syndication scripts
