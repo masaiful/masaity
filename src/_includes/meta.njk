@@ -3,11 +3,19 @@
 
 {# Image handling:
     - if `image` is in frontmatter, set as pageImage; use it for descriptions
-    - set authorImage to be that of the autho, and use as fallback. 
+        - otherwise, if it is a post, use an auto-generated image
+    - finally, set authorImage to be that of the author, and use as fallback. 
    The pageImage should have a 2:1 ratio
 #}
 {%- set pageImage -%}
-{%- if image -%}{{ image | url | absoluteUrl(metadata.url) }}{%- endif -%}
+{%- if image -%}
+    {{ image | url | absoluteUrl(metadata.url) }}
+{%- else -%}
+    {%- if isPost -%}
+        https://fotisxyz-og-image.now.sh/**{{title | urlencode}}**.png?fontSize=150px&md=1&linkUrl={{absolutePageUrl | urlencode}}
+    {%- endif -%}
+{%- endif -%}
+
 {%- endset -%}
 {%- set authorImage -%}{{ metadata.author.avatar | url | absoluteUrl(metadata.url) }}{%- endset -%}
 
@@ -47,7 +55,7 @@
     @see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html
 #}
 {# TODO: change condition to `if isPost and has image` #}
-<meta name="twitter:card" content="{% if isPost and pageImage -%}summary_large_image{% else %}summary{% endif %}">
+<meta name="twitter:card" content="{% if isPost -%}summary_large_image{% else %}summary{% endif %}">
 {# The @username of the site; same as the creator in this case; #}
 <meta name="twitter:site" content="@{{ metadata.author.social.twitter.name }}">
 {# The @username of the creator #}
