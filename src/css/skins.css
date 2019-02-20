@@ -3,10 +3,10 @@
 /** Set the root theme to be the light one */
 :root {
   --primary: #1a1a1a;
-  --secondary: #fafafa;
-  --accent: #da0993;
+  --secondary: #fcf8f3;
+  --accent: #d80b92;
   --accent-2: #4e07dc;
-  --accent-lighter: #da0993;
+  --accent-lighter: #d80b92;
   --selection: #fff09d;
 }
 
