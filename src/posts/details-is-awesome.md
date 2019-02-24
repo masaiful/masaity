@@ -1,5 +1,5 @@
 ---
-title: <details> is awesome
+title: HTML details is awesome
 date: 2019-01-28
 tags:
   - resilience
