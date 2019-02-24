@@ -126,13 +126,13 @@ Given everything above, here is how I would do it:
   </li>
 </ol>
 
-<h2 id="installation">Installation <a href="#installation" aria-hidden="true">#</a></h2>
+<h2 id="installation">Installation <a href="#installation" aria-label="Link to Installation section">#</a></h2>
 <p>You can install the library from npm.</p>
 
-<h2 id="development">Development <a href="#development" aria-hidden="true">#</a></h2>
+<h2 id="development">Development <a href="#development" aria-label="Link to Development section">#</a></h2>
 <p>You will need node version 10 installed.</p>
 
-<h2 id="credits">Credits <a href="#credits" aria-hidden="true">#</a></h2>
+<h2 id="credits">Credits <a href="#credits" aria-label="Link to Credits section">#</a></h2>
 <p>Here is an article about past work on this problem.</p>
 {% endhighlight %}
 {% endWithCodepen %}
