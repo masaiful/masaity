@@ -234,7 +234,7 @@ Other things to consider would be `user-select` and `cursor`. `user-select` in p
 
 ## Polyfills
 
-The [polyfill for details]() is great. It is small in size (just under 1.5kB), and covers IE and Edge well. It is also a good example of a layered polyfill, where parts of the functionality are polyfilled depending on what is supported. Give the source code a read, I learned a bunch from it.
+The [polyfill for details](https://github.com/javan/details-element-polyfill) is great. It is small in size (just under 1.5kB), and covers IE and Edge well. It is also a good example of a layered polyfill, where parts of the functionality are polyfilled depending on what is supported. Give the source code a read, I learned a bunch from it.
 
 ## Accessibility
 
