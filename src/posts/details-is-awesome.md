@@ -46,9 +46,13 @@ Here is what an initial attempt at our comments section would look like:
 
 ### Styling
 
-There are a couple of extra things to know about styling `details`. You can style the arrow with the `::-webkit-details-marker` and `::before` selectors. The `[open]` attribute is added when the summary is open. You can use that to style the container further. [The demo on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) shows the open attribute in practice.
+There are a couple of extra things to know about styling `details`.
 
-I also found that on Safari, the `summary` element cannot be a flexbox container, even if defined in CSS. I wanted to do that to show author images next to the "Show all" text. I added an extra div wrapper inside of summary, to act as a flexbox wrapper.
+The arrow is styled with the `list-style` properties on `summary`, except in Chrome, which uses `::-webkit-details-marker`. You could consider resetting them and then relying on a unified `::before` selector.
+
+The `open` attribute is added when the summary is open. You can query that as `details[open]` to style the container further. [The demo on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details) shows the open attribute in practice.
+
+I also found that on Safari, the `summary` element cannot be a flexbox container, even if defined in CSS. I wanted to do that to show author images next to the "Show all" text. I added an extra div wrapper inside of summary, to act as the flexbox container.
 
 After adding some more styles to our details, it can look like this:
 
