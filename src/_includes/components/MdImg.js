@@ -1,6 +1,6 @@
 const { html } = require('common-tags');
 
-/** An image meant to be used in markdown, that preserves aspect ratio */
+/** An image meant to be used in markdown, that preserves aspect ratio, and makes loading lazy */
 module.exports = function(content, props = {}) {
   const {
     src,
@@ -24,6 +24,7 @@ module.exports = function(content, props = {}) {
       <img
         src="${src}"
         alt="${alt}"
+        loading="lazy"
         class="aspect-ratio--object fit-cover ${positionCls} ${brCls} ${cleanCls(
           className
         )}"
