@@ -20,6 +20,7 @@ module.exports = function(content, props = {}) {
       data-prefill
       data-height="${height}"
       data-default-tab="${defaultTab}"
+      data-theme-id="37790"
     >
       ${htmlContent}
     </div>
