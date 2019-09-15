@@ -1,9 +1,12 @@
-importScripts('/js/workbox/workbox-v4.0.0-beta.0/workbox-sw.js');
+// Import from local Workbox
+// To copy the scripts, follow this guide:
+// https://developers.google.com/web/tools/workbox/modules/workbox-sw#using_local_workbox_files_instead_of_cdn
+importScripts('/js/workbox/workbox-v4.3.1/workbox-sw.js');
 
 /* Needed to use the local workbox version
  * @see https://developers.google.com/web/tools/workbox/reference-docs/latest/workbox#.setConfig
  */
-workbox.setConfig({ modulePathPrefix: '/js/workbox/workbox-v4.0.0-beta.0' });
+workbox.setConfig({ modulePathPrefix: '/js/workbox/workbox-v4.3.1' });
 
 // navigationPreload helps reduce the effect of SW bootup time
 // when handling navigation routes.

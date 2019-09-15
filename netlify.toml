@@ -2,23 +2,51 @@
   publish = "_site"
   command = "DEBUG=* npm run build"
 
+# TODO: Add handling for /img/posts/ with something decent, like 1 day
+
+# NOTE: These match top-to-bottom, so more specific paths
+# should come before more generic ones
+# Reference: https://www.netlify.com/docs/redirects/#splats
+
+# The Codepen embeds are vendored, and not hashed, so they might change in the future
+# Thus, set only an 8 hour time, same as the default ei.js
+[[headers]]
+  for = "/js/codepen/*"
+
+  [headers.values]
+    Cache-Control = '''
+    public,
+    max-age=28800'''
+
+# All the other JS is hashed
 [[headers]]
   for = "/js/*"
 
   [headers.values]
-    Cache-Control = "public,max-age=31536000,immutable"
+    Cache-Control = '''
+    public,
+    max-age=31536000,
+    immutable'''
 
+# CSS is hashed
 [[headers]]
   for = "/css/*"
 
   [headers.values]
-    Cache-Control = "public,max-age=31536000,immutable"
+    Cache-Control = '''
+    public,
+    max-age=31536000,
+    immutable'''
 
+# Fonts are versioned (0.4, 0.5 etc.)
 [[headers]]
   for = "/fonts/*"
 
   [headers.values]
-    Cache-Control = "public,max-age=31536000,immutable"
+    Cache-Control = '''
+    public,
+    max-age=31536000,
+    immutable'''
 
 # Manifest images are currently mutable and not hashed, so we only
 # cache them for up to one day (60 * 60 * 24)
@@ -29,3 +57,18 @@
     Cache-Control = '''
     public,
     max-age=86400'''
+
+# Various security headers
+[[headers]]
+  for = "/*"
+
+  [headers.values]
+    Content-Security-Policy-Report-Only = "frame-ancestors 'none'; default-src 'none'; connect-src 'self' analytics.fotis.xyz; font-src 'self'; form-action codepen.io; frame-src codepen.io; img-src 'self' webmention.io; manifest-src 'self'; script-src 'self' 'unsafe-inline'; script-src-attr 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; worker-src 'self'; report-uri https://fotisxyz.report-uri.com/r/d/csp/reportOnly"
+    # Block site from being framed with X-Frame-Options
+    X-Frame-Options = "DENY"
+    # Prevent the browser from inferring the MIME type of files
+    X-Content-Type-Options = "nosniff"
+    # Only send the Referer header when loading or linking to other same-origin resources
+    Referrer-Policy = "same-origin"
+    Report-To = '{"group":"default","max_age":31536000,"endpoints":[{"url":"https://fotisxyz.report-uri.com/a/d/g"}],"include_subdomains":true}'
+    NEL = '{"report_to":"default","max_age":31536000,"include_subdomains":true}'

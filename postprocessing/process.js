@@ -1,5 +1,6 @@
 /*
- * This file is responsible for postprocessing the html + assets output after Eleventy. Metalsmith is used because it can carry files through a pipeline, and it normalises the directory/file search.
+ * This file is responsible for postprocessing the html + assets output after Eleventy.
+ * Metalsmith is used because it can carry files through a pipeline, and it normalises the directory/file search.
  *
  * Here's what we do at the moment:
  *  - Read all the files from _site

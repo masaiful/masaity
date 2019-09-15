@@ -14,7 +14,7 @@ export default {
   output: {
     file: OUTPUT_FILE,
     format: 'iife',
-    name: 'TechWeeklies',
+    name: 'FotisXyz',
   },
   plugins: [
     // Replace calls to process.env with build-time variables
