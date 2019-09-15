@@ -1,4 +1,10 @@
 /* Enhanced outline */
+
+/** Assume that we know what we are doing with programmatic focus */
+[tabindex='-1']:focus {
+  outline: none;
+}
+
 .enhanced-outline:focus {
   outline: 4px var(--accent-lighter) solid;
   outline-offset: 4px;

@@ -9,6 +9,10 @@ const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 const pluginSyntaxHighlight = require('@fpapado/eleventy-plugin-syntaxhighlight');
 
+// Markdown
+let markdownIt = require('markdown-it');
+let markdownItAnchor = require('./_11ty/markdown-it-anchor-custom');
+
 // For transforms
 const htmlmin = require('html-minifier');
 
@@ -195,21 +199,23 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/manifest.json');
 
   /* Markdown Plugins */
-  let markdownIt = require('markdown-it');
   let options = {
     html: true,
     breaks: true,
     linkify: true,
   };
-  //let markdownItAnchor = require('markdown-it-anchor');
-  /* let anchorOpts = {
+
+  let anchorOpts = {
+    // Only make anchors for h2 headings
+    level: [2],
     permalink: true,
-    permalinkClass: 'direct-link',
     permalinkSymbol: '#',
   };
-  */
 
-  eleventyConfig.setLibrary('md', markdownIt(options));
+  eleventyConfig.setLibrary(
+    'md',
+    markdownIt(options).use(markdownItAnchor, anchorOpts)
+  );
 
   //
   // SHORTCODES
