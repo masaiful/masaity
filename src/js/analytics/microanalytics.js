@@ -17,8 +17,10 @@ export default function MicroAnalytics(url, defaultData = {}) {
 }
 
 MicroAnalytics.prototype.append = function(data) {
-  let _data = {...this.defaultData, ...data};
-  console.log(this.url, _data);
+  let _data = { ...this.defaultData, ...data };
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(this.url, _data);
+  }
   let ok = nanobeacon(this.url, _data);
   if (ok) {
     this.log('append: sent data', _data);
@@ -33,7 +35,7 @@ MicroAnalytics.prototype.batch = function() {
   let cache = [];
   return {
     append: function(data) {
-      let _data = {...self.defaultData, ...data};
+      let _data = { ...self.defaultData, ...data };
       cache.push(_data);
     },
     flush: function() {
@@ -41,6 +43,6 @@ MicroAnalytics.prototype.batch = function() {
       if (!ok) {
         self.log('batch.flush: could not send data', cache);
       }
-    }
+    },
   };
 };
