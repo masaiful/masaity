@@ -15,32 +15,6 @@ const hasProp = Object.prototype.hasOwnProperty;
 
 const permalinkHref = slug => `#${slug}`;
 
-// const renderPermalink = (slug, opts, state, idx) => {
-//   const space = () =>
-//     Object.assign(new state.Token('text', '', 0), { content: ' ' });
-
-//   const linkTokens = [
-//     Object.assign(new state.Token('link_open', 'a', 1), {
-//       attrs: [
-//         ['class', opts.permalinkClass],
-//         ['href', opts.permalinkHref(slug, state)],
-//         ['aria-hidden', 'true'],
-//       ],
-//     }),
-//     Object.assign(new state.Token('html_block', '', 0), {
-//       content: opts.permalinkSymbol,
-//     }),
-//     new state.Token('link_close', 'a', -1),
-//   ];
-
-//   // `push` or `unshift` according to position option.
-//   // Space is at the opposite side.
-//   if (opts.permalinkSpace) {
-//     linkTokens[position[!opts.permalinkBefore]](space());
-//   }
-//   state.tokens[idx + 1].children[position[opts.permalinkBefore]](...linkTokens);
-// };
-
 const renderPermalink = (slug, opts, state, index) => {
   // Get the text content of the heading
   const textContent = state.tokens[index + 1].children
@@ -141,6 +115,9 @@ const anchor = (md, opts) => {
           slug = uniqueSlug(opts.slugify(title), slugs);
           token.attrPush(['id', slug]);
         }
+
+        // Make the heading programmatically focusable (solves some screen reader issues)
+        token.attrPush(['tabindex', '-1']);
 
         if (opts.permalink) {
           opts.renderPermalink(

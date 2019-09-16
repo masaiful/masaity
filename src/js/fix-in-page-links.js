@@ -8,7 +8,13 @@ export function init() {
     if (document.location.hash) {
       let focusId = window.location.hash.replace(/^#/, '');
       const focusEl = document.getElementById(focusId);
-      // console.log('Found location hash, will focus', { focusId, focusEl });
+
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('Found location hash after load, will focus', {
+          focusId,
+          focusEl,
+        });
+      }
       focusOnElement(focusEl);
     }
 
@@ -16,7 +22,11 @@ export function init() {
     window.addEventListener('hashchange', ev => {
       let focusId = window.location.hash.replace(/^#/, '');
       const focusEl = document.getElementById(focusId);
-      // console.log('hashchange', { focusId, focusEl });
+
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('hashchange', { focusId, focusEl });
+      }
+
       focusOnElement(focusEl);
     });
   });
@@ -46,5 +56,6 @@ export function focusOnElement(el) {
       el.removeAttribute('tabindex');
     });
   }
+
   el.focus();
 }
