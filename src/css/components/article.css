@@ -223,5 +223,29 @@
 }
 
 .article .heading-with-anchor > :first-child {
+  /* Give some space after jumping to an element */
+  scroll-margin-top: 1rem;
   margin-right: 0.5rem;
+}
+
+/* Briefly flash the heading when focused */
+
+@keyframes headingFlash {
+  from {
+    background-color: beige;
+  }
+  to {
+    background-color: transparent;
+  }
+}
+
+.article .heading-with-anchor > :first-child:target {
+  animation: headingFlash 1000ms ease-in-out;
+}
+
+@media (print), (prefers-reduced-motion) {
+  .article .heading-with-anchor > :first-child {
+    animation: unset !important;
+    transition: none !important;
+  }
 }
