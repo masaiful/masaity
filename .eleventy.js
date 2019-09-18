@@ -19,6 +19,7 @@ const htmlmin = require('html-minifier');
 // Custom tags etc.
 const WithCodepen = require('./src/_includes/components/WithCodepen');
 const MdImg = require('./src/_includes/components/MdImg');
+const Aside = require('./src/_includes/components/Aside');
 const Text = require('./src/_includes/components/Text');
 const Headline = require('./src/_includes/components/Headline');
 const Heading = require('./src/_includes/components/Heading');
@@ -222,6 +223,7 @@ module.exports = function(eleventyConfig) {
   // SHORTCODES
   eleventyConfig.addPairedShortcode('WithCodepen', WithCodepen);
   eleventyConfig.addPairedShortcode('MdImg', MdImg);
+  eleventyConfig.addPairedShortcode('Aside', Aside);
   eleventyConfig.addPairedShortcode('Text', Text);
   eleventyConfig.addPairedShortcode('Headline', Headline);
   eleventyConfig.addPairedShortcode('Heading', Heading);

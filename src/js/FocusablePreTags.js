@@ -27,7 +27,7 @@ export function init() {
         // Put into tab order if overflowing
         if (el.scrollWidth > el.clientWidth) {
           el.setAttribute('tabindex', 0);
-          el.classList.add('enhanced-outline-fit');
+          el.classList.add('enhanced-outline-shadow');
         }
       }
     });

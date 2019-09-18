@@ -19,6 +19,7 @@
 /** "Components" */
 @import './components/article';
 @import './components/skip-link';
+@import './components/aside';
 
 /** Explicit Print styles */
 @import './print';

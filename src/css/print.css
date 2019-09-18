@@ -28,6 +28,10 @@
     text-decoration: none;
   }
 
+  .article .header-anchor {
+    display: none;
+  }
+
   /* In-site links */
   .article a[href^='/']:after {
     content: ' (↪ https://fotis.xyz' attr(href) ')';

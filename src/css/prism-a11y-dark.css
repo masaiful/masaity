@@ -31,6 +31,8 @@ pre[class*='language-'] {
   padding: 1em;
   margin: 0.5em 0;
   overflow: auto;
+  /* Momentum scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
   border-radius: 0.3em;
 }
 

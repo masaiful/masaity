@@ -94,8 +94,7 @@
 
 /* Type scale */
 .article {
-  /* All type is between f4 and f5 by default */
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   line-height: 1.5;
 
   /* Hyphenation */
@@ -137,7 +136,7 @@
 /** All others are f3 */
 .article h3 {
   /* f3 */
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 /* Font Weights */
@@ -176,7 +175,7 @@
 .article a:focus {
   text-decoration: none;
   outline: 4px var(--accent-lighter) solid;
-  outline-offset: 4px;
+  outline-offset: 2px;
 }
 
 /* Scale text down, to adjust for different fonts (e.g. PhantomSans is smaller than most) */
@@ -200,6 +199,34 @@
   font-size: 0.8em;
 }
 
+.article strong {
+  font-weight: bolder;
+  font-variation-settings: 'wght' 700;
+}
+
+.article em {
+  font-style: italic;
+}
+
+.article blockquote {
+  font-style: italic;
+  font-variation-settings: 'wght' 200;
+  padding-left: 1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+  border-left: 0.5rem solid #ddd;
+}
+
+.article kbd {
+  /* Similar font-size to code */
+  font-size: 0.75em;
+  margin-right: 2px;
+  padding: 0.1rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 2px solid;
+  box-shadow: 2px 2px 0 currentColor;
+}
+
 /* Headings with anchor */
 
 /* Reset spacing of h2 when we have an anchor */
@@ -214,9 +241,6 @@
 
 /* The wrapper is inserted when direct links are inserted */
 .article .heading-with-anchor {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
   /* Give the anchor the same styling as the heading */
   font-size: 2.25rem;
   line-height: 1.25;
@@ -224,6 +248,7 @@
 
 .article .heading-with-anchor > :first-child {
   /* Give some space after jumping to an element */
+  display: inline;
   scroll-margin-top: 1rem;
   margin-right: 0.5rem;
 }

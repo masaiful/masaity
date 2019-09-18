@@ -1,3 +1,5 @@
+const { html } = require('common-tags');
+
 module.exports = function(
   content,
   { href, isExternal = false, className = '' } = {}
@@ -6,8 +8,12 @@ module.exports = function(
     ? `rel="noopener noreferrer" target="_blank"`
     : '';
 
-  return `
-    <a href="${href}" class="fg-accent-lighter hover-fg-accent-2 transition-fg focus-tdn enhanced-outline ${className}" ${externalAttrs}>
-        ${content}
-    </a>`;
+  return html`
+    <a
+      href="${href}"
+      class="fg-accent-lighter hover-fg-accent-2 transition-fg focus-tdn enhanced-outline ${className}"
+      ${externalAttrs}
+      >${content}</a
+    >
+  `;
 };

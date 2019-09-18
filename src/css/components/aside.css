@@ -1,0 +1,33 @@
+.aside {
+  margin-top: 3rem;
+}
+
+.aside-wrapper {
+  display: grid;
+  padding: 1rem;
+  background-color: #f5f5dc;
+  border: 2px solid var(--primary);
+}
+
+/* FIXME: This is hardcoded to h3 atm */
+h3.aside__title {
+  grid-row: 1;
+  grid-column: 1;
+  align-self: start;
+  justify-self: start;
+  margin-top: -2.5rem;
+  padding: 0.5rem 1rem;
+  line-height: 1;
+  font-size: 2rem;
+  font-weight: 600;
+  font-variation-settings: 'wght' 700;
+  background-color: #f6c1c9;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  box-shadow: -2px 3px 0 1px var(--primary);
+}
+
+.aside__content {
+  grid-row: 1;
+  grid-column: 1;
+}
