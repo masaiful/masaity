@@ -323,12 +323,13 @@ In this case, it is not that they are marked up as a `div`. Rather, they are mar
 
 This promise clashes with using it on an anchor tag. An anchor tag is not operable if the `href` attribute is missing (it is meant for links, after all). Thus, while the element promises to be a button, it cannot be perceived as such (and thus, focused by keyboard etc.). If someone were to somehow focus on it, I believe that the <kbd>Enter</kbd> key would work, but I could not get that in my testing.
 
-Another curious part of the arrows is that they have a label as text, but use the `.sr-only` class.
-Typically, an `.sr-only` ("screen reader only") class is a technique to hide an element visually, but keep it accessible in the tree that gets exposed to Assistive Technologies. Another common name for it is `.visually-hidden`. This technique usually involves a combination of positioning and clipping. [The A11y Project has some information on visually hidden](https://a11yproject.com/posts/how-to-hide-content/), and [Scott O'Hara has written about hiding content](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html) as well.
+An interesting part of the arrows is that they have a label as text, and use an `.sr-only` class.
 
-Visually hidden content is often used as a technique to provide accessible labels to buttons and icons. Its benefit over, say, `aria-label` is that it can get auto-translated by tools like Google Translate, and that it has a more prominent space in the DOM (which can aid maintenance). It is also a way to migrate components to be more accessible, which I believe (and might be wrong!) is what happens here.
+Typically, an `.sr-only` ("screen reader only") class is a technique to hide an element visually, but keep it accessible in the tree that gets exposed to Assistive Technologies. Another common name for this class is `.visually-hidden`. This technique usually involves a combination of positioning and clipping. [The A11y Project has some information on visually hidden](https://a11yproject.com/posts/how-to-hide-content/), and [Scott O'Hara has written about hiding content](https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html) as well.
 
-The `.sr-only` class on these arrows, however, sets `display: none;`. With that declaration, the content of the arrows is thus hidden both visually and from Assistive Technologies.
+Visually hidden content is often used as a technique to provide accessible labels to buttons and icons. Its benefit over, say, `aria-label` is that it can get auto-translated by tools like Google Translate, and that it has a more prominent space in the DOM,which can aid maintenance. It is also a way to migrate components to be more accessible, which I believe (and might well be wrong!) is what happens here.
+
+The `.sr-only` class on these arrows, however, sets `display: none;`. With that declaration, the content of the arrows is hidden both visually and from Assistive Technologies.
 
 We can verify this directly in a Browser dev tools, for example [Chrome accessibility pane](https://developers.google.com/web/tools/chrome-devtools/accessibility/reference#pane) or [Firefox accessibility inspector](https://developer.mozilla.org/en-US/docs/Tools/Accessibility_inspector). The arrow has a "button" role, and it does not have an accessible name.
 
@@ -379,13 +380,13 @@ Thus, I would take this opportunity to go the other way, and call back to the no
 
 If you are reading this and you have a role that can affect the page, consider this post an invitation for dialogue, or a call to action. The concrete issues are solvable. Ensuring that future efforts are also accessible is a larger undertaking, that I invite you to participate in.
 
-If are a designer or developer that is interested in making the web accessible for everyone, I hope this post can give you a good reference for any future work! If part of this post is a sampler, consider the links and references as potential for you to dive into the subject. If you found this useful, I would love to [hear from you](/about/#contact).
+If you are a designer or developer that is interested in making the web accessible for everyone, I hope this post can give you a good reference for any future work! If part of this post is a sampler, consider the links and references as potential for you to dive into the subject. If you found this useful, I would love to [hear from you](/about/#contact).
 
 ## Thanks
 
 Many thanks to the [Spice program](https://spiceprogram.org), by my employer, [Futurice](https://www.futurice.com). It allows me to allocate my own [free time and professional expertise for causes that help society](https://www.futurice.com/blog/futurice-professional-volunteering-bonus-extended), while being partially compensated for it. Writing this post would have been impossible without this privilege! These are the kind of initiatives that I love in this country.
 
-Having said the above, bear in mind that the opinions shared here are my own, and not those of my employer.
+Having said the above, bear in mind that the opinions shared here are my own, and not those of my employer. I outlined my reasons in [motivation](#motivation).
 
 If you have thoughts on this post, [you can reach out on Twitter](https://twitter.com/isfotis). I realise that Twitter is not the best place for nuance, so you can use [my other contact info](/about/#contact), if those offer a better medium.
 
