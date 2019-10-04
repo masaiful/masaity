@@ -58,6 +58,10 @@
   background-color: var(--accent-2);
 }
 
+.focus-bg-accent-2:focus {
+  background-color: var(--accent-2);
+}
+
 /** Background */
 .bg-primary {
   background-color: var(--primary);

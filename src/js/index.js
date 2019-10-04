@@ -10,6 +10,7 @@ import * as FixLinks from './fix-in-page-links';
 // Components
 import * as MakeCpInteractive from './MakeCpInteractive';
 import * as FocusablePreTags from './FocusablePreTags';
+import * as PrintButton from './PrintButton';
 // import * as debug from './debug';
 
 /* The main entry point of the application */
@@ -18,6 +19,7 @@ const init = () => {
   FixLinks.init();
   MakeCpInteractive.init();
   FocusablePreTags.init();
+  PrintButton.init();
 
   // Uncomment as needed
   // debug.focus();

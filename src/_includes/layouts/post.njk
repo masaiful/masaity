@@ -15,6 +15,17 @@ templateClass: tmpl-post
     <div class="dn show-print author">
       by <span class="fw6">Fotis Papadogeorgopoulos</span>
     </div>
+
+    <div class="hide-print">
+      <button class="print-button button-reset ph3 pv2 bg-accent hover-bg-accent-2 focus-bg-accent-2 transition-bg fg-secondary enhanced-outline-shadow br2">
+        <div class="flex items-center">
+        <div class="mr1" style="width: 1em; height: 1em;">
+          {% include "svg/file-text.svg" %}
+        </div>
+        Print
+        </div>
+      </button>
+    </div>
   </div>
 
   {# Contents #}
