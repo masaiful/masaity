@@ -4,6 +4,13 @@
  * Works around https://bugs.chromium.org/p/chromium/issues/detail?id=875403
  */
 export function init() {
+  const SUPPORTS_LAZY_IMAGES = 'loading' in HTMLImageElement.prototype;
+
+  // Add a feature detect styling hook
+  if (SUPPORTS_LAZY_IMAGES) {
+    document.documentElement.classList.add('supports-lazy-loading');
+  }
+
   const printButton = document.getElementsByClassName('print-button')[0];
 
   // We use this to know when to warn the user or not
@@ -16,8 +23,8 @@ export function init() {
     // Add a guard-rail onbeforeprint, to warn the user about not-loaded images
     window.addEventListener('beforeprint', () => {
       if ('loading' in HTMLImageElement.prototype) {
-        // clearWarnings();
         if (!userPressedCustomPrint) {
+          // Create a warning for the user
           const warning = createWarningBox({
             uniqueId: 'beforeprint-warning-missing-images',
             focusAfter: printButton,
@@ -92,11 +99,21 @@ function createWarningBox({ focusAfter, content, uniqueId }) {
 function loadAllLazyImages() {
   const loadingPromises = [];
 
-  const images = document.querySelectorAll('[loading=lazy]');
+  const images = document.querySelectorAll('img[loading=lazy]');
 
   images.forEach(img => {
     // Add to the list
-    loadingPromises.push(getImageLoadingPromise(img));
+    loadingPromises.push(
+      // Add styling hooks, in case we want to do something further,
+      // such as showing an "image skipped" warning
+      getImageLoadingPromise(img)
+        .then(() => {
+          img.classList.add('lazy-loading-ok');
+        })
+        .catch(() => {
+          img.classList.add('lazy-loading-error');
+        })
+    );
     // Tweak loading to 'auto' (remove it)
     img.setAttribute('loading', 'eager');
   });

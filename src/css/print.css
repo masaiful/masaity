@@ -1,6 +1,7 @@
 @media print {
   body {
     max-width: 100ch !important;
+    background-color: #ffffff;
   }
 
   .measure-prose {
@@ -63,6 +64,20 @@
     word-break: break-word;
     word-wrap: break-word;
     white-space: wrap;
+  }
+
+  /* Any images left as loading=lazy, and that we have not handled with JS,
+   * give them an alt text explaining what happened.
+   * This can still have false positives in case a lazy-loaded image had been loaded by scrolling.
+   * However, in this concrete case, we use aspect-ratio placeholders and absolute positioning, so
+   * the text will be obscured anyway!
+   * I wish there was some selector for this...
+   */
+  .supports-lazy-loading
+    .article
+    img[loading='lazy']:not(.lazy-loading-ok):not(.lazy-loading-error)::after {
+    display: block;
+    content: '(This lazy-loaded image was skipped)';
   }
 
   .hide-print {
