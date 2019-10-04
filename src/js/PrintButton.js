@@ -1,5 +1,3 @@
-import allSettled from '@ungap/promise-all-settled';
-
 /**
  * A custom print button implementation.
  * Using this allows us to eagerly load any lazy-loaded images and wait for them to load, before printing.
@@ -101,21 +99,28 @@ function loadAllLazyImages() {
 
   const images = document.querySelectorAll('img[loading=lazy]');
 
-  images.forEach(img => {
+  // To check for each images to load, we have to take into account images
+  // that have already loaded. This can happen via scrolling or by lazy loading not
+  // being supported (and thus loaded eagerly.).
+  // To achieve that, we create a new 'img' element, and set the original src
+  images.forEach(originalImage => {
+    const clonedImage = document.createElement('img');
+
     // Add to the list
     loadingPromises.push(
       // Add styling hooks, in case we want to do something further,
       // such as showing an "image skipped" warning
-      getImageLoadingPromise(img)
+      getImageLoadingPromise(clonedImage)
         .then(() => {
-          img.classList.add('lazy-loading-ok');
+          originalImage.classList.add('lazy-loading-ok');
         })
         .catch(() => {
-          img.classList.add('lazy-loading-error');
+          originalImage.classList.add('lazy-loading-error');
         })
     );
-    // Tweak loading to 'auto' (remove it)
-    img.setAttribute('loading', 'eager');
+    // Trigger image load on cloned image
+    clonedImage.src = originalImage.src;
+    originalImage.loading = 'eager';
   });
 
   return allSettled(loadingPromises);
@@ -130,4 +135,27 @@ function getImageLoadingPromise(img) {
     img.addEventListener('load', resolve);
     img.addEventListener('error', reject);
   });
+}
+
+function allSettled(promises) {
+  if ('allSettled' in Promise) {
+    return Promise.allSettled(promises);
+  }
+  return Promise.all(
+    promises.map(
+      function(value) {
+        return Promise.resolve(value)
+          .then(this.onFulfilled)
+          .catch(this.onRejected);
+      },
+      {
+        onFulfilled: function(value) {
+          return { status: 'fulfilled', value: value };
+        },
+        onRejected: function(reason) {
+          return { status: 'rejected', reason: reason };
+        },
+      }
+    )
+  );
 }

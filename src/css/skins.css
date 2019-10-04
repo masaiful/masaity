@@ -38,6 +38,10 @@
   color: var(--accent-lighter);
 }
 
+.hover-fg-secondary:hover {
+  color: var(--secondary);
+}
+
 .hover-fg-accent:hover {
   color: var(--accent);
 }
@@ -58,8 +62,16 @@
   background-color: var(--accent-2);
 }
 
+.focus-bg-accent:focus {
+  background-color: var(--accent);
+}
+
 .focus-bg-accent-2:focus {
   background-color: var(--accent-2);
+}
+
+.focus-fg-secondary:focus {
+  color: var(--secondary);
 }
 
 /** Background */
@@ -85,6 +97,11 @@
 
 .bg-selection {
   background-color: var(--selection);
+}
+
+/* Borders */
+.b--accent {
+  border-color: var(--accent);
 }
 
 /** Text selection 
