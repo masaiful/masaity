@@ -7,6 +7,7 @@
   --accent: #d80b92;
   --accent-2: #4e07dc;
   --accent-lighter: #d80b92;
+  --accent-lightest: #ffbbe9;
   --selection: #fff09d;
 }
 
@@ -17,6 +18,7 @@
   --accent: #da0993;
   --accent-2: #4e07dc;
   --accent-lighter: #da0993;
+  --accent-lightest: #ffbbe9;
   --selection: #fff09d;
 }
 
@@ -93,6 +95,10 @@
 
 .bg-accent-lighter {
   background-color: var(--accent-lighter);
+}
+
+.bg-accent-lightest {
+  background-color: var(--accent-lightest);
 }
 
 .bg-selection {

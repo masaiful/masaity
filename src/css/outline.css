@@ -23,6 +23,14 @@
   box-shadow: 0 0 0 0.25rem var(--accent-lighter);
 }
 
+.enhanced-outline-shadow-lightest:focus {
+  /* Maintain a visible outline in Windows High-Contrast Mode (WHCM), 
+   * where the box-shadows are hidden
+  */
+  outline: 4px solid transparent;
+  box-shadow: 0 0 0 0.25rem var(--accent-lightest);
+}
+
 .focus-tdn:focus {
   text-decoration: none;
 }
