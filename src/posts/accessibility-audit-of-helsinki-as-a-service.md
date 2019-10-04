@@ -87,7 +87,7 @@ The Companies section has logos. Those lack alt text, meaning that AT users have
 {% MdImg
   aspectRatio="1x1",
   position="center",
-  src="/img/posts/helsinki-as-a-service/partners.png",
+  src="faaaail",
   alt="Screencap of the list of partners on the site."
 %}{% endMdImg %}
 

@@ -7,12 +7,24 @@ export function init() {
   const printButtons = document.getElementsByClassName('print-button');
 
   // TODO: Set print styles to show "image loaded lazily, please use..."
-  // TODO: Similarly, onbeforeprint, set a no-print warning box explaining about the images
-  // TODO: Set button styles to hidden in print
+  // TODO: Similarly, onbeforeprint, set a no-print warning box explaining about the images, if the browser supports loading=lazy
+  // TODO: Add checkbox for images
+  // TODO: Show alt text in print for loading=lazy
   if (printButtons !== []) {
     for (const printButton of printButtons) {
       printButton.addEventListener('click', () => {
-        loadAllLazyImages().then(() => {
+        loadAllLazyImages().then(results => {
+          // If any of the images fail to load, then proceed but warn the user
+          const hasFailedImages = results.some(
+            result => result.status === 'rejected'
+          );
+          if (hasFailedImages) {
+            const warning = document.createElement('div');
+            warning.className = 'lh-copy pa3 bg-washed-red br2';
+            warning.innerText =
+              'Some images failed to load when printing. You can reload the page and try again.';
+            printButton.insertAdjacentElement('afterend', warning);
+          }
           window.print();
         });
       });
@@ -35,8 +47,7 @@ function loadAllLazyImages() {
     img.setAttribute('loading', 'eager');
   });
 
-  // TODO: Consider .allSettled instead of .all
-  return Promise.all(loadingPromises);
+  return Promise.allSettled(loadingPromises);
 }
 
 /**
