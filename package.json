@@ -60,6 +60,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-inclusive-language": "^1.0.0",
+    "@ungap/promise-all-settled": "^0.1.1",
     "common-tags": "^1.8.0",
     "details-element-polyfill": "^2.3.0",
     "nanoid": "^2.0.1",

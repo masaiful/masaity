@@ -1,3 +1,5 @@
+import allSettled from '@ungap/promise-all-settled';
+
 /**
  * A custom print button implementation.
  * Using this allows us to eagerly load any lazy-loaded images and wait for them to load, before printing.
@@ -116,7 +118,7 @@ function loadAllLazyImages() {
     img.setAttribute('loading', 'eager');
   });
 
-  return Promise.allSettled(loadingPromises);
+  return allSettled(loadingPromises);
 }
 
 /**
