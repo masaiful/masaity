@@ -16,9 +16,7 @@ export function init() {
   // We use this to know when to warn the user or not
   let userPressedCustomPrint = false;
 
-  // TODO: Set print styles to show "image loaded lazily, please use..."
   // TODO: Add checkbox for images
-  // TODO: Show alt text in print for loading=lazy
   if (printButton !== undefined) {
     // Add a guard-rail onbeforeprint, to warn the user about not-loaded images
     window.addEventListener('beforeprint', () => {
