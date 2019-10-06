@@ -32,7 +32,7 @@
   <body class="pa3 flex db-p flex-column min-vh-100 mw7 center f4 theme-light fg-primary bg-secondary f-phantomsans">
     <header>
       {% include "SkipLink.njk" %}
-      <nav class="mn2 f4 flex flex-row justify-between items-end flex-wrap">
+      <nav class="mn2 f4 flex flex-row justify-between items-end overflow-x-auto scroll-touch">
         <div class="ma2 flex items-end">
           <div class="w2 h2">
           {% include "svg/lightbulb.svg" %}
@@ -55,6 +55,13 @@
               </li>
               {% endif %}
             {%- endfor -%}
+            <li class="db ma2">
+              <a
+                class="fg-primary hover-fg-accent-lighter enhanced-outline link"
+                href="https://speaking.fotis.xyz">
+                  Speaking
+              </a>
+            </li>
           </ul>
         </div>
       </nav>

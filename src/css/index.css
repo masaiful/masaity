@@ -33,3 +33,7 @@
   color: var(--accent);
   line-height: 1.5;
 }*/
+
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+}
