@@ -63,7 +63,7 @@
   for = "/*"
 
   [headers.values]
-    Content-Security-Policy-Report-Only = "frame-ancestors 'none'; default-src 'none'; connect-src 'self' analytics.fotis.xyz; font-src 'self'; form-action codepen.io; frame-src codepen.io; img-src 'self' webmention.io; manifest-src 'self'; script-src 'self' 'unsafe-inline'; script-src-attr 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; worker-src 'self'; report-uri https://fotisxyz.report-uri.com/r/d/csp/reportOnly"
+    Content-Security-Policy = "frame-ancestors 'none'; default-src 'none'; connect-src 'self' analytics.fotis.xyz; font-src 'self'; form-action codepen.io; frame-src codepen.io; img-src 'self' webmention.io; manifest-src 'self'; script-src 'self' 'unsafe-inline'; script-src-attr 'unsafe-inline'; script-src-elem 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; style-src-attr 'unsafe-inline'; style-src-elem 'self' 'unsafe-inline'; worker-src 'self'; report-uri https://fotisxyz.report-uri.com/r/d/csp/enforce"
     # Block site from being framed with X-Frame-Options
     X-Frame-Options = "DENY"
     # Prevent the browser from inferring the MIME type of files
