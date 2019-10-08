@@ -137,6 +137,7 @@
 .article h3 {
   /* f3 */
   font-size: 1.75rem;
+  text-transform: uppercase;
 }
 
 /* Font Weights */
