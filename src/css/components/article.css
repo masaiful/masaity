@@ -8,6 +8,20 @@
 
 /* Generated content namespace */
 
+/* Fallback line-height */
+.article {
+  line-height: 1.5;
+}
+
+/* Max width for content elements */
+.article * {
+  max-width: 70ch;
+}
+
+.article div {
+  max-width: none;
+}
+
 /* Copy line-height for lists and paragraphs */
 .article ol,
 .article ul,
@@ -42,6 +56,11 @@
   margin-top: 1.5em;
 }
 
+/* Collapse margin for img in picture */
+.article source + img {
+  margin-top: 0;
+}
+
 /* Separate list items, but keep them related */
 .article li + li {
   margin-top: 0.5em;
@@ -51,8 +70,7 @@
  * iframes and .md-replaced can be nested, so set
  * margin-top always. False positives are unlikely!
 */
-.article .md-replaced,
-.article iframe {
+.article .md-replaced {
   margin-top: 1.5em;
 }
 

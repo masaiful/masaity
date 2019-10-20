@@ -20,6 +20,8 @@
 @import './components/article';
 @import './components/skip-link';
 @import './components/aside';
+@import './components/YoutubeVideo.css';
+@import './components/VideoWithTranscript.css';
 
 /** Explicit Print styles */
 @import './print';
@@ -36,4 +38,14 @@
 
 .scroll-touch {
   -webkit-overflow-scrolling: touch;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .smooth-scroll {
+    scroll-behavior: auto;
+  }
 }

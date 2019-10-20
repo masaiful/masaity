@@ -6,6 +6,8 @@
  * that users do not resize as much, and performance
  * would be iffy otherwise
  *
+ * TODO: Consider using ResizeObserver, with manual measuring fallback.
+ *
  * Based on:
  * https://github.com/ThePacielloGroup/cupper/blob/a0f8aa23bae666325d0dfdc209b3b5c49417c43e/docs/js/dom-scripts.js#L84
  */

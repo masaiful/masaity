@@ -29,8 +29,8 @@
 
     <link rel="stylesheet" href="{{ '/css/index.css' | resolveHash | url }}">
   </head>
-  <body class="pa3 flex db-p flex-column min-vh-100 mw7 center f4 theme-light fg-primary bg-secondary f-phantomsans">
-    <header>
+  <body class="pa3 flex db-p flex-column min-vh-100 f4 theme-light fg-primary bg-secondary f-phantomsans">
+    <header class="w-100 mw7 center">
       {% include "SkipLink.njk" %}
       <nav class="mn2 f4 flex flex-row justify-between items-end overflow-x-auto scroll-touch">
         <div class="ma2 flex items-end">
@@ -67,11 +67,11 @@
       </nav>
     </header>
 
-    <main id="main" class="flex db-p flex-column flex-grow-1 {% if templateClass %}{{ templateClass }}{% endif %}" style="outline: none;">
+    <main id="main" class="w-100 flex db-p flex-column flex-grow-1 {% if templateClass %}{{ templateClass }}{% endif %} {% if not isFullWidth %}mw7 center{% endif %}" style="outline: none;">
       {{ content | safe }}
     </main>
 
-    <footer class="mt5 hide-print">
+    <footer class="mt5 w-100 mw7 center hide-print">
       <div class="vs2 f4 lh-copy">
         <p class="h-card mv0">
           Made by 

@@ -3,6 +3,7 @@ const fs = require('fs');
 const { DateTime } = require('luxon');
 const { groupBy, flatten, drop } = require('lodash');
 const sanitizeHTML = require('sanitize-html');
+const toml = require('toml');
 
 // Plugins
 const pluginRss = require('@11ty/eleventy-plugin-rss');
@@ -27,6 +28,8 @@ const Subheading = require('./src/_includes/components/Subheading');
 const Link = require('./src/_includes/components/Link');
 const IdentityLink = require('./src/_includes/components/IdentityLink');
 const MarkdownBlock = require('./src/_includes/components/MarkdownBlock');
+const VideoWithTranscript = require('./src/_includes/components/VideoWithTranscript');
+const NotistSlides = require('./src/_includes/components/NotistSlides');
 
 // Globals
 const INPUT_DIR = 'src';
@@ -41,12 +44,25 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ['njk', 'md'],
   });
-  eleventyConfig.setDataDeepMerge(true),
-    eleventyConfig.addPlugin(pluginInclusiveLanguage);
+  eleventyConfig.setDataDeepMerge(true);
+  eleventyConfig.addPlugin(pluginInclusiveLanguage);
+
+  //
+  // Enable TOML parsing in frontmatter; it's much nicer than YAML
+  // @see https://www.11ty.io/docs/data-frontmatter/#example%3A-using-toml-for-front-matter-parsing
+  eleventyConfig.setFrontMatterParsingOptions({
+    engines: {
+      toml: toml.parse.bind(toml),
+    },
+  });
 
   //
   // LAYOUTS
   eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
+  eleventyConfig.addLayoutAlias(
+    'talk-with-transcript',
+    'layouts/talk-with-transcript.njk'
+  );
 
   //
   // FILTERS
@@ -179,9 +195,14 @@ module.exports = function(eleventyConfig) {
   // returning an object {[date]: items} does not work yet.
   eleventyConfig.addCollection('postsByDate', function(collection) {
     const postsGlob = path.join(INPUT_DIR, 'posts/*');
-    const sorted = collection.getFilteredByGlob(postsGlob).sort(function(a, b) {
+    const all = collection.getFilteredByGlob(postsGlob);
+    console.log({ all });
+
+    const sorted = all.sort(function(a, b) {
       return a.date - b.date;
     });
+    console.log({ sorted });
+
     const grouped = groupBy(sorted, item =>
       DateTime.fromJSDate(item.date).startOf('day')
     );
@@ -216,7 +237,10 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.setLibrary(
     'md',
-    markdownIt(options).use(markdownItAnchor, anchorOpts)
+    markdownIt(options)
+      // Disable whitespace-as-code-indicator, which breaks a lot of markup
+      .disable('code')
+      .use(markdownItAnchor, anchorOpts)
   );
 
   //
@@ -229,6 +253,8 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPairedShortcode('Heading', Heading);
   eleventyConfig.addPairedShortcode('Subheading', Subheading);
   eleventyConfig.addPairedShortcode('MarkdownBlock', MarkdownBlock);
+  eleventyConfig.addPairedShortcode('VideoWithTranscript', VideoWithTranscript);
+  eleventyConfig.addPairedShortcode('NotistSlides', NotistSlides);
   eleventyConfig.addPairedShortcode('Link', Link);
   eleventyConfig.addPairedShortcode('IdentityLink', IdentityLink);
 

@@ -1,0 +1,88 @@
+.tmpl-talk-with-transcript[data-layout='full-width'] {
+  max-width: 100%;
+}
+
+.tmpl-talk-with-transcript {
+  scroll-behavior: smooth;
+}
+
+.VideoWithTranscript[data-layout='stacked'] > * + * {
+  margin-top: 4rem;
+}
+
+.VideoWithTranscript[data-layout='split'] {
+  display: grid;
+  gap: 1rem;
+  /* Video: between 24rem and however much, 
+   * Text: between 40 and 70 chars
+   */
+  grid-template-columns: minmax(24rem, 1fr) minmax(40ch, 70ch);
+}
+
+.VideoWithTranscript[data-layout='split']
+  .VideoWithTranscript-Video
+  > :last-child {
+  position: sticky;
+  top: 2rem;
+  left: 0;
+}
+
+.VideoWithTranscript .ButtonGroup > * + * {
+  margin-left: 1rem;
+}
+
+.VideoWithTranscript [aria-pressed] {
+  color: var(--primary);
+  background-color: var(--secondary);
+  box-shadow: inset 0 -1em 0 -0.9em rgba(0, 0, 0, 0.4);
+}
+
+.VideoWithTranscript [aria-pressed='true'] {
+  color: var(--secondary);
+  background-color: var(--primary);
+  box-shadow: inset 0 1em 0 -0.9em rgba(255, 255, 255, 0.6);
+}
+
+.VideoWithTranscript [aria-pressed]:hover,
+.VideoWithTranscript [aria-pressed]:focus {
+  color: var(--primary);
+  background-color: #eee;
+}
+
+.VideoWithTranscript [aria-pressed]:focus {
+  box-shadow: inset 0 -1em 0 -0.9em rgba(0, 0, 0, 0.4),
+    0 0 0 0.25rem var(--accent-lighter);
+}
+
+.VideoWithTranscript [aria-pressed='true']:hover,
+.VideoWithTranscript [aria-pressed='true']:focus {
+  color: var(--secondary);
+  background-color: #333;
+}
+
+.VideoWithTranscript [aria-pressed='true']:focus {
+  box-shadow: inset 0 1em 0 -0.9em rgba(255, 255, 255, 0.6),
+    0 0 0 0.25rem var(--accent-lighter);
+}
+
+.video-timestamp {
+  scroll-margin-top: 2rem;
+}
+
+.video-timestamp > * + * {
+  margin-left: 0.25rem;
+}
+
+.video-timestamp[data-clip-focused='true'] {
+  position: relative;
+}
+
+.video-timestamp[data-clip-focused='true']::before {
+  content: '>';
+  position: absolute;
+  left: -1rem;
+}
+
+.video-timestamp[data-clip-focused='true'] ~ * {
+  background-color: beige;
+}

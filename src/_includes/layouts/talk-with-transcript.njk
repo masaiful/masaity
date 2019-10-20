@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+templateClass: tmpl-talk-with-transcript
+---
+<article class="h-entry pt4 pt5-ns pb4 vs4">
+  <div class="vs3">
+    {% Heading level=1, className="p-name" %}
+      {{title}}
+    {% endHeading %}
+
+    <time class="dt-published db" datetime="{{date}}">
+      {{date | readableDate}}
+    </time>
+
+    <div class="dn show-print author">
+      by <span class="fw6">Fotis Papadogeorgopoulos</span>
+    </div>
+  </div>
+
+  <div class="e-content vs5">
+    {# Contents #}
+    {% MarkdownBlock %}
+      {{ content | safe }}
+    {% endMarkdownBlock %}
+
+    {# Video and Transcript #}
+    {% VideoWithTranscript videoId=videoId, transcriptFilename=transcriptFilename, interjections=interjections, notistEmbed=notistEmbed %}
+    {% endVideoWithTranscript %}
+  </div>
+</article>
+
+{# Webmentions #}
+<section class="mb4 pt4 pb4 bt bb bw1 b--light-gray hide-print">
+{% include "webmentionlist.njk" %}
+</section>
+
+{# Backlink #}
+<section class="hide-print">
+{% Text %}
+  {% Link { href: '/' | url } %}
+    ← Home
+  {% endLink %}
+{% endText %}
+</section>
+
+{# Load Codepen script if needed #}
+{% if hasCodepen %}
+  <script async src="/js/codepen/ei.js"></script>
+{% endif %}

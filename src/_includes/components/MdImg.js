@@ -12,6 +12,10 @@ module.exports = function(content, props = {}) {
     containerClassName,
   } = props;
 
+  if (alt === null || alt === undefined) {
+    throw Error(`Image ${src} must have alt text.`);
+  }
+
   const positionCls = position ? `o-pos-${position}` : '';
   const brCls = borderRadius ? `br-${borderRadius}` : '';
 

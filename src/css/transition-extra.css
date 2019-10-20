@@ -1,5 +1,10 @@
 /** Styles for selectively transitioning colours */
 
+.transition-performant {
+  transition: color 0.15s ease-in, background-color 0.15s ease-in,
+    opacity 0.15s ease-in;
+}
+
 .transition-fg {
   transition: color 0.15s ease-in;
 }
