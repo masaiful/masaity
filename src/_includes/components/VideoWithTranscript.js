@@ -177,13 +177,13 @@ function YoutubeVideo({ videoId, clipTimeSeconds }) {
         </noscript>
       </div>
       <div class="lh-copy">
-        ${Link('You can also watch this video directly on Youtube.', {
+        ${Link('You can also watch this video directly on Youtube', {
           href: getYoutubeVideoUrl({
             videoId,
             clipTimeSeconds,
             isExternal: true,
           }),
-        })}
+        })}.
       </div>
       <div class="flex ButtonGroup">
         <button
