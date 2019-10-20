@@ -128,7 +128,7 @@ function Interjection({ type, data }) {
 function YoutubeVideo({ videoId, clipTimeSeconds }) {
   return html`
     <div class="vs3">
-      <div class="md-replaced aspect-ratio aspect-ratio--16x9 bg-primary">
+      <div class="md-replaced aspect-ratio aspect-ratio--16x9 bg-primary hide-print">
         ${YoutubeThumbnail({
           videoId,
           alt: '',
