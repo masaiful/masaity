@@ -13,6 +13,7 @@ function NotistSlides(_content, { notistEmbed }) {
         allowfullscreen
         frameborder="0"
         loading="lazy"
+        title="Slides for the talk embedded from Notist."
       >
       </iframe>
     </div>
