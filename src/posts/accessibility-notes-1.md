@@ -17,9 +17,9 @@ So, as I start my holidays, I have decided to start writing my notes down on thi
 
 ## Automated Checking Tools
 
-I really like [Accessibility Insights, by Microsoft](https://accessibilityinsights.io/). They have an automatic mode, that scans a page and outlines common issues.
+I really like [Accessibility Insights, by Microsoft](https://accessibilityinsights.io/). They have an automatic mode, that scans a page and outlines common issues. It can also visualise things like Heading Order and so on.
 
-Perhaps more interesting, they also have a manual mode, that gives you a checklist to go through. It can also visualise things like Heading Order and so on.I think the manual mode is a great way to build an intuition about accessibility!
+Perhaps more interesting, the tool has a [manual mode, Assessment](https://accessibilityinsights.io/docs/en/web/getstarted/assessment), that gives you a checklist to go through. I think the manual mode is a great way to build an intuition about accessibility!
 
 ## On Testing with Screen Readers
 
@@ -27,10 +27,10 @@ Testing with a screen reader can be good in a few cases.
 
 Two common ones for me:
 
-- Building an intuition about the interfaces work
+- Building an intuition about how the interfaces work
 - Testing custom widgets and interactions, particularly whether a widget upholds its role / promise to the user.
 
-I personally do not recommend using a Screen Reader as a primary means of evaluating a website. It is usually better to get Screen Reader / Assistive Technology users to do that instead. I believe that to be a better use of your time, and brings up scenarios you might easily miss!
+I personally do not recommend using a Screen Reader yourself as a primary means of evaluating a website, especially if you do not use one regularly. It is usually better to get Screen Reader / Assistive Technology users to do that instead. I believe that to be a better use of your time, and brings up scenarios you might easily miss!
 
 ### How a Screen Reader User Accesses the Web
 
@@ -46,12 +46,14 @@ Macs have the VoiceOver Screen Reader shipped by default. [WebAim has a guide ab
 
 ### Editorial
 
-It might be worth including a guide to alt text in editorial inputs.Here are two I like:
+It might be worth including a guide to alt text in editorial inputs. Here are two I like:
 
 - https://axesslab.com/alt-texts/
 - https://webaim.org/techniques/alttext/
 
 Alt text is not for SEO! Do not include random keywords there. Also, you do not need to write "image of...". Assistive Technologies know to announce them as images already :)
+
+I am also interested in CMS integrations that can help / "lint" for those issues. I might write about this in the future.
 
 ### Note on alt for developers
 
