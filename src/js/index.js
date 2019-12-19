@@ -1,9 +1,6 @@
 // Polyfills
 import 'details-element-polyfill';
 
-// Analytics
-import * as analytics from './analytics/analytics';
-
 // General
 import * as FixLinks from './fix-in-page-links';
 
@@ -15,7 +12,6 @@ import * as YoutubeVideo from './YoutubeVideo';
 
 /* The main entry point of the application */
 const init = () => {
-  analytics.init();
   FixLinks.init();
   MakeCpInteractive.init();
   FocusablePreTags.init();
