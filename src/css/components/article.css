@@ -156,6 +156,7 @@
   /* f3 */
   font-size: 1.75rem;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 /* Font Weights */
