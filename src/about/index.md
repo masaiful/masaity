@@ -24,5 +24,5 @@ _Papa-doh-george-oh-poulos_
 
 ## Contact
 
-- Twitter: [@isfotis](twitter.com/isfotis)
+- Twitter: [@isfotis](https://twitter.com/isfotis)
 - Email: [fotis@fpapado.com](mailto:fotis@fpapado.com)
