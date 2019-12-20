@@ -67,9 +67,7 @@ module.exports = function(eleventyConfig) {
   //
   // FILTERS
   eleventyConfig.addFilter('githubCommentsLink', path => {
-    const uri = `https://github.com/fpapado/fotis.xyz/issues?q=is:open+is:issue+label:Comments+${encodeURIComponent(
-      path
-    )}`;
+    const uri = `https://github.com/fpapado/fotis.xyz/issues?q=is:open+is:issue+label:Comments+${path}`;
     return encodeURI(uri);
   });
 
