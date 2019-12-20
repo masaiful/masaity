@@ -26,8 +26,32 @@ templateClass: tmpl-post
 </article>
 
 {# Webmentions #}
-<section class="mb4 pt4 pb4 bt bb bw1 b--light-gray hide-print">
+<section class="pt4 pb4 bt bb bw1 b--light-gray hide-print">
 {% include "webmentionlist.njk" %}
+</section>
+
+{%- set commentUrl -%}
+{{page.url | url | githubCommentsLink}}
+{%- endset -%}
+<section class="vs4 mb4 pt4 pb4 bb bw1 b--light-gray hide-print">
+  {% Subheading level="2"%}
+    Comments
+  {% endSubheading %}
+  {% Text %}
+    This comment section works via GitHub issues.
+    You can add a comment via the field below, or
+    {% Link href=commentUrl %}
+      comment directly on GitHub
+    {% endLink %}
+  {% endText %}
+  <script src="https://utteranc.es/client.js"
+          repo="fpapado/fotis.xyz"
+          issue-term="pathname"
+          label="Comments"
+          theme="github-light"
+          crossorigin="anonymous"
+          async>
+  </script>
 </section>
 
 {# Backlink #}
