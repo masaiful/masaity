@@ -112,7 +112,7 @@
 
 /* Type scale */
 .article {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
 
   /* Hyphenation */
@@ -123,40 +123,40 @@
 /* -m */
 @media screen and (min-width: 30em) {
   .article {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
 
 /* -l */
 @media screen and (min-width: 60em) {
   .article {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 
 @media print {
   /* Give the medium font-size for article print */
   .article {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
 }
 
 .article h1 {
   /* f1 */
-  font-size: 3rem;
+  font-size: 2.75rem;
 }
 
 .article h2 {
   /* f2 */
-  font-size: 2.25rem;
+  font-size: 1.5rem;
 }
 
 /** All others are f3 */
 .article h3 {
   /* f3 */
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  /* letter-spacing: 0.05em; */
 }
 
 /* Font Weights */
@@ -168,17 +168,6 @@
 .article h5,
 .article h6 {
   font-weight: 700;
-}
-
-@supports (font-variation-settings: normal) {
-  .article h1,
-  .article h2,
-  .article h3,
-  .article h4,
-  .article h5,
-  .article h6 {
-    font-variation-settings: 'wght' 999;
-  }
 }
 
 /* Link styles */
@@ -194,7 +183,7 @@
 
 .article a:focus {
   text-decoration: none;
-  outline: 4px var(--accent-lighter) solid;
+  outline: 3px var(--accent-lighter) solid;
   outline-offset: 2px;
 }
 
@@ -221,7 +210,6 @@
 
 .article strong {
   font-weight: bolder;
-  font-variation-settings: 'wght' 700;
 }
 
 .article em {
@@ -230,7 +218,6 @@
 
 .article blockquote {
   font-style: italic;
-  font-variation-settings: 'wght' 200;
   padding-left: 1.5rem;
   margin-left: 0;
   margin-right: 0;
@@ -256,7 +243,7 @@
 
 /* Add the spacing to the whole container */
 .article * + .heading-with-anchor {
-  margin-top: 1.5em;
+  margin-top: 1.25em;
 }
 
 /* The wrapper is inserted when direct links are inserted */
@@ -270,7 +257,14 @@
   /* Give some space after jumping to an element */
   display: inline;
   scroll-margin-top: 1rem;
-  margin-right: 0.5rem;
+  /* margin-right: 0.5rem; */
+}
+
+.article .heading-with-anchor > a {
+  font-size: 0.75em;
+  /* Use ordinal numbers to tone down '#' */
+  font-feature-settings: 'onum';
+  text-decoration-style: dotted;
 }
 
 /* Briefly flash the heading when focused */

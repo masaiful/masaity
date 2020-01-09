@@ -1,27 +1,17 @@
 <ol reversed class="pa0 vs4 list" style="counter-reset: start-from {{ postslist.length + 1 }}">
 {% for post in postslist %}
-  <li class="h-entry flex items-baseline {% if post.url == url %}fw7{% endif %}">
-    <span class="lh-title">
-      {# Title link #}
-      {% Link href=post.url | url, className="u-url p-name db mb2 mr2 f3 fw7" %}
-        {% if post.data.title %}
-          {{ post.data.title }}
-        {% else %}
-          <code>{{ post.url }}</code>
-        {% endif %}
-      {% endLink %}
+  <li class="h-entry db vs2 lh-title {% if post.url == url %}fw7{% endif %}">
+    {# Title link #}
+    {% Link href=post.url | url, className="u-url p-name db f4 f3-ns fw7" %}
+      {% if post.data.title %}
+        {{ post.data.title }}
+      {% else %}
+        <code>{{ post.url }}</code>
+      {% endif %}
+    {% endLink %}
 
-      {# Date #}
-      <time class="dt-published f4-ns" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
-
-      {# Tags #}
-      {% for tag in post.data.tags %}
-        {%- if tag != "posts" -%}
-        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
-        <a href="{{ tagUrl | url }}" class="ml1 ph2 pv1 f4-ns fg-primary bg-selection br2 link enhanced-outline-shadow">{{ tag }}</a>
-        {%- endif -%}
-      {% endfor %}
-    </span>
+    {# Date #}
+    <time class="dt-published db f6 f5-ns" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate }}</time>
   </li>
 {% endfor %}
 </ol>

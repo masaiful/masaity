@@ -78,10 +78,10 @@ function Transcript({ interjections, transcriptFile }) {
           ({ speaker, time, segment }, index) =>
             html`
               <div class="vs3">
-                <dt class="video-timestamp f3 fw6" id=${time}>
+                <dt class="video-timestamp f3 fw7" id=${time}>
                   <span>${speaker}</span>
                   <button
-                    class="video-timestamp-button button-reset ph2 pv1 fw6 fg-primary enhanced-outline-shadow hover-fg-secondary hover-bg-primary focus-fg-secondary focus-bg-primary transition-performant ba bw1 br2 b--primary pointer"
+                    class="video-timestamp-button button-reset ph2 pv1 fw7 fg-primary enhanced-outline-shadow hover-fg-secondary hover-bg-primary focus-fg-secondary focus-bg-primary transition-performant ba bw1 br2 b--primary pointer"
                     data-video-timestamp="${time}"
                     >${time}</button
                   >
@@ -128,7 +128,9 @@ function Interjection({ type, data }) {
 function YoutubeVideo({ videoId, clipTimeSeconds }) {
   return html`
     <div class="vs3">
-      <div class="md-replaced aspect-ratio aspect-ratio--16x9 bg-primary hide-print">
+      <div
+        class="md-replaced aspect-ratio aspect-ratio--16x9 bg-primary hide-print"
+      >
         ${YoutubeThumbnail({
           videoId,
           alt: '',
@@ -187,12 +189,12 @@ function YoutubeVideo({ videoId, clipTimeSeconds }) {
       </div>
       <div class="flex ButtonGroup">
         <button
-          class="SplitButton button-reset ph2 pv1 f4 fw6 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
+          class="SplitButton button-reset ph2 pv1 f5 fw7 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
           aria-pressed="false"
           >Split view</button
         >
         <button
-          class="FollowTimestampButton button-reset ph2 pv1 f4 fw6 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
+          class="FollowTimestampButton button-reset ph2 pv1 f5 fw7 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
           aria-pressed="false"
           >Follow transcript</button
         >

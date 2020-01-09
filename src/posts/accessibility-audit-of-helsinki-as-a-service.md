@@ -11,7 +11,7 @@ hasCodepen: true
 Helsinki recently launched the [City as a Service](https://helsinkiasaservice.com) campaign. This post explores how to make it more accessible.
 
 <details class="mt4 pointer">
-  <summary class="fw6">Table of Contents </summary>
+  <summary class="fw7">Table of Contents </summary>
   <ol>
     <li><a href="#motivation">Motivation</a></li>
     <li><a href="#what-we%E2%80%99ll-be-doing">What we'll be doing</a></li>
@@ -28,13 +28,13 @@ Helsinki recently launched the [City as a Service](https://helsinkiasaservice.co
 
 ## Motivation
 
-Helsinki, and the tech industry in it, wishes to attract more workers. One of the recent ways they set to achieve that, is the City as a Service initiative. Its website has a video, various quotes and visuals, as well as a list of partners. 
+Helsinki, and the tech industry in it, wishes to attract more workers. One of the recent ways they set to achieve that, is the City as a Service initiative. Its website has a video, various quotes and visuals, as well as a list of partners.
 
-The site outlines some of the best parts of living in Helsinki. I find the techy marketing a bit much ("as a service"...), but I can understand how the content is a condensed summary of why someone would immigrate here. I did, after all, immigrate here as well, didn't I? 
+The site outlines some of the best parts of living in Helsinki. I find the techy marketing a bit much ("as a service"...), but I can understand how the content is a condensed summary of why someone would immigrate here. I did, after all, immigrate here as well, didn't I?
 
 One of the things that struck me, when browsing the site, is that much of its main content is inaccessible. The images were missing descriptions, the buttons lacked labels, the video modal was out of reach, and the carousel did not have any keyboard-accessible controls.
 
-That hit close to home.  When a friend shared the site with me, my initial reaction was to outline the issues with it in our chat. While that was good, and got some local support from others, I realised that nothing meaningful would happen if I left it there. That is when I got the idea to make an "open accessibility audit" for it. I hope to outline the issues, provide reference solutions, and add my voice of support for these issues.
+That hit close to home. When a friend shared the site with me, my initial reaction was to outline the issues with it in our chat. While that was good, and got some local support from others, I realised that nothing meaningful would happen if I left it there. That is when I got the idea to make an "open accessibility audit" for it. I hope to outline the issues, provide reference solutions, and add my voice of support for these issues.
 
 I have seen many initiatives over the past years, that celebrate inclusivity on the surface, only to skip making their sites accessible. That seems like a contradiction to me.
 
@@ -44,7 +44,7 @@ In other words, we need more disabled people to help shape services. If a site t
 
 ## What we'll be doing
 
-We'll be going through some of the common issues that hinder the accessibility of the site. Note that **this list is not exhaustive**, and it is **mostly from a markup point of view**. 
+We'll be going through some of the common issues that hinder the accessibility of the site. Note that **this list is not exhaustive**, and it is **mostly from a markup point of view**.
 
 I am a sighted user, often navigating by keyboard (wanting to get ahead of RSI), but other than that most of the audit revolves around standards and common issues in accessibility. People whose lived experiences differ to mine will have different topics on this list; that is perfectly valid, and I would urge you to listen to them.
 
@@ -52,6 +52,7 @@ I am a sighted user, often navigating by keyboard (wanting to get ahead of RSI),
   title="Before we dive in",
   headingLevel=3
 %}
+
   <p>
   You might be wondering, “<em>why does this person get to come in and trash the thing we made?</em>”. It is important for me to point out that this is not criticising a person! It is auditing an artefact on the screen, as well as a system that pays lip service to equality but does not prioritise inclusivity and accessibility in the concrete outcomes.
   </p>
@@ -72,16 +73,19 @@ Many of images on the site lack alternative textual descriptions, so-called "alt
 If images lack alt text (i.e. the `alt` attribute is missing on the `img`), then typically the full name of the image gets read out. This is usually meaningless, of the form "abcd1234.jpg".
 
 This can be frustrating for a few reasons:
+
 - It is very verbose, and adds noise if the image is **decorative**;
 - People miss out on images that form **content**;
 - Textual alternatives can help convey the meaning and feeling of the page, in an [comparable experience](https://inclusivedesignprinciples.org/#provide-comparable-experience) to people who see the images;
 - Finally, if all images are nonsensical, it can be frustrating not to know whether you are missing out on something!
 
 In general, then, an image should:
+
 - **If it is content**, have an alt text describing it;
 - **If it is decorative**, have an empty alt text (`alt=""`), so Assistive Technologies (ATs) know to skip them.
 
 ### Image examples
+
 The Companies section has logos. Those lack alt text, meaning that AT users have to guess at the names.
 
 {% MdImg
@@ -94,9 +98,21 @@ The Companies section has logos. Those lack alt text, meaning that AT users have
 For example, this is markup for the whim logo:
 
 ```html
-<a _ngcontent-serverapp-c12="" class="logo-container ng-star-inserted" target="_blank" href="https://whimapp.com/jobs/">
-  <lib-image _ngcontent-serverapp-c12="" _nghost-serverapp-c16="" style="--fit:cover;">
-    <img src="//images.ctfassets.net/cegx92j6q58r/2DGqEVRojpxcWSBpxussyl/1b839550e0fc247a2096aa1859896d61/whim_logo.png" class="ng-star-inserted">
+<a
+  _ngcontent-serverapp-c12=""
+  class="logo-container ng-star-inserted"
+  target="_blank"
+  href="https://whimapp.com/jobs/"
+>
+  <lib-image
+    _ngcontent-serverapp-c12=""
+    _nghost-serverapp-c16=""
+    style="--fit:cover;"
+  >
+    <img
+      src="//images.ctfassets.net/cegx92j6q58r/2DGqEVRojpxcWSBpxussyl/1b839550e0fc247a2096aa1859896d61/whim_logo.png"
+      class="ng-star-inserted"
+    />
   </lib-image>
 </a>
 ```
@@ -120,7 +136,11 @@ Instead, we could write "Whim" as the alt text. We skip the word "logo", because
 
 ```html
 <!-- Rest of the markup skipped for clarity -->
-<img alt="Whim" src="//images.ctfassets.net/cegx92j6q58r/2DGqEVRojpxcWSBpxussyl/1b839550e0fc247a2096aa1859896d61/whim_logo.png" class="ng-star-inserted">
+<img
+  alt="Whim"
+  src="//images.ctfassets.net/cegx92j6q58r/2DGqEVRojpxcWSBpxussyl/1b839550e0fc247a2096aa1859896d61/whim_logo.png"
+  class="ng-star-inserted"
+/>
 ```
 
 This will get announced as:
@@ -160,7 +180,7 @@ Below is an example of the outlines on this blog.
   alt=""
 %}{% endMdImg %}
 
-Browsers provide default focus outlines. [Even those are not always accessible](https://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html), but are better than nothing. Yet, quite often, focus is hidden altogether! This is sometimes the result of a stakeholder or implementer having a distaste for when an outline appears for users with a mouse or touch pointer. Other times, it ends up as a blanket "reset" in CSS. 
+Browsers provide default focus outlines. [Even those are not always accessible](https://adrianroselli.com/2017/02/avoid-default-browser-focus-styles.html), but are better than nothing. Yet, quite often, focus is hidden altogether! This is sometimes the result of a stakeholder or implementer having a distaste for when an outline appears for users with a mouse or touch pointer. Other times, it ends up as a blanket "reset" in CSS.
 
 The fact of the matter is, that **usurping a browser default without an alternative can actively exclude people**.
 
@@ -195,6 +215,7 @@ There is a button to open a modal for the video at the top of the site. It is st
 While it visually looks like a button, this control is only marked up as a generic container (`div` and `svg`). As such, it does not expose any specific role or accessible name to Assistive Technologies.
 
 This is a problem for two reasons:
+
 - It is not discoverable (or, [perceivable](https://webaim.org/articles/pour/perceivable)), for many Assistive Technologies users, whose ATs rely on reading the markup to find functionality
 - It is also not [operable](https://webaim.org/articles/pour/operable); a `div` will not receive [focus](#focus), and will not open the modal with the <kbd>Enter</kbd> or <kbd>Space</kbd> keys.
 
@@ -203,8 +224,21 @@ In practice, this means that only a specific subset of users can open the modal.
 A fix would be to introduce a `button`, and attach the `click` event handler to that button, instead of a `div` or the `svg`. The button would also need an accessible name, either through its content, or an `aria-label`.
 
 ```html
-<button aria-label="Open video modal" _ngcontent-serverapp-c2="" class="play-button">
-  <svg aria-hidden="true" focusable="false" _ngcontent-serverApp-c2="" fill="none" height="64" viewBox="0 0 64 64" width="64" xmlns="http://www.w3.org/2000/svg">
+<button
+  aria-label="Open video modal"
+  _ngcontent-serverapp-c2=""
+  class="play-button"
+>
+  <svg
+    aria-hidden="true"
+    focusable="false"
+    _ngcontent-serverApp-c2=""
+    fill="none"
+    height="64"
+    viewBox="0 0 64 64"
+    width="64"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <!-- Content skipped for brevity -->
   </svg>
 </button>
@@ -240,9 +274,9 @@ For example, this part of the page at the start has an `h5`, and then an `h1`:
     Helsinki is calling for demo users
   </h5>
   <div _ngcontent-serverapp-c2="" class="top-pattern"></div>
-    <h1 _ngcontent-serverapp-c2="" class="heading ng-star-inserted">
-      Welcome to the World’s First City as a Service
-    </h1>
+  <h1 _ngcontent-serverapp-c2="" class="heading ng-star-inserted">
+    Welcome to the World’s First City as a Service
+  </h1>
   <div _ngcontent-serverapp-c2="" class="bottom-pattern"></div>
   <p _ngcontent-serverapp-c2="" class="body-text ng-star-inserted">
     What is the most tech-savvy city on this planet? No idea, but Helsinki just
@@ -261,9 +295,9 @@ Which could instead be:
     Helsinki is calling for demo users
   </p>
   <div _ngcontent-serverapp-c2="" class="top-pattern"></div>
-    <h1 _ngcontent-serverapp-c2="" class="heading ng-star-inserted">
-      Welcome to the World’s First City as a Service
-    </h1>
+  <h1 _ngcontent-serverapp-c2="" class="heading ng-star-inserted">
+    Welcome to the World’s First City as a Service
+  </h1>
   <div _ngcontent-serverapp-c2="" class="bottom-pattern"></div>
   <p _ngcontent-serverapp-c2="" class="body-text ng-star-inserted">
     What is the most tech-savvy city on this planet? No idea, but Helsinki just
@@ -278,6 +312,7 @@ Which could instead be:
   title="On CMS",
   headingLevel=3
 %}
+
 <p>
 One thing to note, in many of these cases, is that there is probably a Content Management System (CMS) in-between the authoring and the content on screen. It is not always easy to "hard code" fixes like these, or to even check for these mistakes. This is even more prevalent when a simple format, like Markdown, is used for authoring.
 </p>
@@ -302,7 +337,7 @@ The carousel has left and right arrows, as well as "bullets" that one can click 
   alt="Screencap of the carousel, with the controls on the side."
 %}{% endMdImg %}
 
-These controls, however, are only marked up as generic containers (`div`s). Those do not expose any specific role or accessible name to Assistive Technologies. Moreover, they cannot be operated by a keyboard because of that. 
+These controls, however, are only marked up as generic containers (`div`s). Those do not expose any specific role or accessible name to Assistive Technologies. Moreover, they cannot be operated by a keyboard because of that.
 The carousel can also be operated with the arrow (left/right) keys on a keyboard, but it is unclear to me how someone would discover that.
 In practice, this means that only sighted users with a pointer device (mouse, touch, pen etc.) can operate the carousel.
 
@@ -360,11 +395,21 @@ One step might be to change the markup, and add accessible labels to the control
 
 ```html
 <ol class="carousel-indicators ng-star-inserted" aria-label="Carousel controls">
-  <li id="ngb-slide-10" class="ng-star-inserted active"><button aria-label="Jump to slide 1"></button></li>
-  <li id="ngb-slide-11" class="ng-star-inserted active"><button aria-label="Jump to slide 2"></button></li>
-  <li id="ngb-slide-12" class="ng-star-inserted active"><button aria-label="Jump to slide 3"></button></li>
-  <li id="ngb-slide-13" class="ng-star-inserted active"><button aria-label="Jump to slide 4"></button></li>
-  <li id="ngb-slide-14" class="ng-star-inserted active"><button aria-label="Jump to slide 5"></button></li>
+  <li id="ngb-slide-10" class="ng-star-inserted active"
+    ><button aria-label="Jump to slide 1"></button
+  ></li>
+  <li id="ngb-slide-11" class="ng-star-inserted active"
+    ><button aria-label="Jump to slide 2"></button
+  ></li>
+  <li id="ngb-slide-12" class="ng-star-inserted active"
+    ><button aria-label="Jump to slide 3"></button
+  ></li>
+  <li id="ngb-slide-13" class="ng-star-inserted active"
+    ><button aria-label="Jump to slide 4"></button
+  ></li>
+  <li id="ngb-slide-14" class="ng-star-inserted active"
+    ><button aria-label="Jump to slide 5"></button
+  ></li>
 </ol>
 ```
 

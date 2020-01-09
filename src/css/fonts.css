@@ -1,98 +1,22 @@
-/* FONTS
- * The font used on the site is Phantom Sans, by Phantom Foundry.
- * https://www.futurefonts.xyz/phantom-foundry/phantom-sans
- *
- * Phantom Sans is available as a variable font, meaning that
- * we can get all the font weights in one file. This is great
- * for grouping layouts. Another important property is that the
- * file is very small (26kB), which is about the size of one font
- * weight!
-
-*/
-/* Progressively enhance fwX classes to be variable.
- * NOTE: Phantom Sans v5 goes from Regular - Bold,
- * so the scale 0 - 1000 is skewed along that range.
-*/
-@supports (font-variation-settings: normal) {
-  .normal {
-    font-variation-settings: 'wght' 1;
-  }
-  .b {
-    font-variation-settings: 'wght' 700;
-  }
-  .fw1 {
-    font-variation-settings: 'wght' 1;
-  }
-  .fw2 {
-    font-variation-settings: 'wght' 1;
-  }
-  .fw3 {
-    font-variation-settings: 'wght' 1;
-  }
-  .fw4 {
-    font-variation-settings: 'wght' 1;
-  }
-  .fw5 {
-    font-variation-settings: 'wght' 400;
-  }
-  .fw6 {
-    font-variation-settings: 'wght' 700;
-  }
-  .fw7 {
-    font-variation-settings: 'wght' 999;
-  }
-  .fw8 {
-    font-variation-settings: 'wght' 999;
-  }
-  .fw9 {
-    font-variation-settings: 'wght' 999;
-  }
-}
-
-/* PhantomSans */
-/* Variable and fallbacks.
- * @see https://medium.com/clear-left-thinking/how-to-use-variable-fonts-in-the-real-world-e6d73065a604
-*/
-
-/* PhantomSansVariable
- * Variable needs only woff2, since their support overlaps.
-*/
+/* Asty-regular */
 @font-face {
-  font-family: 'PhantomSansVariable';
-  font-display: swap;
-  src: url(/fonts/phantom-sans-v5-variable.woff2) format('woff2');
-  font-weight: 1 999;
-}
-
-/* PhantomSans-regular */
-@font-face {
-  font-family: 'PhantomSans';
+  font-family: 'Asty';
   /* TODO: reconsider font-display for these */
   font-display: swap;
-  src: url(/fonts/phantom-sans-v5-regular.woff2) format('woff2'),
-    url(/fonts/phantom-sans-v5-regular.woff) format('woff');
+  src: url(/fonts/Fonts/asty-regular-v1.woff) format('woff');
   font-weight: 400;
 }
 
-/* PhantomSans-bold */
+/* Asty-bold */
 @font-face {
-  font-family: 'PhantomSans';
+  font-family: 'Asty';
   font-display: swap;
-  src: url(/fonts/phantom-sans-v5-bold.woff2) format('woff2'),
-    url(/fonts/phantom-sans-v5-bold.woff) format('woff');
+  src: url(/fonts/Fonts/asty-bold-v1.woff) format('woff');
   font-weight: 700;
 }
 
 /* Use @supports to pick the correct fonts */
-.f-phantomsans {
-  font-family: 'PhantomSans', Arial, Helvetica, sans-serif;
+.f-asty {
+  font-family: 'Asty', Arial, Helvetica, sans-serif;
   font-weight: 400;
-}
-
-@supports (font-variation-settings: normal) {
-  .f-phantomsans {
-    font-family: 'PhantomSansVariable', Arial, Helvetica, sans-serif;
-    /* Normalise font-weight if not specified */
-    font-variation-settings: 'wght' 1;
-  }
 }

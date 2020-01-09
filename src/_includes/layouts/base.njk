@@ -22,22 +22,19 @@
     <meta name="theme-color" content="#1a1a1a">
     {% include "pingback.njk" %}
 
-    {# Preload variable font. Browsers with preload also support variable fonts, so this is a good balance.
-      Fonts are loaded with crossorigin anonymous because of browser behaviour.
-    #}
-    <link rel="preload" href="{{ '/fonts/phantom-sans-v5-variable.woff2' | url}}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/fonts/asty-regular-v1.woff' | url}}" as="font" type="font/woff" crossorigin>
 
     <link rel="stylesheet" href="{{ '/css/index.css' | resolveHash | url }}">
   </head>
-  <body class="pa3 flex db-p flex-column min-vh-100 f4 theme-light fg-primary bg-secondary f-phantomsans">
+  <body class="pa3 flex db-p flex-column min-vh-100 f5 theme-light fg-primary bg-secondary f-asty">
     <header class="w-100 mw7 center">
       {% include "SkipLink.njk" %}
-      <nav class="mn2 f4 flex flex-row justify-between items-end overflow-x-auto scroll-touch">
+      <nav class="mn2 f5 flex flex-row justify-between items-end overflow-x-auto scroll-touch">
         <div class="ma2 flex items-end">
           <div class="w2 h2">
           {% include "svg/lightbulb.svg" %}
           </div>
-          <a class="ml2 db fg-accent-lighter fw6 link enhanced-outline animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
+          <a class="ml2 db fg-accent-lighter fw7 link enhanced-outline animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
         </div>
         <div class="ma2">
           <ul class="mn2 pa0 flex list hide-print">
@@ -72,7 +69,7 @@
     </main>
 
     <footer class="mt5 w-100 mw7 center hide-print">
-      <div class="vs2 f4 lh-copy">
+      <div class="vs2 f5 lh-copy">
         <p class="h-card mv0">
           Made by 
           {% IdentityLink href='https://fotis.xyz', className="p-name u-url" %}Fotis Papadogeorgopoulos{% endIdentityLink %}

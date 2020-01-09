@@ -8,8 +8,8 @@
   }
 
   /* Variable fonts do not get rendered correctly in print styles */
-  .f-phantomsans {
-    font-family: 'PhantomSans', Arial, Helvetica, sans-serif;
+  .f-asty {
+    font-family: 'Asty', Arial, Helvetica, sans-serif;
   }
 
   .f2-p {

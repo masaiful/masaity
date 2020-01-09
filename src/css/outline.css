@@ -6,12 +6,12 @@
 }
 
 .enhanced-outline:focus {
-  outline: 4px var(--accent-lighter) solid;
+  outline: 3px var(--accent-lighter) solid;
   outline-offset: 2px;
 }
 
 .enhanced-outline-fit:focus {
-  outline: 4px var(--accent-lighter) solid;
+  outline: 3px var(--accent-lighter) solid;
   outline-offset: 0px;
 }
 
@@ -19,7 +19,7 @@
   /* Maintain a visible outline in Windows High-Contrast Mode (WHCM), 
    * where the box-shadows are hidden
   */
-  outline: 4px solid transparent;
+  outline: 3px solid transparent;
   box-shadow: 0 0 0 0.25rem var(--accent-lighter);
 }
 

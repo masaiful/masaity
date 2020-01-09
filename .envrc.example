@@ -1,9 +1,9 @@
 # This is an example of a .envrc file
 # Replace the values found here with those in password safe
 
-# Analytics
-export ANALYTICS_ID=''
-export ANALYTICS_ENDPOINT=''
+# Font CDN URL
+# Used to download the font files at build time, to keep them out of the repo
+export FONT_CDN_URL=""
 
 # For fetching data in _data/webmentions.js
 # You get this from webmention.io, after authenticating

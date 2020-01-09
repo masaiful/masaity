@@ -256,7 +256,7 @@ function getOrCreatePlayer({ videoId, clipTimeSeconds, playerEl }) {
 function errorBox(videoId, clipTimeSeconds) {
   return `
     <div class="vs3 pa3 fg-secondary">
-      <p class="mv0 f4 f3-ns fw6 lh-title">Oh no!</p>
+      <p class="mv0 f4 f3-ns fw7 lh-title">Oh no!</p>
       <p class="mv0 f5 f4-ns lh-copy measure-prose nested">
         There was an error with the player, sorry about that. Try refreshing the page, or
           <a href="https://youtube.com/watch?v=${videoId}${
