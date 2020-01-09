@@ -14,7 +14,7 @@
     {% Link 
       isExternal=true, 
       href=webmention.url,
-      className="mr2 f5 f4-ns fw7"
+      className="mr2 f-copy f4-ns fw7"
     %}
     {% if webmention.author %}
       {{ webmention.author.name }}
@@ -23,7 +23,7 @@
     {% endif %}
     {% endLink %}
     {% if webmention.published %}
-      <time class="f6 f5-ns dt-published" datetime="{{ webmention.published }}">{{ webmention.published | dateFromTimestamp | readableDate }}</time>
+      <time class="f5 dt-published" datetime="{{ webmention.published }}">{{ webmention.published | dateFromTimestamp | readableDate }}</time>
     {% endif %}
   </div>
 

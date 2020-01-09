@@ -112,7 +112,7 @@
 
 /* Type scale */
 .article {
-  font-size: 1rem;
+  font-size: 1.125rem;
   line-height: 1.5;
 
   /* Hyphenation */
@@ -148,13 +148,13 @@
 
 .article h2 {
   /* f2 */
-  font-size: 1.5rem;
+  font-size: 1.75rem;
 }
 
 /** All others are f3 */
 .article h3 {
   /* f3 */
-  font-size: 1.375rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
   /* letter-spacing: 0.05em; */
 }
@@ -261,7 +261,7 @@
 }
 
 .article .heading-with-anchor > a {
-  font-size: 0.75em;
+  font-size: 0.85em;
   /* Use ordinal numbers to tone down '#' */
   font-feature-settings: 'onum';
   text-decoration-style: dotted;

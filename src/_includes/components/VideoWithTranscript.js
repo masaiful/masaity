@@ -189,12 +189,12 @@ function YoutubeVideo({ videoId, clipTimeSeconds }) {
       </div>
       <div class="flex ButtonGroup">
         <button
-          class="SplitButton button-reset ph2 pv1 f5 fw7 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
+          class="SplitButton button-reset ph2 pv1 f-copy fw7 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
           aria-pressed="false"
           >Split view</button
         >
         <button
-          class="FollowTimestampButton button-reset ph2 pv1 f5 fw7 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
+          class="FollowTimestampButton button-reset ph2 pv1 f-copy fw7 ba bw1 b--primary br2 enhanced-outline-shadow transition-performant pointer"
           aria-pressed="false"
           >Follow transcript</button
         >
