@@ -257,7 +257,7 @@
   /* Give some space after jumping to an element */
   display: inline;
   scroll-margin-top: 1rem;
-  /* margin-right: 0.5rem; */
+  margin-right: 0.25em;
 }
 
 .article .heading-with-anchor > a {
