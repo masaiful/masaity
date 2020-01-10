@@ -195,6 +195,10 @@
   font-size: 0.9em;
 }
 
+.article pre[class*='language-'] {
+  max-width: 100%;
+}
+
 /* TODO: Look more into code formatting */
 .article :not(pre) > code {
   word-break: break-word;
