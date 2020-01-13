@@ -47,7 +47,6 @@ function VideoWithTranscript(
 }
 
 function Transcript({ interjections, transcriptFile }) {
-  console.log({ interjections });
   /* Split the lines in the file, and separate the speaker */
   const speakerAndSegmentList = transcriptFile
     .split('\r\n')
@@ -96,7 +95,6 @@ function Transcript({ interjections, transcriptFile }) {
                   <p>${segment}</p>
                   ${interjections
                     .filter(({ slide }) => {
-                      console.log({ slide, index });
                       return slide === index;
                     })
                     .map(Interjection)}
