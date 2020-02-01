@@ -21,8 +21,9 @@ const buildSW = () => {
         'js/index.*.js',
         // CodePen embeds
         'js/codepen/ei.js',
-        // Only need to cache woff2, because browsers that support service workers also support woff2
-        'fonts/**/*.woff2',
+        // We would only need to cache woff2, because browsers that support service workers also support woff2
+        // Having said that, asty is .woff :)
+        'fonts/**/*.woff',
         // Offline page
         'offline.html',
         // 404 page
