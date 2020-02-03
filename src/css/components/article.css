@@ -10,7 +10,7 @@
 
 /* Fallback line-height */
 .article {
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* Max width for content elements */
@@ -26,7 +26,7 @@
 .article ol,
 .article ul,
 .article p {
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 /* Consistent padding for list items */
@@ -74,6 +74,10 @@
   margin-top: 1.5em;
 }
 
+.article .cp_embed_wrapper {
+  margin-top: 1.5em;
+}
+
 /* For pre, we want to keep subsequent ones close,
  * and separate everything else.
 */
@@ -113,7 +117,6 @@
 /* Type scale */
 .article {
   font-size: 1.125rem;
-  line-height: 1.5;
 
   /* Hyphenation */
   hyphens: auto;

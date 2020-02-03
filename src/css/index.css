@@ -26,16 +26,6 @@
 /** Explicit Print styles */
 @import './print';
 
-/** Dev-time styles */
-/* img::before {
-  display: block;
-  padding: 1rem;
-  content: attr(alt);
-  font-size: 2rem;
-  color: var(--accent);
-  line-height: 1.5;
-}*/
-
 .scroll-touch {
   -webkit-overflow-scrolling: touch;
 }
