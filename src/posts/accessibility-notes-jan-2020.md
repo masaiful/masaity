@@ -4,7 +4,7 @@ date: 2020-01-31
 tags:
   - accessibility
   - a11y
-description: 'A collection of notes on accessibility topics at work.'
+description: 'A collection of notes on accessibility topics at work, from January 2020.'
 hasCodepen: true
 ---
 
