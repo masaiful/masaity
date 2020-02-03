@@ -12,7 +12,7 @@
     {{ image | url | absoluteUrl(metadata.url) }}
 {%- else -%}
     {%- if isPost -%}
-        https://fotisxyz-og-image.now.sh/**{{title | urlencode}}**.png?fontSize=150px&md=1&linkUrl={{absolutePageUrl | urlencode}}
+    {{"/img/logo_hq.png" | url | absoluteUrl(metadata.url) }}
     {%- endif -%}
 {%- endif -%}
 
