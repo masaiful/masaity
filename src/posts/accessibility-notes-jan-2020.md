@@ -14,17 +14,17 @@ At work, I spend much of my time consulting with co-workers about accessibility.
 
 A common topic is menus that expand and collapse, toggling a set of items (typically navigation links below) them.
 
-When people run into this, and want to make it more accessible, their search brings them to the ARIA `menu` role. While it seems reasonable ("it says it on the tin, menu" and "semantics are good, right?"), I usually advise against it.
+When people run into this, and want to make it more accessible, their search brings them to the ARIA `menu` and `menubutton` roles. While it seems reasonable ("it says menu on the tin" and "semantics are good, right?"), I usually advise against it.
 
 The `menu` role is meant for a type of "application", which in ARIA (and screen reader implementations) implies a specific set of interactions. Screen readers might go into a specific application mode upon encountering a `menu`.
 
-As an example, you would probably use the `menu` role if you were implementing Google Docs' top-bar men (the one that says `Files`, `Edit` etc.), rather than a hamburger menu, or a menu of sharing options.
+As an example, you would probably use the `menu` role if you were implementing Google Docs' top-bar menu (the one that says `Files`, `Edit` etc.), rather than a hamburger menu, or a menu of sharing options.
 
-Another reason not to use `menu`, in my experience, is that its implementation has a few moving parts that go out of sync as a project goes along. As the ARIA Authoring Practices document says, ["a role is a promise"](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). A `menu` role must act like a `menu`, and it turns out there are a few things involved to do that. [You can read the interactions and markup on the ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton) guide.
+Another reason not to use `menu`, in my experience, is that its implementation has a number of moving parts that can go out of sync as a project goes along. As the ARIA Authoring Practices document says, ["a role is a promise"](https://www.w3.org/TR/wai-aria-practices-1.1/#no_aria_better_bad_aria). A `menu` widget must act like a `menu`, and it turns out there are a few things involved to do that. [You can read the interactions and markup on the ARIA Authoring Practices](https://www.w3.org/TR/wai-aria-practices-1.1/#menubutton) guide.
 
-There are keyboard interactions involved, and a set order of nesting the markup for `menu` and `menuitems`. Most often, I see `menuitems` go on nested child nodes instead of immediate ones. At that point, the implementation is wrong, but it certainly might look right to someone! Even worse, it might look daunting. Daunting code is code that does not get touched, and only accumulates cruft. That can be dangerous for the accessibility of the project long-term.
+There are keyboard interactions involved, and a set order of nesting the markup for `menu` and `menuitems`. Most often, I see `menuitems` go on nested child nodes instead of immediate ones. At that point, the implementation is wrong, but it certainly might look right to someone! Even worse, it might look daunting. If a piece of code looks daunting, then people avoid touching it and it only accumulates cruft. That can be dangerous for the accessibility of a project long-term.
 
-I love this article by [Sarah Higley on Roles and Relationships](https://sarahmhigley.com/writing/roles-and-relationships/) and the various moving part of complex widgets. I think she outlines much of the same concerns, better than I could!
+I love this article by [Sarah Higley on Roles and Relationships](https://sarahmhigley.com/writing/roles-and-relationships/) and the various moving part of compound widgets. I think she outlines much of the same concerns, better than I could!
 
 Other people have covered this as well, such as [Heydon Pickering on Collapsible Sections](https://inclusive-components.design/collapsible-sections/) and [Menus & Menu Buttons](https://inclusive-components.design/menus-menu-buttons/), which you could read as a more in-depth guide.
 
