@@ -40,6 +40,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = function(eleventyConfig) {
   //
   // PLUGINS
+  // https://github.com/11ty/eleventy-plugin-rss
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ['njk', 'md'],

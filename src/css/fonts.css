@@ -1,8 +1,8 @@
 /* Asty-regular */
 @font-face {
   font-family: 'Asty';
-  /* TODO: reconsider font-display for these */
   font-display: swap;
+  font-style: normal;
   src: url(/fonts/Fonts/asty-regular-v1.woff2) format('woff2'),
        url(/fonts/Fonts/asty-regular-v1.woff) format('woff');
   font-weight: 400;
@@ -12,6 +12,7 @@
 @font-face {
   font-family: 'Asty';
   font-display: swap;
+  font-style: normal;
   src: url(/fonts/Fonts/asty-bold-v1.woff2) format('woff2'),
        url(/fonts/Fonts/asty-bold-v1.woff) format('woff');
   font-weight: 700;

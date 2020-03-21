@@ -10,13 +10,16 @@
     <link rel="icon" type="image/png" href="/img/favicon-128x128.png" sizes="128x128">
 
     {# RSS Feed link #}
-    <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.shortTitle }}">
+    <link rel="alternate" href="{{ metadata.feed.path | url | absoluteUrl(metadata.url) }}" type="application/atom+xml" title="{{ metadata.shortTitle }}">
 
     {# Used to point to a canonical feed url, for all the posts 
       @see https://indieweb.org/posse-post-discovery#Algorithm
       @see https://indieweb.org/h-feed#rel_feed
+
+      I am not sure whether this should be fully qualified or not;
+      adding it as absolute, just in case
     #}
-    <link rel="feed alternate" type="text/html" href="/posts/" title="Writing" />
+    <link rel="feed alternate" type="text/html" href="{{ "/posts/" | url | absoluteUrl(metadata.url) }}" title="Writing" />
 
     {% include "meta.njk" %}
     <meta name="theme-color" content="#1a1a1a">
