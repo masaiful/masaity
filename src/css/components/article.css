@@ -268,7 +268,7 @@
 }
 
 .article .heading-with-anchor > a {
-  font-size: 0.85em;
+  font-size: 0.8em;
   /* Use ordinal numbers to tone down '#' */
   font-feature-settings: 'onum';
   text-decoration-style: dotted;

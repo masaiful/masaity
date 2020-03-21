@@ -112,13 +112,19 @@
   border-color: var(--primary);
 }
 
-/** Text selection 
-  * TODO: Reconsider
-*/
-/* ::selection {
-  background-color: var(--selection);
+/* Hardcoded values */
+.dark-green {
+  color: #137752;
 }
 
-::-moz-selection {
-  background-color: var(--selection);
-} */
+.dark-red {
+  color: #e7040f;
+}
+
+.bg-light-gray {
+  background-color: #eee;
+}
+
+.b--light-gray {
+  border-color: #eee;
+}

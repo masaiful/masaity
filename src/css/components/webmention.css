@@ -1,0 +1,7 @@
+/* Hide microfromat mentions without content.
+ * They do not make sense as empty tab stops / announcements,
+ * but we want them in the HTMl. So, display none;
+ */
+.webmention__content .u-mention {
+  display: none;
+}

@@ -29,7 +29,7 @@
 
   <div class="webmention__content p-content">
     {% MarkdownBlock %}
-    {{ webmention.content.value | safe }}
+    <p>{{ webmention.content.html | safe }}</p>
     {% endMarkdownBlock %}
   </div>
 </article>
