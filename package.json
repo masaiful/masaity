@@ -10,7 +10,7 @@
     "build:postprocess": "NODE_DIR=. node postprocessing/process.js",
     "build:join-manifests": "node postprocessing/join-manifests.js",
     "build:inject-sw-manifest": "node postprocessing/inject-sw-manifest",
-    "fonts:fetch": "wget -O Fonts.zip $FONT_CDN_URL; unzip Fonts.zip -d ./src/fonts; rm Fonts.zip",
+    "fonts:fetch": "wget -O Fonts.zip $FONT_CDN_URL; unzip -o Fonts.zip -d ./src/fonts; rm Fonts.zip",
     "clean": "rimraf _site/",
     "dev": "NODE_ENV=development npm-run-all -p dev:site dev:css dev:js",
     "dev:js": "rollup --config rollup.config.js --watch",

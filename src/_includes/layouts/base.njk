@@ -23,7 +23,6 @@
     {% include "pingback.njk" %}
 
     <link rel="preload" href="{{ '/fonts/Fonts/asty-regular-v1.woff' | url}}" as="font" type="font/woff" crossorigin>
-
     <link rel="stylesheet" href="{{ '/css/index.css' | resolveHash | url }}">
   </head>
   <body class="pa3 flex db-p flex-column min-vh-100 f-copy theme-light fg-primary bg-secondary f-asty">
@@ -34,7 +33,7 @@
           <div class="w2 h2">
           {% include "svg/lightbulb.svg" %}
           </div>
-          <a class="ml2 db fg-accent-lighter fw7 link enhanced-outline animation-cycle animate-me" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
+          <a class="ml2 db fg-accent-lighter fw7 link enhanced-outline" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
         </div>
         <div class="ma2">
           <ul class="mn2 pa0 flex list hide-print">
