@@ -40,7 +40,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = function(eleventyConfig) {
   //
   // PLUGINS
-  // https://github.com/11ty/eleventy-plugin-rss
+  // https://github.com/11ty/eleventy-plugin-oss
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ['njk', 'md'],
@@ -55,6 +55,23 @@ module.exports = function(eleventyConfig) {
     engines: {
       toml: toml.parse.bind(toml),
     },
+  });
+
+  // Browsersync Overrides
+  eleventyConfig.setBrowserSyncConfig({
+    callbacks: {
+      ready: function(err, browserSync) {
+        const content_404 = fs.readFileSync('_site/404.html');
+
+        browserSync.addMiddleware('*', (req, res) => {
+          // Provides the 404 content without redirect.
+          res.write(content_404);
+          res.end();
+        });
+      },
+    },
+    ui: false,
+    ghostMode: false,
   });
 
   //
