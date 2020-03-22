@@ -38,31 +38,19 @@
           <div class="w2 h2">
           {% include "svg/lightbulb.svg" %}
           </div>
-          <a class="ml2 db fg-accent-lighter fw7 link enhanced-outline" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
+          <a class="ml2 db f5 f-copy-ns fg-accent-lighter fw7 link enhanced-outline" href="{{ '/' | url }}">{{ metadata.shortTitle }}</a>
         </div>
         <div class="ma2">
-          <ul class="mn2 pa0 flex list hide-print">
-            {%- for nav in collections.nav | reverse -%}
-              {# Do not add home to the navigation #}
-              {% if nav.url !== '/' %}
-              <li class="db ma2 {% if nav.url == page.url %} fw7{% endif %}">
-                <a
-                  {# Declare full feed for /posts/ #}
-                  {% if nav.url == page.url %}aria-current="page"{% endif %}
-                  class="fg-primary hover-fg-accent-lighter enhanced-outline link"
-                  href="{{ nav.url | url }}">
-                    {{ nav.data.navtitle }}
-                </a>
-              </li>
-              {% endif %}
-            {%- endfor -%}
-            <li class="db ma2">
-              <a
-                class="fg-primary hover-fg-accent-lighter enhanced-outline link"
-                href="https://speaking.fotis.xyz">
-                  Speaking
-              </a>
+          {# Read more about `eleventy-navigation` at https://github.com/11ty/eleventy-navigation #}
+          {% set navPages = collections.all | eleventyNavigation %}
+          <ul class="f5 f-copy-ns mn2 pa0 flex list hide-print">
+          {%- for entry in navPages %}
+            <li class="db ma2 {% if entry.url == page.url %}fw7{% endif %}"
+              {% if entry.url == page.url %}aria-current="page"{% endif %}
+            >
+              <a href="{{ entry.url | url }}" class="fg-primary hover-fg-accent-lighter enhanced-outline link">{{ entry.title }}</a>
             </li>
+          {%- endfor %}
           </ul>
         </div>
       </nav>

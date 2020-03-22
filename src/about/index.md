@@ -1,9 +1,9 @@
 ---
 layout: layouts/standalone.njk
 title: About Me
-tags:
-  - nav
-navtitle: About
+eleventyNavigation:
+  key: About
+  order: 2
 ---
 
 Hi, my name is Fotis. I’m Greek, living in Finland, working as a software developer.

@@ -4,7 +4,7 @@
   font-display: swap;
   font-style: normal;
   src: url(/fonts/Fonts/asty-regular-v1.woff2) format('woff2'),
-       url(/fonts/Fonts/asty-regular-v1.woff) format('woff');
+    url(/fonts/Fonts/asty-regular-v1.woff) format('woff');
   font-weight: 400;
 }
 
@@ -14,7 +14,7 @@
   font-display: swap;
   font-style: normal;
   src: url(/fonts/Fonts/asty-bold-v1.woff2) format('woff2'),
-       url(/fonts/Fonts/asty-bold-v1.woff) format('woff');
+    url(/fonts/Fonts/asty-bold-v1.woff) format('woff');
   font-weight: 700;
 }
 
@@ -25,4 +25,10 @@
 
 .f-copy {
   font-size: 1.125rem;
+}
+
+@media screen and (min-width: 30em) {
+  .f-copy-ns {
+    font-size: 1.125rem;
+  }
 }

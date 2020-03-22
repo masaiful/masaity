@@ -9,6 +9,7 @@ const toml = require('toml');
 const pluginRss = require('@11ty/eleventy-plugin-rss');
 const pluginInclusiveLanguage = require('@11ty/eleventy-plugin-inclusive-language');
 const pluginSyntaxHighlight = require('@fpapado/eleventy-plugin-syntaxhighlight');
+const pluginNavigation = require('@11ty/eleventy-navigation');
 
 // Markdown
 let markdownIt = require('markdown-it');
@@ -40,13 +41,14 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = function(eleventyConfig) {
   //
   // PLUGINS
-  // https://github.com/11ty/eleventy-plugin-oss
+  // https://github.com/11ty/eleventy-plugin-rss
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight, {
     templateFormats: ['njk', 'md'],
   });
-  eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPlugin(pluginInclusiveLanguage);
+  eleventyConfig.addPlugin(pluginNavigation);
+  eleventyConfig.setDataDeepMerge(true);
 
   //
   // Enable TOML parsing in frontmatter; it's much nicer than YAML
