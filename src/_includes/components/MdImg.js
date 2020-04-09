@@ -9,6 +9,8 @@ module.exports = function(content, props = {}) {
     position,
     className,
     borderRadius,
+    width,
+    height,
     containerClassName,
   } = props;
 
@@ -28,6 +30,8 @@ module.exports = function(content, props = {}) {
       <img
         src="${src}"
         alt="${alt}"
+        ${width !== undefined ? `width="${width}"` : ""}
+        ${height !== undefined ? `width="${height}"` : ""}
         loading="lazy"
         class="aspect-ratio--object fit-cover ${positionCls} ${brCls} ${cleanCls(
           className
