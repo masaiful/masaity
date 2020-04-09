@@ -9,8 +9,6 @@ module.exports = function(content, props = {}) {
     position,
     className,
     borderRadius,
-    width,
-    height,
     containerClassName,
   } = props;
 
