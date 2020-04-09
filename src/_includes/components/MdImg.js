@@ -30,8 +30,6 @@ module.exports = function(content, props = {}) {
       <img
         src="${src}"
         alt="${alt}"
-        ${width !== undefined ? `width="${width}"` : ""}
-        ${height !== undefined ? `width="${height}"` : ""}
         loading="lazy"
         class="aspect-ratio--object fit-cover ${positionCls} ${brCls} ${cleanCls(
           className

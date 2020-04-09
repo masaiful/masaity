@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Personal blog of Fotis Papadogeorgopoulos",
   "scripts": {
-    "build": "NODE_ENV=production npm-run-all -s clean fonts:fetch build:css build:js build:join-manifests build:site build:postprocess build:inject-sw-manifest",
+    "build": "NODE_ENV=production npm-run-all -s clean fonts:fetch build:css build:js build:join-manifests build:site build:inject-sw-manifest",
     "build:js": "rollup --config rollup.config.js",
     "build:site": "ELEVENTY_ENV=production eleventy",
     "build:css": "postcss src/css/*.css --dir _site/css/",
