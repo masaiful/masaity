@@ -24,13 +24,15 @@
     {% include "meta.njk" %}
     <meta name="theme-color" content="#1a1a1a">
     {% include "pingback.njk" %}
+
+    <link rel="preload" href="{{ '/fonts/Fonts/asty-regular-v1.woff2' | url}}" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="{{ '/fonts/Fonts/asty-bold-v1.woff2' | url}}" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="{{ '/css/index.css' | resolveHash | url }}">
   </head>
   <body class="pa3 flex db-p flex-column min-vh-100 f-copy theme-light fg-primary bg-secondary f-asty">
     <header class="w-100 mw7 center">
-      <p>Hi! On April 9, this site is <a href="https://css-naked-day.github.io/">participating in CSS naked day</a>.</p>
-      <p>Styles will be back tomorrow!</p>
       {% include "SkipLink.njk" %}
-      <hr>
       <nav class="mn2 f-copy flex flex-row justify-between items-end overflow-x-auto scroll-touch">
         <div class="ma2 flex items-end">
           <div class="w2 h2">
